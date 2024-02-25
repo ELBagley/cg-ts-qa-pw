@@ -1,0 +1,20 @@
+{ 
+    "NumTabs": 0,
+    "Tab1Text": "0",
+    "Tab2Text": "0",
+    "Tab3Text": "0",
+    "Tab1Columns": 4,
+    "Tab1Rows": 1,
+    "Tab1Row0": ["OrganizationInformation", "Type", "Description", "Status"],
+    "Tab1Row1": ["No results found"],
+    "Tab1Row1ChangeLinkText": " ",
+    "Tab1Row1CancelLinkText": " ",
+    "Tab2Columns": 0,
+    "Tab2Rows": 0,
+    "Tab2Row0": [" "],
+    "Tab2Row1": [" "],
+    "Tab2Row2": [" "],
+    "Tab2Row3": [" "],
+    "Tab3Columns": 0,
+    "Tab3Row3": 0
+}

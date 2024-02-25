@@ -1,0 +1,17 @@
+
+{ 
+    "NumTabs": 3,
+    "Tab1Text": "Donation History",
+    "Tab2Text": "Payroll Contribution",
+    "Tab3Text": "My Nominations",
+    "Tab1HeaderText": ["Action", "Organization Information", "Type", "Description", "Status"],
+    "Tab1Rows": 1,
+    "Tab1Row1Data": [" ", "DELOITTE FOUNDATION EDUCATION FUND", "One-Time Credit Card", "25.00 USD", "Closed"],
+    "Tab2Rows": 2,
+    "Tab2Row0": ["Action","Organization Information","Type","Description","Status"],
+    "Tab2Row1": ["Change","DELOITTE FOUNDATION EDUCATION FUND","One-Time Payroll","20.00 USD","You have successfully registered your payroll deduction"],
+    "Tab2Row2": ["Change","DELOITTE FOUNDATION EDUCATION FUND", " ", "Recurring Payroll", "5.00 USD per pay period", "You have successfully registered your payroll deduction"],
+    "Tab3Rows": 0,
+    "Tab3Row0": ""
+
+}

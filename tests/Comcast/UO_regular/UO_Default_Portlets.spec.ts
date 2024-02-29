@@ -14,9 +14,11 @@ test ('Examine default Home Page react portlet', async ({page}) => {
     const pm = new extPageManager(page)
 
     await pm.useloginPage().loginToExternalPortal('SQAUO1', '123!SilverFox')
-    await pm.useHomePage().examineTabs(testHomeData, testHomeLocators )
+    await pm.useHomePage().examineTabs("Current Payroll Contribution",testHomeData, testHomeLocators)
+    await pm.useHomePage().examineTabs("Matching Gift Balance",testHomeData, testHomeLocators)
+    await pm.useHomePage().examineTabs("My UpComing Events",testHomeData, testHomeLocators)
 })
-test ("examine default Universl Give react portlet", async ({page}) => {
+test ("examine default Universal Give react portlet", async ({page}) => {
     const pm = new extPageManager(page)
 
     await pm.useGivingPage().navigateToGivingPage()

@@ -1,0 +1,19 @@
+{
+    "Manage Open Events": {
+
+    },
+    "Manage Completed Events": {
+        "TableLocator": "my_events_table388922",
+        "Row0": ["Action", "Organization Information", "Type", "Date", "Description", "Status", "Enrolled"],
+        "Row1ViewOccurancesLink": true,
+        "Row1ViewLink": false,
+        "Row2ViewOccurancesLink": false,
+        "Row2ViewLink": true
+    },
+    "Events I Created": {
+        "Row0": ["Action", "Organization Information", "Type", "Date", "Description", "Status", "Enrolled"]
+    },
+    "Unsubmitted Events I Created": {
+        "Row0": ["Action", "Organization Information", "Type", "Description"]
+    }
+}

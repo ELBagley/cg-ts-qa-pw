@@ -19,8 +19,9 @@ export class examinePortletHelper {
       currentTab++
     } // location of current tab in the array
     await this.page.getByText(tabName).click();
+   
     // HISTORY PORTLET
-    if(testData[tabName].TabType == 1019){ 
+    if((testData[tabName].TabType == 1019) || (testData[tabName].TabType == 1002)){ 
       for(let currentRow = 0; currentRow < testData[tabName].TabRows; currentRow++){
         for(let currentElement = 0; currentElement < testData[tabName].TabElements; currentElement++){
           if(currentRow == 0){
@@ -55,59 +56,31 @@ export class examinePortletHelper {
         }
       }
     }
-    // MY EVENTS PORTLET
-    else if (testData[tabName].TabType == 1036){
+    // UNSUBMITTED EVENTS
+    else if (testData[tabName].TabType == 1016){
       for(let currentRow = 0; currentRow < testData[tabName].TabRows; currentRow++){
         for(let currentElement = 0; currentElement < testData[tabName].TabElements; currentElement++){
           if((currentRow == 0) && (currentElement == 0)){} // don't bother
+          else { 
+
+          }
+        }
+      }
+    }
+    // RECURRING CREATED and COMPLETED EVENTS.  tab type 1010
+    else if (testData[tabName].TabType == 1010){
+      // expand all of the rows with "View Occurences"
+      // this assumes
+      // 1: the order of rows positions the Summary row first in the list
+      // 2: tests will only hae one summary row
+      if((testData[tabName].TabAction == "open") && (testData[tabName].TabRow1[0]).textContent() == "View Occurrences"){
+        // select the cell with "View Occurrences" to expand the ongoing events
+        testData[tabName].tab1Row1[0].click()
+      }
+      for(let currentRow = 0; currentRow < testData[tabName].TabRows; currentRow++){
+        for(let currentElement = 0; currentElement < testData[tabName].TabElements; currentElement++){
         }
       }
     }
   }
 }
-
-
-  /*
-  async examineTabData(){
-    let currentRow = 0
-    // while there are rows to verify
-    while (currentRow <= this.numRows) { 
-      // verify each of the elements in the array of row data until there is no more data
-        if (currentRow == 0){  
-          for(let currentElement = 0; currentElement <= this.TabRow0Data.length; currentElement++){                
-            await expect(this.page.getByRole('cell', { name: this.TabRow0Data[currentElement]})).toBeVisible();
-            break
-        }}
-        if (currentRow == 1){
-          for(let currentElement = 0; currentElement <= this.TabRow1Data.length; currentElement++){ 
-            await expect(this.page.getByRole('cell', { name: this.TabRow1Data[currentElement]})).toBeVisible();
-            break
-        }}
-        if (currentRow == 2){
-          for(let currentElement = 0; currentElement <= this.TabRow2Data.length; currentElement++){ 
-          await expect(this.page.getByRole('cell', { name: this.TabRow2Data[currentElement]})).toBeVisible();
-          break
-        }}
-        if (currentRow == 3){
-          for(let currentElement = 0; currentElement <= this.TabRow3Data.length; currentElement++){ 
-          await expect(this.page.getByRole('cell', { name: this.TabRow3Data[currentElement]})).toBeVisible();
-          break
-        }}
-        if (currentRow == 4){
-          for(let currentElement = 0; currentElement <= this.TabRow4Data.length; currentElement++){ 
-            await expect(this.page.getByRole('cell', { name: this.TabRow4Data[currentElement]})).toBeVisible();
-            break
-        }}
-        if (currentRow == 5){
-          for(let currentElement = 0; currentElement <= this.TabRow5Data.length; currentElement++){ 
-            await expect(this.page.getByRole('cell', { name: this.TabRow5Data[currentElement]})).toBeVisible();
-            break
-        }}
-        currentRow = currentRow + 1
-    } //for 'currentRow'  
-      //DEBUG console.log("ROWS" + testData.numRows + ", ELEMENTS " + testData.Tab1Row1[i])
-  } //while 'currentRow'
-
-} //class 'examinePortletHelper'
-  */
-

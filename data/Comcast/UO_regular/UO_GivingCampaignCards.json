@@ -1,9 +1,4 @@
 {
 "NumOfCards": 6,
-"Card1Text": "Arts & Culture",
-"Card2Text": "Basic Needs Fund",
-"Card3Text": "Compassion Fund",
-"Card4Text": "Education Fund",
-"Card5Text": "General Fund",
-"Card6Text": "Team Member Charitable Fund"
+"CardTitleArray": ["Arts & Culture","Basic Needs Fund", "Compassion Fund", "Education Fund",  "General Fund", "Team Member Charitable Fund"]
 }

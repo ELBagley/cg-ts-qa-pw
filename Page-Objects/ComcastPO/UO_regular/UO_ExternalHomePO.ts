@@ -1,4 +1,4 @@
-import { Page, expect } from "@playwright/test";
+import { Page, expect } from "@playwright/test"
 import { examinePortletHelper } from "../ExaminePortlet"
 
 //const testData = JSON.parse(JSON.stringify(require('../../Fixtures/Comcast/Home_ContributionPortlet.json')));

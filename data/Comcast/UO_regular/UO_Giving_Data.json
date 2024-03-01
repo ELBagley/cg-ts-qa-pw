@@ -1,0 +1,31 @@
+
+{
+    "NumTabs": 3,
+    "TabArray": ["Matching Gift Balance", "Current Payroll Contribution", "Donation History"],
+    "Matching Gift Balance": {
+        "Tab1Type": "1006",
+        "Tab1Columns": 5,
+        "Tab1Rows": 4,
+        "Tab1Row0": ["Program name", "Number of Transaction(s)", "Limit", "Total Match Amount", "Balance"],
+        "Tab1Row1": ["myImpact","$1,000.00","$1,000.00","x", "x"],
+        "Tab1Row2": ["Match Summary", "0", "$0.00","x", "x"],
+        "Tab1Row3": ["Payroll Match", "0", "$0.00","x", "x"]
+    },
+    "Current Payroll Contribution": {
+        "Tab2Type": "1019",
+        "Tab2Columns": 4,
+        "Tab2Rows": 1,
+        "Tab2Row0": ["Type", "Contribution Amount", "Distribution", "Action"],
+        "Tab2Row1": ["No results found", "x","x", "x"],
+        "Tab2Row1ChangeLinkText": "Change",
+        "Tab2Row1CancelLinkText": "Cancel"
+    },
+    "Donation History": {
+        "Tab3Type": "1002",
+        "Tab3Columns": 4,
+        "Tab3Rows": 1,
+        "Tab3Row0": ["Organization Information", "Type", "Description", "Status"],
+        "Tab3Row1": ["No results found", "x","x", "x"]
+    }
+}
+

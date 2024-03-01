@@ -1,24 +1,43 @@
-import { test } from "@playwright/test"    
-import { UO_ExternalPageLogin } from "../../../page-objects/ComcastPO/UO_regular/UO_ExternalLoginPO"
-import { UO_ExternalHome } from "../../../page-objects/ComcastPO/UO_regular/UO_ExternalHomePO"
-import { UO_ExternalGiving } from "../../../page-objects/ComcastPO/UO_regular/UO_ExternalGivingPO"
-import { UO_ExternalEvents } from "../../../page-objects/ComcastPO/UO_regular/UO_ExternalEventsPO"
+import { test } from "@playwright/test"  
+import { extPageManager }  from "../../../Page-Objects/ComcastPO/UO_regular/extPageManager"
 
-const testDataHome = JSON.parse(JSON.stringify(require("../../../fixtures/Comcast/UO_regular/UO_Home_ContributionPortlet.json")));
-const testDataGiving = JSON.parse(JSON.stringify(require("../../../fixtures/Comcast/UO_regular/UO_Giving_MatchPortlet.json")));
-const testDataEvents = JSON.parse(JSON.stringify(require("../../../fixtures/Comcast/UO_regular/UO_Event_Portlet.json")));
+const testHomeLocators = JSON.parse(JSON.stringify(require("../../../data/Comcast/UO_regular/UO_Home_Locators.json")));
+const testGivingLocators = JSON.parse(JSON.stringify(require("../../../data/Comcast/UO_regular/UO_Giving_Locators.json")));
+const testEventsLocators = JSON.parse(JSON.stringify(require("../../../data/Comcast/UO_regular/UO_Event_Locators.json")));
 
-test ('Examine Home Page portlet', async ({page}) => {
+const testHomeData = JSON.parse(JSON.stringify(require('../../../data/Comcast/UO_regular/UO_Home_Data.json')));
+const testGivingData = JSON.parse(JSON.stringify(require('../../../data/Comcast/UO_regular/UO_Giving_Data.json')));
+const testEventsDataShort = JSON.parse(JSON.stringify(require('../../../data/Comcast/UO_regular/UO_Event_DataShort.json')));
+const testEventsDataLong = JSON.parse(JSON.stringify(require('../../../data/Comcast/UO_regular/UO_Event_DataLong.json')));
 
-    const externalPageLogin = new UO_ExternalPageLogin(page)
-    const externalHome = new UO_ExternalHome(page)
-    const externalGivePO = new UO_ExternalGiving(page) 
-    const externalEventPO = new UO_ExternalEvents(page) 
-
-    await externalPageLogin.loginToExternalPortal('SQAUO1', '123!SilverFox')
-    await externalHome.validatePortlet(testDataHome)
-    await externalGivePO.validatePortlet(testDataGiving)
-    await externalEventPO.validatePortlet(testDataEvents)
-}
-)
+test ('Examine Home page with data', async ({page}) => {
+    const pm = new extPageManager(page)
+    await pm.useloginPage().loginToExternalPortal('SQAUO', '123!SilverFox')
+    await pm.useHomePage().examineTabs("Current Payroll Contribution",testHomeData, testHomeLocators)
+    await pm.useHomePage().examineTabs("Matching Gift Balance",testHomeData, testHomeLocators)
+    await pm.useHomePage().examineTabs("My UpComing Events",testHomeData, testHomeLocators)
+})
+test ("Examine Universal Give page with data", async ({page}) => {
+    const pm = new extPageManager(page)
+    await pm.useGivingPage().navigateToGivingPage()
+    await pm.useGivingPage().examineTabs("Matching Gift Balance",testGivingData, testGivingLocators)
+    await pm.useGivingPage().examineTabs("Current Payroll Contribution",testGivingData, testGivingLocators)
+    await pm.useGivingPage().examineTabs("Donation History",testGivingData, testGivingLocators)
+})
+test ("Examine Create Events with data - short", async ({page}) => {
+    const pm = new extPageManager(page)
+    await pm.useEventsPage().navigateToEventsPage()
+    await pm.useEventsPage().examineTabs("Manage Open Events",testEventsDataShort, testEventsLocators)
+    await pm.useEventsPage().examineTabs("Manage Completed Events",testEventsDataShort, testEventsLocators)
+    await pm.useEventsPage().examineTabs("Events I Created",testEventsDataShort, testEventsLocators)
+    await pm.useEventsPage().examineTabs("Unsubmitted Events I Created",testEventsDataShort, testEventsLocators)
+})
+test ("Examine Create Events with data - long", async ({page}) => {
+    const pm = new extPageManager(page)
+    await pm.useEventsPage().navigateToEventsPage()
+    await pm.useEventsPage().examineTabs("Manage Open Events",testEventsDataLong, testEventsLocators)
+    await pm.useEventsPage().examineTabs("Manage Completed Events",testEventsDataLong, testEventsLocators)
+    await pm.useEventsPage().examineTabs("Events I Created",testEventsDataLong, testEventsLocators)
+    await pm.useEventsPage().examineTabs("Unsubmitted Events I Created",testEventsDataLong, testEventsLocators)
+})
 

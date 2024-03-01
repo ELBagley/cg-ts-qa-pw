@@ -1,19 +1,22 @@
 {
-"Tab1Locator": "ul[role='tablist'] > li:nth-of-type(1)",
-"Tab2Locator": "ul[role='tablist'] > li:nth-of-type(2)",
-"Tab3Locator": "ul[role='tablist'] > li:nth-of-type(3)",
-"Tab1Row0": ".get_balances-wrapper .css-1tdt1jy  .css-gatevb",
-"Tab1Row1":  "tbody > tr:nth-of-type(1)",
-"Tab1Row2":  "tbody > tr:nth-of-type(2)",
-"Tab1Row3":  "tbody > tr:nth-of-type(3)",
-"Tab2Row0": "tr#cgcurrentcontriheader",
-"Tab2Row1": "tbody > tr:nth-of-type(1)",
-"Tab2Row2": "tbody > tr:nth-of-type(2)",
-"Tab2Row3": "tbody > tr:nth-of-type(3)",
-"Tab2Row1ChangeLinkLocator": "td:nth-of-type(4) > a:nth-of-type(1)",
-"Tab2Row1CancelLinkLocator": "td:nth-of-type(4) > a:nth-of-type(2)",
-"Tab3Row0": "[data-url='eg_portlet_data/.get_giving_history/?x_mod_id/=510316/&x_language_code/=en-US'] .css-gatevb",
-"Tab3Row1": "[data-url='eg_portlet_data/.get_giving_history/?x_mod_id/=510316/&x_language_code/=en-US'] tbody tr:nth-of-type(1)",
-"Tab3Row2": "[data-url='eg_portlet_data/.get_giving_history/?x_mod_id/=510316/&x_language_code/=en-US'] tbody tr:nth-of-type(2)",
-"Tab3Row3": "[data-url='eg_portlet_data/.get_giving_history/?x_mod_id/=510316/&x_language_code/=en-US'] tbody tr:nth-of-type(3)"
+    "Tab1Counter": "",
+    "Matching Gift Balance": {
+    },
+    "Current Payroll Contribution":{
+        "TabRow0":  ["#cg368796Type", "#cg368796ContribAmt", "#cg368796Distribution", "#cg368796Action"],     
+        "TabRow1Locator": "",
+        "TabRow1ChangeLinkLocator": "Change[key=4211914]",
+        "TabRow1CancelLinkLocator": "Cancel[key=4211914]",
+        "TabRow2Locator": "",
+        "TabRow2ChangeLinkLocator": "",
+        "TabRow2CancelLinkLocator": ""
+    },
+    "Donation History": {
+        "Tab2Row0": ".css-gatevb",
+        "Tab2Row1": "",
+        "Tab2Row2": "",
+        "Tab2Row3": "",
+        "Tab2Row1ChangeLinkLocator": "",
+        "Tab2Row1CancelLinkLocator": ""
+    }
 }

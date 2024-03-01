@@ -1,11 +1,5 @@
        
 {
 "NumMenuItems": 7,
-"Menu1Text": "Home",
-"Menu2Text": "Universal Give",
-"Menu3Text": "Universal Serve",
-"Menu4Text": "Search Volunteer Opportunities",
-"Menu5Text": "Log Your Hours",
-"Menu6Text": "Create Events",
-"Menu7Text": "Guidelines & FAQs"
+"MenuDataArray": ["Home","Universal Give","Universal Serve","Search Volunteer Opportunities","Log Your Hours", "Create Events", "Guidelines & FAQs"]
 }

@@ -1,0 +1,46 @@
+{ 
+    "NumTabs": 4,
+    "TabArray": ["Manage Open Events", "Manage Completed Events", "Events I Created", "Unsubmitted Events I Created"],
+    "Manage Completed Events": {
+        "Tab1Type": "1010",
+        "Tab1Columns": 7,
+        "Tab1Rows":  5,
+        "Tab1Action": "open",
+        "Tab1Row0": ["Action", "Organizational Information", "Type", "Date", "Description", "Status", "Enrolled"],
+        "Tab1Row1": ["Hide Occurances", "UNIVERSAL EDUCATION CENTER", "Universal Orlando Volunteer Events", "-", "SQA Test R", "x", "x"],
+        "Tab1Row2": ["View", "UNIVERSAL EDUCATION CENTER", "Universal Orlando Volunteer Events", "-", "SQA Test R", "Closed", "0"],
+        "Tab1Row3": ["View", "Boulder Universal", "Universal Orlando Volunteer Events", "-", "SQA Test OT", "Closed", "0"],
+        "Tab1Row4": ["View", "UNIVERSAL EDUCATION CENTER", "Universal Orlando Volunteer Events", "-", "SQA Test R", "Closed", "0"]
+    },
+    "Manage Open Events": {
+        "Tab2Type": "1010",
+        "Tab2Columns": 1,
+        "Tab2Rows": 2,
+        "Tab2Action": "none",
+        "Tab2Row0": ["My Photos"],
+        "Tab2Row1": ["Upload Phots"],
+        "Tab2Row2": [" "],
+        "Tab2Row3": [" "]
+    },
+    "Events I Created": {
+        "Tab3Type": "1010",
+        "Tab3Columns": 7,
+        "Tab3Rows": 5,
+        "Tab3Action": "open",
+        "Tab3Row0": ["Action", "Organizational Information", "Type", "Date", "Description", "Status", "Enrolled"],
+        "Tab3Row1": ["Hide Occurances", "UNIVERSAL EDUCATION CENTER", "Universal Orlando Volunteer Events", "-", "SQA Test R", " ", " "],
+        "Tab3Row2": ["View", "UNIVERSAL EDUCATION CENTER", "Universal Orlando Volunteer Events", "-", "SQA Test R", "Closed", "0"],
+        "Tab3Row3": ["View", "Boulder Universal", "Universal Orlando Volunteer Events", "-", "SQA Test OT", "Close", "0"],
+        "Tab3Row4": ["View", "UNIVERSAL EDUCATION CENTER", "Universal Orlando Volunteer Events", "-", "SQA Test R", "Closed", "0"]
+    },
+    "Unsubmitted Events I Created": {
+        "Tab4Type": "1016",
+        "Tab4Columns": 4,
+        "Tab4Rows": 2,
+        "Tab4Action": "none",
+        "Tab4Row0": ["Action", "Organizational Information", "Type", "Description"],
+        "Tab4Row1": ["Edit | Delete", "SACRED HEART GREENWICH", "Universal Orlando Volunteer Events", "SQA Test Ongoing"],
+        "Tab4Row2": [" "],
+        "Tab4Row3": [" "]
+    }
+}

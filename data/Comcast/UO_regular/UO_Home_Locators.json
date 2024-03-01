@@ -1,29 +1,13 @@
 {
-    "Tab1Counter": "ul[role='tablist']",
     "Current Payroll Contribution": {
-        "TabLocator": "#span-tab-368796",
-        "TabRow0Locator": "#cgcurrentcontriheader",
         "TabRow0": ["#cg368796Type", "#cg368796ContribAmt", "#cg368796Distribution", "#cg368796Action"],     
-        "TabRow1LocatorNoResults": "#tdNoContribution",
-        "TabRow1Locator": "",
         "TabRow1ChangeLinkLocator": "Change[key=4211914]",
         "TabRow1CancelLinkLocator": "Cancel[key=4211914]",
-        "TabRow2Locator": "",
         "TabRow2ChangeLinkLocator": "",
         "TabRow2CancelLinkLocator": ""
     },
     "Matching Gift Balance": {
-        "TabLocator": "#span-tab-510318",
-        "TabRow0ProgramName": ".css-1li71cl",
-        "TabRow0CellLocators": ".css-xoo92v",
-        "TabRow1ProgramName": ".css-1kr0bgy",
-        "TabRow1CellLocators": ".css-kz14y8",
-        "TabRow2ProgramName": ".css-1kr0bgy",
-        "TabRow2Locator": "[.css-1db6t2d]",
-        "TabRow3Locator": "[.css-xwxvkm]"
     },
     "My Upcoming Events": {
-        "TabLocator": "#span-tab-388912",
-        "TabRow0Locator": " "
     }
 }

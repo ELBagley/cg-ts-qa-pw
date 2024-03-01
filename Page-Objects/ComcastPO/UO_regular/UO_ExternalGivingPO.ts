@@ -1,13 +1,13 @@
-import { Page, expect } from "@playwright/test";
+import { Page, expect } from "@playwright/test"
+
+import { examinePortletHelper } from "../ExaminePortlet"
 
 const givingPage = "https://sandbox.cybergrants.com/pls/cybergrants-sb/eg_portal.home?x_gm_id=7272&x_page=uo_giving"
 
-export class UO_ExternalGiving {
-
-    private readonly page: Page
+export class UO_ExternalGiving extends examinePortletHelper{
 
     constructor(page: Page) {
-        this.page = page
+        super(page)
     }
     /**
      * 

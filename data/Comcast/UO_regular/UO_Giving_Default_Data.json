@@ -14,21 +14,21 @@
         "TabRow5": [" ", " "," "," "," "]
     },
     "Current Payroll Contribution": {
-        "Tab2Type": "1019",
-        "Tab2Columns": 4,
-        "Tab2Rows": 2,
-        "Tab2Row0": ["Type", "Contribution Amount", "Distribution", "Action"],
-        "Tab2Row1": ["No results found", "x", "x", "x"],
-        "Tab2Row1ChangeLinkText": "Change",
-        "Tab2Row1CancelLinkText": "Cancel"
+        "TabType": "1019",
+        "TabColumns": 4,
+        "TabRows": 2,
+        "TabRow0": ["Type", "Contribution Amount", "Distribution", "Action"],
+        "TabRow1": ["No results found", "x", "x", "x"],
+        "TabRow1ChangeLinkText": "Change",
+        "TabRow1CancelLinkText": "Cancel"
     },
     "Donation History": {
-        "Tab3Type": "1002",
-        "Tab3Columns": 4,
-        "Tab3Rows": 3,
-        "Tab3Row0": ["Organization Information", "Type", "Description", "Status"],
-        "Tab3Row1": ["Art and Culture Fund", "Matching Gift", "$12.00 on", "Match Amount $10.00"],
-        "Tab3Row2": ["Art and Culture Fund", "Credit Card", "$12.00 on", "Contribution has been approved"]
+        "TabType": "1002",
+        "TabColumns": 4,
+        "TabRows": 3,
+        "TabRow0": ["Organization Information", "Type", "Description", "Status"],
+        "TabRow1": ["Art and Culture Fund", "Matching Gift", "$12.00 on", "Match Amount $10.00"],
+        "TabRow2": ["Art and Culture Fund", "Credit Card", "$12.00 on", "Contribution has been approved"]
     }
 }
 

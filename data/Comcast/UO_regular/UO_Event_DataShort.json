@@ -2,42 +2,42 @@
     "NumTabs": 4,
     "TabArray": ["Manage Open Events", "Manage Completed Events", "Events I Created", "Unsubmitted Events I Created"],
     "Manage Completed Events": {
-        "Tab1Type": "1010",
-        "Tab1Columns": 7,
-        "Tab1Rows":  3,
-        "Tab1Action": "none",
-        "Tab1Row0": ["Action", "Organizational Information", "Type", "Date", "Description", "Status", "Enrolled"],
-        "Tab1Row1": ["View Occurances", "UNIVERSAL EDUCATION CENTER", "Universal Orlando Volunteer Events", "-", "SQA Test R", " ", " "],
-        "Tab1Row2": ["View", "Boulder Universal", "Universal Orlando Volunteer Events", "-", "SQA Test OT", "Open", "2"]
+        "TabType": 1010,
+        "TabColumns": 7,
+        "TabRows":  3,
+        "TabAction": "none",
+        "TabRow0": ["Action", "Organizational Information", "Type", "Date", "Description", "Status", "Enrolled"],
+        "TabRow1": ["View Occurances", "UNIVERSAL EDUCATION CENTER", "Universal Orlando Volunteer Events", "-", "SQA Test R", " ", " "],
+        "TabRow2": ["View", "Boulder Universal", "Universal Orlando Volunteer Events", "-", "SQA Test OT", "Open", "2"]
     },
     "Manage Open Events": {
-        "Tab2Type": "1010",
-        "Tab2Columns": 1,
-        "Tab2Rows": 1,
-        "Tab2Action": "none",
-        "Tab2Row0": ["My Photos"],
-        "Tab2Row1": ["Upload Phots"],
-        "Tab2Row2": [" "],
-        "Tab2Row3": [" "]
+        "TabType": 1010,
+        "TabColumns": 1,
+        "TabRows": 1,
+        "TabAction": "none",
+        "TabRow0": ["My Photos"],
+        "TabRow1": ["Upload Phots"],
+        "TabRow2": [" "],
+        "TabRow3": [" "]
     },
     "Events I Created": {
-        "Tab3Type": "Event",
-        "Tab3Columns": 7,
-        "Tab3Rows": 3,
-        "Tab3Action": "none",
-        "Tab3Row0": ["Action", "Organizational Information", "Type", "Date", "Description", "Status", "Enrolled"],
-        "Tab3Row1": ["View Occurances", "UNIVERSAL EDUCATION CENTER", "Universal Orlando Volunteer Events", "-", "SQA Test R", " ", " "],
-        "Tab3Row2": ["View", "Boulder Universal", "Universal Orlando Volunteer Events", "-", "SQA Test OT", "Open", "2"],
-        "Tab3Row3": [" "]
+        "TabType": 1010,
+        "TabColumns": 7,
+        "TabRows": 3,
+        "TabAction": "none",
+        "TabRow0": ["Action", "Organizational Information", "Type", "Date", "Description", "Status", "Enrolled"],
+        "TabRow1": ["View Occurances", "UNIVERSAL EDUCATION CENTER", "Universal Orlando Volunteer Events", "-", "SQA Test R", " ", " "],
+        "TabRow2": ["View", "Boulder Universal", "Universal Orlando Volunteer Events", "-", "SQA Test OT", "Open", "2"],
+        "TabRow3": [" "]
     },
     "Unsubmitted Events I Created": {
-        "Tab4Type": "1016",
-        "Tab4Columns": 4,
-        "Tab4Rows": 2,
-        "Tab4Action": "none",
-        "Tab4Row0": ["Action", "Organizational Information", "Type", "Description"],
-        "Tab4Row1": ["Edit | Delete", "SACRED HEART GREENWICH", "Universal Orlando Volunteer Events", "SQA Test Ongoing"],
-        "Tab4Row2": [" "],
-        "Tab4Row3": [" "]
+        "TabType": 1016,
+        "TabColumns": 4,
+        "TabRows": 2,
+        "TabAction": "none",
+        "TabRow0": ["Action", "Organizational Information", "Type", "Description"],
+        "TabRow1": ["Edit | Delete", "SACRED HEART GREENWICH", "Universal Orlando Volunteer Events", "SQA Test Ongoing"],
+        "TabRow2": [" "],
+        "TabRow3": [" "]
     }
 }

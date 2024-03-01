@@ -27,7 +27,7 @@ export class examinePortletHelper {
     if((testData[tabName].TabType == 1019) || (testData[tabName].TabType == 1002)){ 
       for(let currentRow = 0; currentRow < testData[tabName].TabRows; currentRow++){
         for(let currentElement = 0; currentElement < testData[tabName].TabElements; currentElement++){
-          if(currentRow == 0){
+          if(currentRow == 0){ // column headings
             await expect(this.page.locator(testLocators[tabName].TabRow0[currentElement])).toHaveText(testData[tabName].TabRow0[currentElement]);
           }
           else if ((currentRow == 1) && (testData[tabName].TabRow1[0] != 'No Result Found')){
@@ -59,14 +59,11 @@ export class examinePortletHelper {
         }
       }
     }
-    // UNSUBMITTED EVENTS
-    else if (testData[tabName].TabType == 1016){
+    // UNSUBMITTED and MY UPCOMMING EVENTS
+    else if ((testData[tabName].TabType == 1016) || (testData[tabName].TabType == 1036)){
       for(let currentRow = 0; currentRow < testData[tabName].TabRows; currentRow++){
         for(let currentElement = 0; currentElement < testData[tabName].TabElements; currentElement++){
           if((currentRow == 0) && (currentElement == 0)){} // don't bother
-          else { 
-
-          }
         }
       }
     }

@@ -19,6 +19,7 @@ test ('Examine Home page with data', async ({page}) => {
 })
 test ("Examine Universal Give page with data", async ({page}) => {
     const pm = new extPageManager(page)
+    await pm.useloginPage().loginToExternalPortal('SQAUO', '123!SilverFox')
     await pm.useGivingPage().navigateToGivingPage()
     await pm.useGivingPage().examineTabs("Matching Gift Balance",testGivingData, testGivingLocators)
     await pm.useGivingPage().examineTabs("Current Payroll Contribution",testGivingData, testGivingLocators)
@@ -26,6 +27,7 @@ test ("Examine Universal Give page with data", async ({page}) => {
 })
 test ("Examine Create Events with data - short", async ({page}) => {
     const pm = new extPageManager(page)
+    await pm.useloginPage().loginToExternalPortal('SQAUO', '123!SilverFox')
     await pm.useEventsPage().navigateToEventsPage()
     await pm.useEventsPage().examineTabs("Manage Open Events",testEventsDataShort, testEventsLocators)
     await pm.useEventsPage().examineTabs("Manage Completed Events",testEventsDataShort, testEventsLocators)
@@ -34,6 +36,7 @@ test ("Examine Create Events with data - short", async ({page}) => {
 })
 test ("Examine Create Events with data - long", async ({page}) => {
     const pm = new extPageManager(page)
+    await pm.useloginPage().loginToExternalPortal('SQAUO', '123!SilverFox')
     await pm.useEventsPage().navigateToEventsPage()
     await pm.useEventsPage().examineTabs("Manage Open Events",testEventsDataLong, testEventsLocators)
     await pm.useEventsPage().examineTabs("Manage Completed Events",testEventsDataLong, testEventsLocators)

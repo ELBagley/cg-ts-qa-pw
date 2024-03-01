@@ -15,7 +15,7 @@
         "TabRow1CancelLinkText": "Cancel"
     },
     "Matching Gift Balance": {
-        "TabType": "1006",
+        "TabType": 1006,
         "TabElements": 5,
         "TabRows": 4,
         "TabRow0": ["Program Name", "Number of Transaction(s)", "Limit", "Total Match Amount", "Balance"],
@@ -26,7 +26,7 @@
         "TabRow5": [" ", " "," "," "," "]
     },
     "My Upcoming Events": {
-        "TabType": "1016",
+        "TabType": 1016,
         "TabElements": 0,
         "TabRows": 0,
         "TabRow0": [" "],

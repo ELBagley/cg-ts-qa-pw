@@ -18,7 +18,10 @@ export class examinePortletHelper {
       }
       currentTab++
     } // location of current tab in the array
-    await this.page.getByText(tabName).click();
+    if((tabName == "Events I Created") || (tabName == "Unsubmitted Events I Created")){ // need to use a better identifier
+      await this.page.locator(testLocators[tabName].TabLocator).click()
+    }
+    else {await this.page.getByText(tabName).click()}
    
     // HISTORY PORTLET
     if((testData[tabName].TabType == 1019) || (testData[tabName].TabType == 1002)){ 

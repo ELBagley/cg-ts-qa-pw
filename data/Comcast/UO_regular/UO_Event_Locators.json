@@ -11,9 +11,11 @@
         "Row2ViewLink": true
     },
     "Events I Created": {
+        "TabLocator": "#span-tab-388918",
         "Row0": ["Action", "Organization Information", "Type", "Date", "Description", "Status", "Enrolled"]
     },
     "Unsubmitted Events I Created": {
-        "Row0": ["Action", "Organization Information", "Type", "Description"]
+        "Row0": ["Action", "Organization Information", "Type", "Description"],
+        "TabLocator": "#span-tab-388920"
     }
 }

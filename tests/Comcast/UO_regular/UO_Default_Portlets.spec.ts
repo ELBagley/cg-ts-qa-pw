@@ -12,14 +12,14 @@ const testEventsData = JSON.parse(JSON.stringify(require('../../../data/Comcast/
 
 test ('Examine default Home Page react portlet', async ({page}) => {
     const pm = new extPageManager(page)
-
     await pm.useloginPage().loginToExternalPortal('SQAUO1', '123!SilverFox')
     await pm.useHomePage().examineTabs("Current Payroll Contribution",testHomeData, testHomeLocators)
     await pm.useHomePage().examineTabs("Matching Gift Balance",testHomeData, testHomeLocators)
-    await pm.useHomePage().examineTabs("My UpComing Events",testHomeData, testHomeLocators)
+    await pm.useHomePage().examineTabs("My Upcoming Events",testHomeData, testHomeLocators)
 })
 test ("Examine default Universal Give react portlet", async ({page}) => {
     const pm = new extPageManager(page)
+    await pm.useloginPage().loginToExternalPortal('SQAUO1', '123!SilverFox')
     await pm.useGivingPage().navigateToGivingPage()
     await pm.useGivingPage().examineTabs("Matching Gift Balance",testGivingData, testGivingLocators)
     await pm.useGivingPage().examineTabs("Current Payroll Contribution",testGivingData, testGivingLocators)
@@ -27,6 +27,7 @@ test ("Examine default Universal Give react portlet", async ({page}) => {
 })
 test ("Examine default Universal Events portlets - short", async ({page}) => {
     const pm = new extPageManager(page)
+    await pm.useloginPage().loginToExternalPortal('SQAUO1', '123!SilverFox')
     await pm.useEventsPage().navigateToEventsPage()
     await pm.useEventsPage().examineTabs("Manage Open Events",testEventsData, testEventsLocators)
     await pm.useEventsPage().examineTabs("Manage Completed Events",testEventsData, testEventsLocators)

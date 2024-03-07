@@ -3,15 +3,15 @@
     "TabArray": ["Manage Open Events","Manage Completed Events","Events I Created","Unsubmitted Events I Created" ],
     "Manage Open Events": {
         "Tab1Type": "1010",
-        "Tab1Columns": 1,
-        "Tab1Rows": 1,
+        "Tab1Elements": 0,
+        "Tab1Rows": 0,
         "Tab1Row0": ["My Photos"],
         "Tab1Row1": ["Upload Phots"]
     },
     "Manage Completed Events": {
         "Tab2Type": "1010",
-        "Tab2Columns": 1,
-        "Tab2Rows": 1,
+        "Tab2Elements": 0,
+        "Tab2Rows": 0,
         "Tab2Row0": ["My Photos"],
         "Tab2Row1": ["Upload Phots"],
         "Tab2Row2": [" "],
@@ -19,8 +19,8 @@
     },
     "Events I Created": {
         "Tab3Type": "1010",
-        "Tab3Columns": 1,
-        "Tab3Rows": 1,
+        "Tab3Elements": 0,
+        "Tab3Rows": 0,
         "Tab3Row0": ["My Photos"],
         "Tab3Row1": ["Upload Phots"],
         "Tab3Row2": [" "],
@@ -28,8 +28,8 @@
     },
     "Unsubmitted Events I Created": {
         "Tab4Type": "1016",
-        "Tab4Columns": 1,
-        "Tab4Rows": 1,
+        "Tab4Elements": 0,
+        "Tab4Rows": 0,
         "Tab4Row0": ["My Photos"],
         "Tab4Row1": ["Upload Phots"],
         "Tab4Row2": [" "],

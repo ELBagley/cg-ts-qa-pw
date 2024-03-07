@@ -3,19 +3,17 @@
     "TabArray": ["Current Payroll Contribution", "Matching Gift Balance", "My Upcoming Events"],
     "Current Payroll Contribution": {
         "TabType": 1019,
-        "TabColumns": 4,
+        "TabElements": 4,
         "TabRows": 3,
         "TabRow0": ["Type", "Contribution Amount", "Distribution", "Action"],
-        "TabRow1": ["OneTime", "$30.00", "$30.00 ", "Change | Cancel"],
-        "TabRow1ChangeLinkText": "Change",
-        "TabRow1CancelLinkText": "Cancel",
+        "TabRow1": ["One Time", "$30.00", "$30.00 to UNIVERSAL ORLANDO FOUNDATION INC - Compassion Fund", "Change | Cancel"],
         "TabRow2": ["Recurring", "$90.00", "$20.00 to UNIVERSAL ORLANDO FOUNDATION INC - Arts and Culture Fund", "Change | Cancel "],
         "TabRow2ChangeLinkText": "Change",
         "TabRow2CancelLinkText": "Cancel"
     },
     "Matching Gift Balance": {
         "TabType": 1006,
-        "TabColumns": 7,
+        "TabElements": 7,
         "TabRows": 4,
         "TabRow0": ["Program Name", "Number of Transaction(s)", "Limit", "-", "Total Match Amount", "=", "Balance"],
         "TabRow1": ["myImpact","$1,000.00", "$1,000.00","x"],
@@ -24,7 +22,7 @@
     },
     "My Upcoming Events": {
         "TabType": 1036,
-        "TabColumns": 0,
+        "TabElements": 0,
         "TabRow3": 0
     }
 }

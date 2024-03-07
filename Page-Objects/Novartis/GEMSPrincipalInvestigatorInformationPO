@@ -1,0 +1,13 @@
+import { Page } from "@playwright/test";
+
+const PrincipalIIPageURL = 'https://sandbox.cybergrants.com/pls/cybergrants-sb/np_portal.turnstile?x_source_flag=&x_gm_id=2932&x_proposal_type_id=49608&x_invitation_id=&x_org_id=&x_style_id=&x_language_code=en-US'
+
+export class GEMSPrincipalIIPO{
+    private readonly page: Page
+    constructor(page: Page) {
+        this.page = page
+    }
+    async navigateToHomePrincipalIIPage (){
+        await this.page.goto(PrincipalIIPageURL, {waitUntil: "domcontentloaded"})
+    }
+}

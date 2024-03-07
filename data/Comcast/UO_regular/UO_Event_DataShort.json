@@ -3,17 +3,17 @@
     "TabArray": ["Manage Open Events", "Manage Completed Events", "Events I Created", "Unsubmitted Events I Created"],
     "Manage Completed Events": {
         "TabType": 1010,
-        "TabColumns": 7,
+        "TabElements": 7,
         "TabRows":  3,
         "TabAction": "none",
-        "TabRow0": ["Action", "Organizational Information", "Type", "Date", "Description", "Status", "Enrolled"],
-        "TabRow1": ["View Occurances", "UNIVERSAL EDUCATION CENTER", "Universal Orlando Volunteer Events", "-", "SQA Test R", " ", " "],
-        "TabRow2": ["View", "Boulder Universal", "Universal Orlando Volunteer Events", "-", "SQA Test OT", "Open", "2"]
+        "TabRow0": ["Action", "Organization Information", "Type", "Date", "Description", "Status", "Enrolled"],
+        "TabRow1": ["View Occurrences", "UNIVERSAL EDUCATION CENTER", "Universal Orlando Volunteer Events", "SQA Test R", "x"],
+        "TabRow2": ["View", "Boulder Universal", "Universal Orlando Volunteer Events", "SQA Test OT", "Open", "2"]
     },
     "Manage Open Events": {
         "TabType": 1010,
-        "TabColumns": 1,
-        "TabRows": 1,
+        "TabElements": 0,
+        "TabRows": 0,
         "TabAction": "none",
         "TabRow0": ["My Photos"],
         "TabRow1": ["Upload Phots"],
@@ -22,20 +22,20 @@
     },
     "Events I Created": {
         "TabType": 1010,
-        "TabColumns": 7,
+        "TabElements": 7,
         "TabRows": 3,
         "TabAction": "none",
-        "TabRow0": ["Action", "Organizational Information", "Type", "Date", "Description", "Status", "Enrolled"],
-        "TabRow1": ["View Occurances", "UNIVERSAL EDUCATION CENTER", "Universal Orlando Volunteer Events", "-", "SQA Test R", " ", " "],
-        "TabRow2": ["View", "Boulder Universal", "Universal Orlando Volunteer Events", "-", "SQA Test OT", "Open", "2"],
+        "TabRow0": ["Action", "Organization Information", "Type", "Date", "Description", "Status", "Enrolled"],
+        "TabRow1": ["View Occurrences", "UNIVERSAL EDUCATION CENTER", "Universal Orlando Volunteer Events", "SQA Test R", "x"],
+        "TabRow2": ["View", "Boulder Universal", "Universal Orlando Volunteer Events", "SQA Test OT", "Open", "2"],
         "TabRow3": [" "]
     },
     "Unsubmitted Events I Created": {
         "TabType": 1016,
-        "TabColumns": 4,
+        "TabElements": 4,
         "TabRows": 2,
         "TabAction": "none",
-        "TabRow0": ["Action", "Organizational Information", "Type", "Description"],
+        "TabRow0": ["Action", "Organization Information", "Type", "Description"],
         "TabRow1": ["Edit | Delete", "SACRED HEART GREENWICH", "Universal Orlando Volunteer Events", "SQA Test Ongoing"],
         "TabRow2": [" "],
         "TabRow3": [" "]

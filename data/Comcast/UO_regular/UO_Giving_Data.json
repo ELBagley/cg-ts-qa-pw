@@ -4,26 +4,27 @@
     "TabArray": ["Matching Gift Balance", "Current Payroll Contribution", "Donation History"],
     "Matching Gift Balance": {
         "TabType": 1006,
-        "TabColumns": 5,
+        "TabElements": 5,
         "TabRows": 4,
-        "TabRow0": ["Program name", "Number of Transaction(s)", "Limit", "Total Match Amount", "Balance"],
+        "TabRow0": ["Program Name", "Number of Transaction(s)", "Limit", "Total Match Amount", "Balance"],
         "TabRow1": ["myImpact","$1,000.00","$1,000.00","x", "x"],
-        "TabRow2": ["Match Summary", "0", "$0.00","x", "x"],
+        "TabRow2": ["Matching Gift", "0", "$0.00","x", "x"],
         "TabRow3": ["Payroll Match", "0", "$0.00","x", "x"]
     },
     "Current Payroll Contribution": {
         "TabType": 1019,
-        "TabColumns": 4,
-        "TabRows": 1,
+        "TabElements": 4,
+        "TabRows": 3,
         "TabRow0": ["Type", "Contribution Amount", "Distribution", "Action"],
-        "TabRow1": ["No results found", "x","x", "x"],
-        "TabRow1ChangeLinkText": "Change",
-        "TabRow1CancelLinkText": "Cancel"
+        "TabRow1": ["One Time", "$30.00", "$30.00 to UNIVERSAL ORLANDO FOUNDATION INC - Compassion Fund", "Change | Cancel"],
+        "TabRow2": ["Recurring", "$90.00", "$20.00 to UNIVERSAL ORLANDO FOUNDATION INC - Arts and Culture Fund", "Change | Cancel "],
+        "TabRow2ChangeLinkText": "Change",
+        "TabRow2CancelLinkText": "Cancel"
     },
     "Donation History": {
         "TabType": 1002,
-        "TabColumns": 4,
-        "TabRows": 1,
+        "TabElements": 4,
+        "TabRows": 2,
         "TabRow0": ["Organization Information", "Type", "Description", "Status"],
         "TabRow1": ["No results found", "x","x", "x"]
     }

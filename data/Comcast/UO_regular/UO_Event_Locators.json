@@ -1,10 +1,12 @@
 {
     "Manage Open Events": {
-
+        "TableLocator": "",
+        "Row0Locators": [".headerCell"],
+        "Row1Locators": [".cglink"]
     },
-    "Manage Completed Events": {
+    "Manage Completed Events": {   
         "TableLocator": "my_events_table388922",
-        "Row0": ["Action", "Organization Information", "Type", "Date", "Description", "Status", "Enrolled"],
+        "Row0Locators": "",
         "Row1ViewOccurancesLink": true,
         "Row1ViewLink": false,
         "Row2ViewOccurancesLink": false,
@@ -12,10 +14,12 @@
     },
     "Events I Created": {
         "TabLocator": "#span-tab-388918",
-        "Row0": ["Action", "Organization Information", "Type", "Date", "Description", "Status", "Enrolled"]
+        "TabRow0":  ["#cg388922Action","#cg388922Organization", "#cg388922Type", "#cg388922Date", "#cg388922Event", "#cg388922Status", "#cg388922Enrolled", "#cg388922Completed"],  
+        "Row0": ""
     },
     "Unsubmitted Events I Created": {
-        "Row0": ["Action", "Organization Information", "Type", "Description"],
-        "TabLocator": "#span-tab-388920"
+        "TabLocator":"#span-tab-388920",
+        "TabRow0":  ["#cg388920Action","#cg388920Organization", "#cg388920Type", "#cg388920Event"]  
+
     }
 }

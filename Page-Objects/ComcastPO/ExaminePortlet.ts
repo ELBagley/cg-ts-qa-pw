@@ -18,12 +18,23 @@ export class examinePortletHelper {
       }
       currentTab++
     } // location of current tab in the array
-    if((tabName == "Events I Created") || (tabName == "Unsubmitted Events I Created")){ // need to use a better identifier
-      await this.page.locator(testLocators[tabName].TabLocator).click()
+    // duplicate strings causing confusion
+    if(tabName == "Events I Created"){
+      //await this.page.locator(testLocators[tabName].TabLocator).click()
+      await this.page.getByRole('tab', {name: tabName, exact: true}).click()
+    } 
+    else if(tabName == "Unsubmitted Events I Created"){ // need to use a better identifier
+      //await this.page.locator(testLocators[tabName].TabLocator).click()
+      await this.page.getByRole('tab', {name: tabName, exact: true}).click()
     }
-    else {await this.page.getByText(tabName).click()}
-   
+    else {
+      await this.page.getByText(tabName).click()
+    }
+    await this.page.waitForTimeout(3000);
+
     // HISTORY PORTLET
+    //   Current Payroll Contribution 1019
+    //   Donation History 1002
     if((testData[tabName].TabType == 1019) || (testData[tabName].TabType == 1002)){ 
       for(let currentRow = 0; currentRow < testData[tabName].TabRows; currentRow++){
         for(let currentElement = 0; currentElement < testData[tabName].TabElements; currentElement++){
@@ -31,16 +42,17 @@ export class examinePortletHelper {
             await expect(this.page.locator(testLocators[tabName].TabRow0[currentElement])).toHaveText(testData[tabName].TabRow0[currentElement]);
           }
           else if ((currentRow == 1) && (testData[tabName].TabRow1[0] != 'No Result Found')){
-            await expect(this.page.getByRole('cell', {name: testData[tabName].TabRow1[currentElement]})).toBeVisible();
+            await expect(this.page.getByRole('cell', {name: testData[tabName].TabRow1[currentElement], exact: true})).toBeVisible();
             break
           }
           else if (currentRow != 0 && currentRow != 1){
-            await expect(this.page.getByRole('cell', {name: testData[tabName].TabRow1[currentElement]})).toBeVisible();
+            await expect(this.page.getByRole('cell', {name: testData[tabName].TabRow1[currentElement], exact:true})).toBeVisible();
           }
         }
       }
     }
     // BALANCE PORTLET
+    //   Matching Gift Balance
     else if (testData[tabName].TabType == 1006){ 
       for(let currentRow = 0; currentRow < testData[tabName].TabRows; currentRow++){
         for(let currentElement = 0; currentElement < testData[tabName].TabElements; currentElement++){
@@ -59,26 +71,100 @@ export class examinePortletHelper {
         }
       }
     }
-    // UNSUBMITTED and MY UPCOMMING EVENTS
-    else if ((testData[tabName].TabType == 1016) || (testData[tabName].TabType == 1036)){
+
+    // TODO: EVENTS PORTLET - Volunteer
+    //    Upcoming Events
+    //else if (testData[tabName].TabType == 1036){}
+
+    // TODO: DOLLARS FOR DOERS std is 4012 (associated Bank)
+    //
+
+    // EVENTS PORTLET - Edit/Delete
+    //   Unsubmitted Events I Created
+    else if (testData[tabName].TabType == 1016){
+      await this.page.waitForTimeout(5000);
       for(let currentRow = 0; currentRow < testData[tabName].TabRows; currentRow++){
         for(let currentElement = 0; currentElement < testData[tabName].TabElements; currentElement++){
-          if((currentRow == 0) && (currentElement == 0)){} // don't bother
+          if(currentRow == 0){ 
+            await expect(this.page.getByRole('cell', {name: testData[tabName].TabRow0[currentElement],exact: true})).toBeVisible();
+          }
+          if(currentRow == 1){
+            await expect(this.page.getByRole('cell', {name: testData[tabName].TabRow1[currentElement],exact: true})).toBeVisible();
+          }
+          if(currentRow == 2){
+            await expect(this.page.getByRole('cell', {name: testData[tabName].TabRow2[currentElement],exact: true})).toBeVisible();
+          }
+          if(currentRow == 3){
+            await expect(this.page.getByRole('cell', {name: testData[tabName].TabRow3[currentElement],exact: true})).toBeVisible();
+          }
         }
       }
     }
-    // RECURRING CREATED and COMPLETED EVENTS.  tab type 1010
+
+    // EVENTS PORTLET - multi occurrences
+    //   Manage Open Events 
+    //   Manage Completed Events
+    //   Events I Created 
     else if (testData[tabName].TabType == 1010){
-      // expand all of the rows with "View Occurences"
-      // this assumes
+      let expandedData = 0
+      // TODO: CAN NOT assume
       // 1: the order of rows positions the Summary row first in the list
-      // 2: tests will only hae one summary row
-      if((testData[tabName].TabAction == "open") && (testData[tabName].TabRow1[0]).textContent() == "View Occurrences"){
-        // select the cell with "View Occurrences" to expand the ongoing events
-        testData[tabName].tab1Row1[0].click()
-      }
+      // 2: tests will only have one summary row
       for(let currentRow = 0; currentRow < testData[tabName].TabRows; currentRow++){
         for(let currentElement = 0; currentElement < testData[tabName].TabElements; currentElement++){
+          if((testData[tabName].TabAction == "open") && (expandedData == 0)){
+            // select the cell with "View Occurrences" to expand the ongoing events
+            await this.page.getByRole('link', {name: 'View Occurrences'}).click()
+            await this.page.waitForTimeout(3000);
+            expandedData = 1
+          }
+          if(currentRow == 0){ //headings
+            await expect(this.page.getByRole('cell', {name: testData[tabName].TabRow0[currentElement]})).toBeVisible();
+          }
+          if((currentRow == 1) && (testData[tabName].TabRow1[currentElement] != "x")){
+            // attempt to understand where to find duplicates are in the table
+            // split the contents of the string and where it is located in the table
+            let curStringArray = testData[tabName].TabRow1[currentElement].split('|')
+            if(curStringArray.length == 2){ 
+              await expect(this.page.getByRole('cell', {name: curStringArray[0],exact: true}).nth(curStringArray[1])).toBeVisible();
+            }
+            else{
+              await expect(this.page.getByRole('cell', {name: testData[tabName].TabRow1[currentElement],exact: true})).toBeVisible();
+            }
+          }
+          if((currentRow == 2) && (testData[tabName].TabRow2[currentElement] != "x")){
+            // attempt to understand where to find duplicates are in the table
+            // split the contents of the string and where it is located in the table
+            let curStringArray = testData[tabName].TabRow2[currentElement].split('|')
+            if(curStringArray.length == 2){ 
+              await expect(this.page.getByRole('cell', {name: curStringArray[0],exact: true}).nth(curStringArray[1])).toBeVisible();
+            }
+            else{
+              await expect(this.page.getByRole('cell', {name: testData[tabName].TabRow2[currentElement],exact: true})).toBeVisible();
+            }
+          }
+          if((currentRow == 3) && (testData[tabName].TabRow3[currentElement] != "x")){
+            // attempt to understand where to find duplicates are in the table
+            // split the contents of the string and where it is located in the table
+            let curStringArray = testData[tabName].TabRow3[currentElement].split('|')
+            if(curStringArray.length == 2){ 
+              await expect(this.page.getByRole('cell', {name: curStringArray[0],exact: true}).nth(curStringArray[1])).toBeVisible();
+            }
+            else{
+              await expect(this.page.getByRole('cell', {name: testData[tabName].TabRow3[currentElement],exact: true})).toBeVisible();
+            }
+          }
+          if((currentRow == 4) && (testData[tabName].TabRow4[currentElement] != "x")){
+            // attempt to understand where to find duplicates are in the table
+            // split the contents of the string and where it is located in the table
+            let curStringArray = testData[tabName].TabRow4[currentElement].split('|')
+            if(curStringArray.length == 2){ 
+              await expect(this.page.getByRole('cell', {name: curStringArray[0],exact: true}).nth(curStringArray[1])).toBeVisible();
+            }
+            else{
+              await expect(this.page.getByRole('cell', {name: testData[tabName].TabRow4[currentElement],exact: true})).toBeVisible();
+            }
+          }
         }
       }
     }

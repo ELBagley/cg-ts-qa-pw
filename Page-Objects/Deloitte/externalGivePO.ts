@@ -37,18 +37,4 @@ export class GivePO{
     async giveToEducationByOneTimePayroll(amount: number) {
         await this.page.getByRole('button').getByText('One-time Payroll').click()
     }
-    async validatePortlet(){
-
-    const Tab1Locator = "ul[role='tablist'] > li:nth-of-type(1)"
-    const Tab2Locator=  "ul[role='tablist'] > li:nth-of-type(2)"
-    const Tab3Locator = "ul[role='tablist'] > li:nth-of-type(3)"
-    const Tab1HeaderLocator =  ".css-gatevb"
-    const Tab1Row1Locator =    "[data-url='eg_portlet_data\.get_giving_history\?x_mod_id\=526810\&x_language_code\=en-US'] [class=' css-1db6t2d']"
-    const Tab2HeaderLocator =  "[data-url='eg_portlet_data\.get_giving_history\?x_mod_id\=526812\&x_language_code\=en-US'] .css-gatevb"
-    const Tab2Row1Locator =    "[data-url='eg_portlet_data\.get_giving_history\?x_mod_id\=526812\&x_language_code\=en-US'] tbody [class=' css-1db6t2d']:nth-of-type(1)"
-    const Tab2Row2Locator =    "[data-url='eg_portlet_data\.get_giving_history\?x_mod_id\=526812\&x_language_code\=en-US'] tbody [class=' css-1db6t2d']:nth-of-type(2)"
-    const Tab3HeaderLocator = ""
-    const Tab3Row1Locator =  ""
-
-    }
 }

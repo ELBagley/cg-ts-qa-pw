@@ -1,0 +1,25 @@
+import { Page, expect } from "@playwright/test";
+
+const GEMSLoginPage = 'https://sandbox.cybergrants.com/pls/cybergrants-sb/np_portal.turnstile?x_source_flag=&x_gm_id=2932&x_proposal_type_id=49608&x_invitation_id=&x_org_id=&x_style_id=&x_language_code=en-US';
+
+export class GEMS_ExternalPageLogin {
+
+    private readonly page: Page
+
+    constructor(page: Page) {
+        this.page = page
+    }
+    
+    async loginToExternalPortal (userName: string, userPassword: string){
+        // start with login page. do not go to an actual external page first
+        await this.page.goto(GEMSLoginPage)
+        await this.page.getByPlaceholder('User ID').fill(userName)
+        await this.page.getByPlaceholder('Password').fill(userPassword)
+        await this.page.getByRole('button', { name: 'Log In' }).click()
+        await this.page.waitForTimeout(250)
+        // once logged in needs a destination
+    }
+    async verifyMenuItems(){
+        //verify navigation bar for test donor SQAUO
+    }   
+}

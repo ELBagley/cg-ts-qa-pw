@@ -1,0 +1,20 @@
+import { Page } from "@playwright/test";
+
+const WelcomePageURL = "https://sandbox.cybergrants.com/pls/cybergrants-sb/eg_portal.home?x_gm_id=1998&x_page=home"
+
+export class GEMSWelcomPO{
+    private readonly page: Page
+    constructor(page: Page) {
+        this.page = page
+    }
+    async navigateToHomePage (){
+        await this.page.goto(WelcomePageURL, {waitUntil: "domcontentloaded"})
+        await this.page.getByText('Clinical - Investigator Initiated Trials (IITs) Research which constitutes a');
+    }
+    async selectClinicalIIT(){
+        await this.page.getByRole('link', { name: 'Clinical - IIT Application' }).click();
+    }
+    async selectNonClinicalIIT(){
+    await this.page.getByRole('link', { name: 'Non-clinical IIR Application' }).click();
+    }
+}

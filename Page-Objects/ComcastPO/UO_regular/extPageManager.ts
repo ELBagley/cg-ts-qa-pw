@@ -5,8 +5,6 @@ import { UO_ExternalGiving } from    "../../../page-objects/ComcastPO/UO_regular
 import { UO_ExternalHome } from      "../../../page-objects/ComcastPO/UO_regular/UO_ExternalHomePO"
 import { UO_ExternalEvents } from    "../../../page-objects/ComcastPO/UO_regular/UO_ExternalEventsPO"
 
-const foo = ""
-
 export class extPageManager{
     private readonly page: Page
     private readonly extLoginPage:UO_ExternalPageLogin

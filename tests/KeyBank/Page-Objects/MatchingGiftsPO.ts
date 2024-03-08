@@ -1,10 +1,11 @@
 import { Page, expect } from "@playwright/test";
-import { examinePortletHelper } from "../Fixtures/ExaminePortlet"
 
-export class extMatchingGifts extends examinePortletHelper{
+export class MatchingGifts {
+
+    private readonly page: Page
 
     constructor(page: Page) {
-        super(page)
+        this.page = page
     }
 /*
 Menu

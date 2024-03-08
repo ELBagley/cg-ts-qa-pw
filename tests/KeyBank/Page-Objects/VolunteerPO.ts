@@ -7,6 +7,7 @@ export class extVolunteer extends examinePortletHelper{
         super(page)
     }
     async selectLogYourHours(){
+        await this.page.getByRole('link', { name: 'Log Your Hours' }).click();
         // goes to organizational search for PT 96916
         // then to Volunteer Hours Information
     }

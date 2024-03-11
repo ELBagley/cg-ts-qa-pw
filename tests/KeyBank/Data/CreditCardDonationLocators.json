@@ -1,0 +1,13 @@
+{
+    "payments": "#rccDropdown",
+    "StreetAddress": "*Street Address",
+    "StreetAddress2": "*Street Address",
+    "city": "*City",
+    "mailingAddress": "#MailingAddress__state__ggid1",
+    "zipCode": "*ZIP Code",
+    "cardName": "Name on Card",
+    "creditCardNumber": "Credit Card Number",
+    "verificationCode": "Verification Code",
+    "expirationYear": "Expiration Year", 
+    "btnSubmit": "Submit"
+}

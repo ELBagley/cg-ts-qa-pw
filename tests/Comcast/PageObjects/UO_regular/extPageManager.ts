@@ -1,9 +1,9 @@
 import { Page, expect } from "@playwright/test";
 
-import { UO_ExternalPageLogin } from "../../../page-objects/ComcastPO/UO_regular/UO_ExternalLoginPO"
-import { UO_ExternalGiving } from    "../../../page-objects/ComcastPO/UO_regular/UO_ExternalGivingPO"
-import { UO_ExternalHome } from      "../../../page-objects/ComcastPO/UO_regular/UO_ExternalHomePO"
-import { UO_ExternalEvents } from    "../../../page-objects/ComcastPO/UO_regular/UO_ExternalEventsPO"
+import { UO_ExternalPageLogin } from "../UO_regular/UO_ExternalLoginPO"
+import { UO_ExternalGiving } from    "../UO_regular/UO_ExternalGivingPO"
+import { UO_ExternalHome } from      "../UO_regular/UO_ExternalHomePO"
+import { UO_ExternalEvents } from    "../UO_regular/UO_ExternalEventsPO"
 
 export class extPageManager{
     private readonly page: Page

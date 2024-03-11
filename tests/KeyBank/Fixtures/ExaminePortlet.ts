@@ -76,9 +76,73 @@ export class examinePortletHelper {
     //    Upcoming Events
     //else if (testData[tabName].TabType == 1036){}
 
-    // TODO: DOLLARS FOR DOERS std is 4012 (associated Bank)
-    //
+    // TODO: Board Service -> DOLLARS FOR DOERS std is 4012 (associated Bank)
+    // action = open
+    // 
+    else if (testData[tabName].TabType == 4012){
+      await this.page.waitForTimeout(5000);
+      let expandedData = 0
+      for(let currentRow = 0; currentRow < testData[tabName].TabRows; currentRow++){
+        for(let currentElement = 0; currentElement < testData[tabName].TabElements; currentElement++){
+          if((testData[tabName].TabAction == "open") && (expandedData == 0)){
+            // select the cell with "View Occurrences" to expand the ongoing events
+            await this.page.getByRole('button', { name: 'Details' }).click();
+            await this.page.waitForTimeout(3000);
+            expandedData = 1
+          }
+        }          
+      }
+      /*  DONOR1
+      //portlet Banner
+      await page.getByText('Dollars for DoersCongratulations! You are eligible to redeem a volunteer match!').click();
+  await page.getByText('Deadline:').click();
+  await page.getByText('12/31/').click();
+      await page.getByRole('button', { name: 'Details' }).click();
 
+      // expands portlet details
+
+      await page.getByText('HEART 1 MISSION5 hoursTotal5 hours').click();
+      await page.getByText('Total$500.00').click();
+      await page.locator('#drawer_d4d-details-report-2').click();
+      await page.getByText('Redeemable').click();
+      await page.getByText('$500.00').nth(1).click();
+      await page.getByText('Hours Available').click();
+      await page.getByText('5', { exact: true }).nth(1).click();
+      await page.getByText('Redeemed', { exact: true }).click();
+      await page.getByText('$0.00').nth(1).click();
+      await page.getByText('Hours Logged').click();
+      await page.getByText('5', { exact: true }).nth(2).click();
+      await page.getByRole('button', { name: 'Redeem' }).click();
+      await page.getByRole('link', { name: 'HEART 1 MISSION' }).click();
+      await page.getByRole('button', { name: 'Save and Proceed' }).click();
+      await page.getByRole('button', { name: 'Submit' }).click();
+      await page.getByRole('link', { name: 'Return to Home Page' }).click();
+      await page.getByRole('button', { name: 'Details' }).click();
+      await page.getByRole('button', { name: 'Details' }).click();
+
+
+  await page.getByText('RED CROSS ELEMENTARY PTO INC10/1 hours').click();
+  await page.locator('span').filter({ hasText: /^RED CROSS ELEMENTARY PTO INC10\/1 hours$/ }).locator('div').nth(2).click();
+  await page.getByText('HEART 1 MISSION3/1 hours').click();
+  await page.locator('span').filter({ hasText: /^1 HEART 1 MISSION3\/1 hours$/ }).locator('div').nth(2).click();
+  await page.getByText('RED CROSS ELEMENTARY PTO INC10 hours1 HEART 1 MISSION3 hoursTotal13 hours').click();
+  await page.locator('#drawer_d4d-details-report-1').click();
+  await page.getByText('Total$1,000.00').click();
+  await page.getByText('RED CROSS ELEMENTARY PTO INC$').click();
+  await page.getByText('$500.00').first().click();
+  await page.getByText('Total$500.00').click();
+  await page.getByText('Redeemable').click();
+  await page.getByText('$500.00').nth(2).click();
+  await page.getByText('Hours Available').click();
+  await page.getByText('3', { exact: true }).nth(1).click();
+  await page.getByText('Redeemed', { exact: true }).click();
+  await page.getByText('$500.00').nth(3).click();
+  await page.getByText('Hours Logged').click();
+  await page.getByText('13', { exact: true }).click();
+  await page.getByRole('link', { name: 'Log Hours' }).click();
+      */
+    }
+    
     // EVENTS PORTLET - Edit/Delete
     //   Unsubmitted Events I Created
     else if (testData[tabName].TabType == 1016){

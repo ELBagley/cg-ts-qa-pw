@@ -19,7 +19,11 @@ export class extGiving extends examinePortletHelper{
     async selectRequestAMatchForAPreviousDonation(){
         // goes to Organization Search with Graphic Balance portlet
     }
-    
+    async makeUWCCDonations(){
+        // on the UW Giving page select CC donations button
+        // fill out the form using data passed in
+        //
+    }
 
     //Matching Gifts Balance
     //Matching Gifts History

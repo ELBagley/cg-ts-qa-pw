@@ -1,5 +1,5 @@
 import { Page, expect } from "@playwright/test"
-import { examinePortletHelper } from "../../ComcastPO/ExaminePortlet"
+import { examinePortletHelper } from "../ExaminePortlet"
 
 const eventsPage = "https://sandbox.cybergrants.com/pls/cybergrants-sb/eg_portal.home?x_gm_id=7272&x_page=uo_create_events"
 

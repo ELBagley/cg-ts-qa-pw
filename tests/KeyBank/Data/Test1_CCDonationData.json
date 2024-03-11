@@ -1,0 +1,35 @@
+{
+    "numTestPayments": 3,
+    "Payment1": {
+        "proposalType": "",
+        "deductionType": "OneTime",
+        "payments": "",
+        "StreetAddress": "",
+        "StreetAddress2": "",
+        "city": "",
+        "mailingAddress": "",
+        "zipCode": "",
+        "cardName": "",
+        "creditCardNumber": "6011000990139424",
+        "verificationCode": "275",
+        "expirationMonth": "03",
+        "expirationYear": "2028", 
+        "btnSubmit": "Submit"
+    },
+    "Payment2": {
+        "proposalType": "",
+        "deductionType": "Monthly",
+        "payments": "",
+        "StreetAddress": "",
+        "StreetAddress2": "",
+        "city": "",
+        "mailingAddress": "",
+        "zipCode": "",
+        "cardName": "",
+        "creditCardNumber": "6011000990139424",
+        "verificationCode": "275",
+        "expirationMonth": "03",
+        "expirationYear": "2028", 
+        "btnSubmit": "Submit"
+    }
+}

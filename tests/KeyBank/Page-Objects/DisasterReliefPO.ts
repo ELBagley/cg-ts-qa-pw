@@ -6,6 +6,9 @@ export class extDisasterRelief extends examinePortletHelper{
     constructor(page: Page) {
         super(page)
     }
+    async navigateToDisasterRelief(){
+        await this.page.goto("https://sandbox.cybergrants.com/pls/cybergrants-sb/eg_portal.home?x_gm_id=10762&x_page=disasterrelief")
+    }
     async selectDonationOrganization(OrganizationName: string){
         //titles are on the 
         await this.page.getByText(OrganizationName).getByRole('link', { name: 'Donate Today' }).click();

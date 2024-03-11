@@ -1,6 +1,6 @@
 import { test } from "@playwright/test"    
-import { Comcast_ExternalPageLogin } from "../../../page-objects/ComcastPO/Comcast/Comcast_ExternalLoginPO"
-import { Comcast_ExternalHomePO } from    "../../../page-objects/ComcastPO/Comcast/Comcast_ExternalHomePO"
+import { Comcast_ExternalPageLogin } from "../PageObjects/Comcast/Comcast_ExternalLoginPO"
+import { Comcast_ExternalHomePO } from    "../PageObjects/Comcast/Comcast_ExternalHomePO"
 const testData = JSON.parse(JSON.stringify(require('../../../fixtures/Comcast/Comcast/Comcast_Home_ContributionPortlet.json')));
 
 test ('Examine Home Page portlet', async ({page}) => {

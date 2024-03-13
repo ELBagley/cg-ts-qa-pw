@@ -1,0 +1,11 @@
+{
+    "<tab title>": {
+        "TabType": "1019",
+        "TabColumns": 4,
+        "TabRows": 1,
+        "TabRow0": ["Type", "Contribution Amount", "Distribution", "Action"],
+        "TabRow1": ["No results found", "x", "x", "x"],
+        "TabRow1ChangeLinkText": "Change",
+        "TabRow1CancelLinkText": "Cancel"
+    }
+}

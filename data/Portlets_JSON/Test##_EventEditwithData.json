@@ -1,0 +1,12 @@
+{ 
+    "<tab title>": {
+        "TabType": 1016,
+        "TabElements": 4,
+        "TabRows": 0,
+        "TabAction": "none",
+        "TabRow0": ["Action", "Organization Information", "Type", "Description"],
+        "TabRow1": ["Edit | Delete", "", "", ""],
+        "TabRow2": ["Edit | Delete", "", "", ""],
+        "TabRow3": ["Edit | Delete", "", "", ""]
+    }
+}

@@ -1,22 +1,23 @@
 import { Page, expect } from "@playwright/test";
 
-import { extBoardService } from "./BoardServicePO"
-import { CreditCardDonation } from "./CreditCardDonationPO"
-import { extDisasterRelief } from "./DisasterReliefPO"
-import { extDollarsForDoers } from "./DollarsForDoersPO"
-import { DonorMatching } from "./DonorMatchingGiftPO"
-import { eventInformation } from "./EventInformationPO"
-import { extGiving } from "./GivingPO"
-import { GivingReview } from "./GivingReviewPO"
-import { extHome } from "./HomePO"
-import { extLogin } from "./LoginPO"
-import { extManageEvents } from "./ManageEventsPO"
-import { MatchingGifts } from "./MatchingGiftsPO"
-import { OrganizationSearch} from "./OrganizationSearchPO"
-import { SubmissionSuccessful } from "./SubmissionSuccessfulPO"
-import { extUWGiving } from "./UWGivingPO"
-import { extVolunteerHours } from "./VolunteerHoursPO"
-import { extVolunteer } from "./VolunteerPO"
+import { extBoardService } from "./extBoardServicePO"
+import { CreditCardDonation } from "./actCreditCardDonationPO"
+import { extDisasterRelief } from "./extDisasterReliefPO"
+import { extDollarsForDoers } from "./actDollarsForDoersPO"
+import { DonorMatching } from "./actDonorMatchingGiftPO"
+import { eventInformation } from "./actEventInformationPO"
+import { extGiving } from "./extGivingPO"
+import { GivingReview } from "./actGivingReviewPO"
+import { extHome } from "./extHomePO"
+import { extLogin } from "./extLoginPO"
+import { extManageEvents } from "./extManageEventsPO"
+import { MatchingGifts } from "./actMatchingGiftsPO"
+import { OrganizationSearch} from "./actOrganizationSearchPO"
+import { PayrollDeduction} from "./actPayrollDeductionsPO"
+import { SubmissionSuccessful } from "./actSubmissionSuccessfulPO"
+import { extUWGiving } from "./extUWGivingPO"
+import { extVolunteerHours } from "./actVolunteerHoursPO"
+import { extVolunteer } from "./actVolunteerPO"
 
 export class extPageManager{
     private readonly extBoardServicePage: extBoardService
@@ -32,6 +33,7 @@ export class extPageManager{
     private readonly extManageEventsPage: extManageEvents
     private readonly MatchingGiftsPage: MatchingGifts
     private readonly OrganizationSearchPage: OrganizationSearch
+    private readonly PayrollDeductionPage: PayrollDeduction
     private readonly SubmissionSuccessfulPage: SubmissionSuccessful
     private readonly extUWGivingPage: extUWGiving
     private readonly extVolunteerHoursPage: extVolunteerHours
@@ -53,6 +55,7 @@ export class extPageManager{
         this.extManageEventsPage = new extManageEvents (this.page)
         this.MatchingGiftsPage = new MatchingGifts(this.page)
         this.OrganizationSearchPage = new OrganizationSearch(this.page)
+        this.PayrollDeductionPage = new PayrollDeduction(this.page)
         this.SubmissionSuccessfulPage = new SubmissionSuccessful(this.page)
         this.extUWGivingPage = new extUWGiving(this.page)      
         this.extVolunteerHoursPage = new extVolunteerHours(this.page)
@@ -96,6 +99,9 @@ export class extPageManager{
     }
     useOrganizationSearchPage(){
         return this.OrganizationSearchPage
+    }
+    usePayrollDeductionPage(){
+        return this.PayrollDeductionPage
     }
     useSubmissionSuccessfulPage(){
         return this.SubmissionSuccessfulPage

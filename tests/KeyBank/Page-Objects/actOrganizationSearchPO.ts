@@ -7,8 +7,8 @@ export class OrganizationSearch {
     constructor(page: Page) {
         this.page = page
     }
-    async searchForOrganization(){
-        await this.page.getByPlaceholder('Organization Name').fill('cat');
+    async searchForOrganization(orgToUse: string){
+        await this.page.getByPlaceholder('Organization Name').fill(orgToUse);
         await this.page.getByRole('button', { name: 'Search', exact: true }).click();      
     }
 

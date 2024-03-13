@@ -1,0 +1,10 @@
+{
+    "<tab title>": {
+        "TabType": "1002",
+        "TabColumns": 4,
+        "TabRows": 0,
+        "TabRow0": ["Organization Information", "Type", "Description", "Status"],
+        "TabRow1": ["", "", "", ""],
+        "TabRow2": ["", "", "", ""]
+    }
+}

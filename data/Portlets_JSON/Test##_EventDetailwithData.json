@@ -1,0 +1,15 @@
+{ 
+    "NumTabs": 1,
+    "TabArray": ["<tab title>"],
+    "<tab title>": {
+        "TabType": 1010,
+        "TabElements": 7,
+        "TabRows":  0,
+        "TabAction": "open",
+        "TabRow0": ["Action", "Organization Information", "Type", "Description", "Status", "Enrolled","Completed"],
+        "TabRow1": ["Hide Occurrences", "", "", "", "", "", ""],
+        "TabRow2": ["View|0",           "", "", "", "", "", ""],
+        "TabRow3": ["View|1",           "", "", "", "", "", ""],
+        "TabRow4": ["View|2",           "", "", "", "", "", ""]
+    }
+}

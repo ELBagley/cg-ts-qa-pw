@@ -3,7 +3,8 @@
     "Deduction1": {
         "proposalType": "",
         "deductionType": "OneTime",
-        "testOrganization": "",
+        "testOrganizationID": "",
+        "organizationname": "",
         "deductionAmount": 22,
         "designation": "test1",
         "privacyPreference": "anonymous",
@@ -13,7 +14,8 @@
     "Deduction2": {
         "proposalType": "",
         "deductionType": "Recurring",
-        "testOrganization": "",
+        "testOrganizationID": "",
+        "organizationname": "",
         "deductionAmount": 33,
         "designation": "test2",
         "privacyPreference": "anonymous",
@@ -23,7 +25,8 @@
     "Deduction3": {
         "proposalType": "",
         "deductionType": "OneTime",
-        "testOrganization": "",
+        "testOrganizationID": "",
+        "organizationname": "",
         "deductionAmount": 44,
         "designation": "test3",
         "privacyPreference": "anonymous",

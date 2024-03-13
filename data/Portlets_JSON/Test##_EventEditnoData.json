@@ -1,0 +1,10 @@
+{ 
+    "<tab title>": {
+        "TabType": 1016,
+        "TabElements": 0,
+        "TabRows": 0,
+        "TabAction":"none",
+        "TabRow0": ["My Photos"],
+        "TabRow1": ["Upload Photos"]
+    }
+}

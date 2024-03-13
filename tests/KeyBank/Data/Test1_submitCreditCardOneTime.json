@@ -1,0 +1,17 @@
+{
+    "organizationName": "RED CROSS ELEMENTARY PTO INC",
+    "deductionType": "OneTime",
+    "donationAmount": "25",
+    "matchAmount": "25",
+    "donationDesignation": "test",
+    "StreetAddress": "12 Main St",
+    "StreetAddress2": "",
+    "city": "Andover",
+    "mailingAddress": "MA",
+    "zipCode": "01810",
+    "cardName": "Erica Bagley",
+    "creditCardNumber": "6011000990139424",
+    "verificationCode": "275",
+    "expirationMonth": "03",
+    "expirationYear": "2028"
+}

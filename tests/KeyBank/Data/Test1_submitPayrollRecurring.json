@@ -1,0 +1,12 @@
+{
+    "extButton": "Make a Payroll Donation",
+    "actionButton": "United Way recurring Payroll",
+    "organizationname": "Select 1 HEART 1 MISSION",
+    "deductionType": "annual",
+    "deductionAmount": "25",
+    "designation": "recurring payroll deduction",
+    "privacyPreference": "anonymous",
+    "recognitionName": "SQA TEST",
+    "recognitionEmail": "test@test.com"
+
+}

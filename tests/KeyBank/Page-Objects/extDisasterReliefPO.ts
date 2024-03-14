@@ -12,7 +12,7 @@ export class extDisasterRelief extends examinePortletHelper{
     async selectDonationOrganization(OrganizationName: string){
         //titles are on the 
         await this.page.getByText(OrganizationName).getByRole('link', { name: 'Donate Today' }).click();
-        //await this.page.locator('#cg550576').getByRole('link', { name: 'Donate Today' }).click(); //Project Hope
+        await this.page.locator('#cg550576').getByRole('link', { name: 'Donate Today' }).click(); //Project Hope
         //await this.page.locator('#cg550580').getByRole('link', { name: 'Donate Today' }).click(); //Feeding America
         //await this.page.locator('#cg550578').getByRole('link', { name: 'Donate Today' }).click(); //International Medical Corps
         //await this.page.locator('#cg550574').getByRole('link', { name: 'Donate Today' }).click(); //DirectRelief

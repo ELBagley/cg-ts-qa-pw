@@ -12,12 +12,13 @@ import { extHome } from "./extHomePO"
 import { extLogin } from "./extLoginPO"
 import { extManageEvents } from "./extManageEventsPO"
 import { MatchingGifts } from "./actMatchingGiftsPO"
-import { OrganizationSearch} from "./actOrganizationSearchPO"
-import { PayrollDeduction} from "./actPayrollDeductionsPO"
+import { OrganizationSearch } from "./actOrganizationSearchPO"
+import { PayrollDeduction } from "./actPayrollDeductionsPO"
+import { ReviewInformation} from "./actReviewInformationPO"
 import { SubmissionSuccessful } from "./actSubmissionSuccessfulPO"
 import { extUWGiving } from "./extUWGivingPO"
 import { extVolunteerHours } from "./actVolunteerHoursPO"
-import { extVolunteer } from "./actVolunteerPO"
+import { extVolunteer } from "./extVolunteerPO"
 
 export class extPageManager{
     private readonly extBoardServicePage: extBoardService
@@ -34,6 +35,7 @@ export class extPageManager{
     private readonly MatchingGiftsPage: MatchingGifts
     private readonly OrganizationSearchPage: OrganizationSearch
     private readonly PayrollDeductionPage: PayrollDeduction
+    private readonly ReviewInformationPage: ReviewInformation
     private readonly SubmissionSuccessfulPage: SubmissionSuccessful
     private readonly extUWGivingPage: extUWGiving
     private readonly extVolunteerHoursPage: extVolunteerHours
@@ -56,6 +58,7 @@ export class extPageManager{
         this.MatchingGiftsPage = new MatchingGifts(this.page)
         this.OrganizationSearchPage = new OrganizationSearch(this.page)
         this.PayrollDeductionPage = new PayrollDeduction(this.page)
+        this.ReviewInformationPage = new ReviewInformation(this.page)
         this.SubmissionSuccessfulPage = new SubmissionSuccessful(this.page)
         this.extUWGivingPage = new extUWGiving(this.page)      
         this.extVolunteerHoursPage = new extVolunteerHours(this.page)
@@ -102,6 +105,9 @@ export class extPageManager{
     }
     usePayrollDeductionPage(){
         return this.PayrollDeductionPage
+    }
+    useReviewInformationPage(){
+        return this.ReviewInformationPage
     }
     useSubmissionSuccessfulPage(){
         return this.SubmissionSuccessfulPage

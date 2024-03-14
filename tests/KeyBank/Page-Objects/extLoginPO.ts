@@ -20,7 +20,7 @@ export class extLogin extends examinePortletHelper{
   async loginToExternalPortal (userName: string, userPassword: string){
     // start with login page. do not go to an actual external page first
     await this.page.goto(extLoginPage)
-    await this.page.getByPlaceholder('User ID').fill(userName)
+    await this.page.getByPlaceholder('Employee ID').fill(userName)
     await this.page.getByPlaceholder('Password').fill(userPassword)
     await this.page.getByRole('button', { name: 'Log In' }).click()
     await this.page.waitForTimeout(250)

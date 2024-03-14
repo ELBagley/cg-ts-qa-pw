@@ -1,10 +1,12 @@
 import { Page, expect } from "@playwright/test";
 import { examinePortletHelper } from "../Fixtures/ExaminePortlet"
 
-export class extDollarsForDoers extends examinePortletHelper{
+export class extDollarsForDoers{
+
+    private readonly page: Page
 
     constructor(page: Page) {
-        super(page)
+        this.page = page
     }
     
     async navigateToD4Dpage(){ // NO PAGE TO GO TO??

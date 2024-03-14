@@ -7,39 +7,49 @@ export class eventInformation{
     constructor(page: Page) {
         this.page = page
     }
+    // portlets
+    // event search (vc_search_responsive)
+    // Event Calendar (vc_event_calendar)
+    // My Upcoming Events (giving_history)
+    //    "Recorded Hours" (get giving history)
+    //    "My Nominations" ()
+    // My Completed Events ()
+        // "Recorded Hours" (get giving history)
+        // "My Nominations" ()
+
+
     //candidate for helper form class using JSON data 
-    async createAnEvent (){
-        await this.page.getByLabel('*Opportunity Title').fill('SQA TEST EVENT');
-        await this.page.getByLabel('*Event Frequency').selectOption('N'); // Y | N
-        await this.page.locator('#CG2828586_start_date').click(); //activate widget
-        await this.page.getByRole('button', { name: '11' }).click(); //select date
-        await this.page.locator('#CG2828586_end_date').click(); //activate widget
-        await this.page.getByRole('button', { name: '15' }).click(); //select date
-        await this.page.getByLabel('Signup Deadline').click(); //activate widget
-        await this.page.getByRole('button', { name: '11' }).click(); //select date
-        await this.page.getByLabel('*Description').fill('TEST description');
-        await this.page.getByLabel('Event Type').selectOption('22830'); // Community
-        await this.page.getByLabel('Skills').selectOption('2827806|633192'); //Children & Family
+    async createAnEvent (newEventData: any){
+        await this.page.getByLabel('*Opportunity Title').fill(newEventData.opportunityTitle);
+        await this.page.getByLabel('*Event Frequency').selectOption(newEventData.eventFrequency); 
+        await this.page.locator('#CG2828586_start_date').fill(newEventData.startDate); 
+        await this.page.locator('#CG2828586_end_date').fill(newEventData.endDate); 
+        await this.page.getByLabel('Signup Deadline').fill(newEventData.signupDeadline);
+        await this.page.getByLabel('*Description').fill(newEventData.eventDescription);
+        await this.page.getByLabel('Event Type').selectOption(newEventData.eventType); // Community
+        await this.page.getByLabel('Skills').selectOption(newEventData.selectSkills); //Children & Family
         await this.page.locator('#cgcontent').click();
-        await this.page.getByLabel('*Maximum Number of Volunteers').fill('5');
-        await this.page.getByLabel('Allow Waitlist?').selectOption('Y');
-        await this.page.getByLabel('Are Friends and Family').selectOption('Y');
-        await this.page.getByLabel('Allow Auto-Logging Hours Flag').selectOption('Y');
-        await this.page.getByLabel('Venue').fill('Central Park');
-        await this.page.getByLabel('*Country').selectOption('US');
-        await this.page.getByLabel('*Address').fill('123 Main street');
-        await this.page.getByLabel('*City').fill('Boston');
-        await this.page.getByLabel('*State').selectOption('MA');
-        await this.page.getByLabel('*ZIP/Postal Code').fill('01810');
-        await this.page.getByLabel('*Team Leader First Name').fill('Erica');
-        await this.page.getByLabel('*Team Leader Last Name').fill('Bagley');
-        await this.page.getByLabel('*Team Leader E-mail Address').fill('erica.bagley@bonterratech.com');
-        await this.page.getByLabel('Telephone').fill('9995558888');
+        await this.page.getByLabel('*Maximum Number of Volunteers').fill(newEventData.maxVolunteers);
+        await this.page.getByLabel('Allow Waitlist?').selectOption(newEventData.allowWaitlist);
+        await this.page.getByLabel('Are Friends and Family').selectOption(newEventData.IncludeFriendsandFamily);
+        await this.page.getByLabel('Allow Auto-Logging Hours Flag').selectOption(newEventData.allowAutoLoginHours);
+        await this.page.getByLabel('Venue').fill(newEventData.describeVenue);
+        await this.page.getByLabel('*Country').selectOption(newEventData.whatCountry);
+        await this.page.getByLabel('*Address').fill(newEventData.whatAddress);
+        await this.page.getByLabel('*City').fill(newEventData.whatCity);
+        await this.page.getByLabel('*State').selectOption(newEventData.whatState);
+        await this.page.getByLabel('*ZIP/Postal Code').fill(newEventData.whatZip);
+        await this.page.getByLabel('*Team Leader First Name').fill(newEventData.teamLeaderFirstName);
+        await this.page.getByLabel('*Team Leader Last Name').fill(newEventData.teamLeaderLastName);
+        await this.page.getByLabel('*Team Leader E-mail Address').fill(newEventData.teamLeaderEmail);
+        await this.page.getByLabel('Telephone').fill(newEventData.teamLeaderTelephone);
         await this.page.getByRole('button', { name: 'Save and Proceed' }).click();
         /*
         await this.page.getByRole('heading', { name: 'Review Information' }).click();
         await this.page.getByRole('button', { name: 'Submit' }).click();
         */
-
+    }
+    async addvolunteersToEvent(){
+        
     }
 }

@@ -2,9 +2,8 @@
     "extButton": "Make a Payroll Donation",
     "actionButton": "United Way One-Time Payroll",
     "organizationName": "",
-    "deductionType": "annual",
-    "deductionAmount": "",
-    "designation": "test",
+    "deductionAmount": "25",
+    "designation": "One-Time payroll deduction",
     "privacyPreference": "ANONYMOUS",
     "recognitionName": "",
     "recognitionEmail": ""

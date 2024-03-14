@@ -1,10 +1,12 @@
 import { Page, expect } from "@playwright/test";
 import { examinePortletHelper } from "../Fixtures/ExaminePortlet"
 
-export class extVolunteerHours extends examinePortletHelper{
+export class extVolunteerHours{
+
+    private readonly page: Page
 
     constructor(page: Page) {
-        super(page)
+        this.page = page
     }
 
     async addVolunteerHours(startDate: string, endDate: string, volunteeredHours: string, addDescription: string){

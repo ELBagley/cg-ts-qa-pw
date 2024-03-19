@@ -8,10 +8,10 @@ export class OrganizationSearch {
         this.page = page
     }
     async selectOrganization(testData: any){
-        await this.page.getByPlaceholder('Organization Name').fill(testData.organizationName);
+        await this.page.getByPlaceholder('Organization Name').fill(testData.organizationName); //css-1q464cn
         await this.page.getByRole('button', { name: 'Search', exact: true }).click();  
-        await this.page.waitForTimeout(15000);
-        await this.page.getByLabel(testData.organizationName).click()    
+        await this.page.waitForTimeout(15000); 
+        await this.page.getByLabel(testData.organizationName).nth(0).click()    
     }
 
     async selectExistingOrganization(existingOrganization: any){
@@ -25,6 +25,6 @@ export class OrganizationSearch {
     }
     async selectCheckout(){
         //part of the payroll deduction process
-        
+        await this.page.getByRole('link', { name: 'Checkout' }).click();        
     }
 }

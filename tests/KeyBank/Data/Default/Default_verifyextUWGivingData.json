@@ -1,0 +1,35 @@
+{ 
+    "NumTabs": 4,
+    "TabArray": ["United Way Match Balance", "United Way Credit Card Transactions", "Payroll Contributions", "United Way - Give Again"],
+    "Manage Completed Events": {
+        "TabType": 1006,
+        "TabElements": 5,
+        "TabRows": 4,
+        "TabRow0": ["Program Name", "Number of Transaction(s)", "Limit", "Total Match Amount", "Balance"],
+        "TabRow1": ["United Way - CC Match",    "0|0", "$99,999,999.99|0","$0.00|0","$99,999,999.99|1"],
+        "TabRow2": ["United Way Payroll Match", "0|1", "$99,999,999.99|2","$0.00|1", "$99,999,999.99|3"],
+        "TabRow3": ["United Way-Request a Match for a Previous Donation", "0|2", "$99,999,999.99|4","$0.00|2", "$99,999,999.99|5"]
+    },
+    "United Way Credit Card Transactions": {
+        "TabType": 1002,
+        "TabElements": 3,
+        "TabRows": 2,
+        "TabAction":"none",
+        "TabRow0": ["Organization Information", "Description", "Status"],
+        "TabRow1": ["No results found","x"]
+        },
+    "Payroll Contributions": {
+        "TabType": 1010,
+        "TabElements": 5,
+        "TabRows": 7,
+        "TabAction": "none",
+        "TabRow0": ["Action", "Organization Information", "Type", "Description", "Status"],
+        "TabRow1": ["No results found","x"]    
+    },
+    "United Way - Give Again": {
+        "TabType": 4014,
+        "TabElements": 0,
+        "numText": 0,
+        "textArray": [""]
+    }
+}

@@ -1,0 +1,24 @@
+{
+    "United Way Match Balance": {
+    },
+    "United Way Credit Card Transactions":{
+        "TabRow0":  [""],     
+        "TabRow1Locator": "",
+        "TabRow1ChangeLinkLocator": "",
+        "TabRow1CancelLinkLocator": "",
+        "TabRow2Locator": "",
+        "TabRow2ChangeLinkLocator": "",
+        "TabRow2CancelLinkLocator": ""
+    },
+    "Payroll Contributions": {
+        "Tab2Row0": "",
+        "Tab2Row1": "",
+        "Tab2Row2": "",
+        "Tab2Row3": "",
+        "Tab2Row1ChangeLinkLocator": "",
+        "Tab2Row1CancelLinkLocator": ""
+    },
+    "United Way - Give Again": {
+        "Tab2Row0": ""
+    }
+}

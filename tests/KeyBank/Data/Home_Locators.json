@@ -1,0 +1,13 @@
+{
+    "Current Payroll Contribution": {
+        "TabRow0": ["#cg368796Type", "#cg368796ContribAmt", "#cg368796Distribution", "#cg368796Action"],     
+        "TabRow1ChangeLinkLocator": "Change[key=4211914]",
+        "TabRow1CancelLinkLocator": "Cancel[key=4211914]",
+        "TabRow2ChangeLinkLocator": "",
+        "TabRow2CancelLinkLocator": ""
+    },
+    "Matching Gift Balance": {
+    },
+    "My Upcoming Events": {
+    }
+}

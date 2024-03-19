@@ -1,0 +1,51 @@
+{ 
+    "NumTabs": 6,
+    "TabArray": ["Board Service Membership", "Board Service Recorded Hours", "Board Service Matching Gifts", "Community Leadership Gift Balance", "My Nominations", "Dollars for Doers"],
+    "Board Service Membership": {
+        "TabType": 1002,
+        "TabElements": 4,
+        "TabRows":  2,
+        "TabRow0": ["Organization Information", "Type", "Description", "Status"],
+        "TabRow1": ["No results found","x"]
+    },
+    "Board Service Recorded Hours": {
+        "TabType": 1002,
+        "TabElements": 4,
+        "TabRows": 2,
+        "TabRow0": ["Organization Information", "Type", "Description", "Status"],
+        "TabRow1": ["No results found","x"]
+    },
+    "Board Service Matching GiftsEvents I Created": {
+        "TabType": 1002,
+        "TabElements": 4,
+        "TabRows": 2,
+        "TabRow0": ["Organization Information", "Type", "Description", "Status"],
+        "TabRow1": ["No results found","x"]
+    },
+    "Community Leadership Gift Balance": {
+        "TabType": 1016,
+        "TabElements": 6,
+        "TabRows": 2,
+        "TabRow0": ["Program Name", "Number of Transaction(s)", "Limit", "Total Match Amount", "Balance"],
+        "TabRow1": ["Board Service - Community Leadership Gift", "0", "$2,000.00", "$0.00", "$2,000.00"]
+    },
+    "My Nominations": {
+        "TabType": 1002,
+        "TabElements": 0,
+        "TabRows": 0,
+        "TabRow0": ["x"],
+        "TabRow1": ["x"]
+    },
+    "Dollars for Doers": {
+        "TabType": 4012,
+        "message": "Volunteer to become eligible for a volunteer match!",
+        "span1Organization": "",
+        "span1Hours": "",
+        "span2Organization": "",
+        "span2Hours": "",
+        "redeemableAmount": "$0.00",
+        "redeemHours": "0",
+        "redeemedAmount": "$0.00",
+        "hoursLogged": "0"
+    }
+}

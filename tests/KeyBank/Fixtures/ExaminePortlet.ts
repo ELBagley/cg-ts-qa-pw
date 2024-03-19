@@ -76,71 +76,28 @@ export class examinePortletHelper {
     //    Upcoming Events
     //else if (testData[tabName].TabType == 1036){}
 
-    // TODO: Board Service -> DOLLARS FOR DOERS std is 4012 (associated Bank)
-    // action = open
-    // 
+    // 4012
+    // DOLLARS FOR DOERS 
     else if (testData[tabName].TabType == 4012){
+      //TODO: if "Details" select it to expand more information
       await this.page.waitForTimeout(5000);
-      let expandedData = 0
-      for(let currentRow = 0; currentRow < testData[tabName].TabRows; currentRow++){
-        for(let currentElement = 0; currentElement < testData[tabName].TabElements; currentElement++){
-          if((testData[tabName].TabAction == "open") && (expandedData == 0)){
-            // select the cell with "View Occurrences" to expand the ongoing events
-            await this.page.getByRole('button', { name: 'Details' }).click();
-            await this.page.waitForTimeout(3000);
-            expandedData = 1
-          }
-        }          
+      await this.page.getByText(testData[tabName].message).click();
+      if(testData[tabName].span1Organization != ""){
+        await this.page.getByText(testData[tabName].span1Organization).isVisible
+        await this.page.getByText(testData[tabName].span1Hours).isVisible
       }
-      /*  DONOR1
-      //portlet Banner
-      await page.getByText('Dollars for DoersCongratulations! You are eligible to redeem a volunteer match!').click();
-  await page.getByText('Deadline:').click();
-  await page.getByText('12/31/').click();
-      await page.getByRole('button', { name: 'Details' }).click();
-
-      // expands portlet details
-
-      await page.getByText('HEART 1 MISSION5 hoursTotal5 hours').click();
-      await page.getByText('Total$500.00').click();
-      await page.locator('#drawer_d4d-details-report-2').click();
-      await page.getByText('Redeemable').click();
-      await page.getByText('$500.00').nth(1).click();
-      await page.getByText('Hours Available').click();
-      await page.getByText('5', { exact: true }).nth(1).click();
-      await page.getByText('Redeemed', { exact: true }).click();
-      await page.getByText('$0.00').nth(1).click();
-      await page.getByText('Hours Logged').click();
-      await page.getByText('5', { exact: true }).nth(2).click();
-      await page.getByRole('button', { name: 'Redeem' }).click();
-      await page.getByRole('link', { name: 'HEART 1 MISSION' }).click();
-      await page.getByRole('button', { name: 'Save and Proceed' }).click();
-      await page.getByRole('button', { name: 'Submit' }).click();
-      await page.getByRole('link', { name: 'Return to Home Page' }).click();
-      await page.getByRole('button', { name: 'Details' }).click();
-      await page.getByRole('button', { name: 'Details' }).click();
-
-
-  await page.getByText('RED CROSS ELEMENTARY PTO INC10/1 hours').click();
-  await page.locator('span').filter({ hasText: /^RED CROSS ELEMENTARY PTO INC10\/1 hours$/ }).locator('div').nth(2).click();
-  await page.getByText('HEART 1 MISSION3/1 hours').click();
-  await page.locator('span').filter({ hasText: /^1 HEART 1 MISSION3\/1 hours$/ }).locator('div').nth(2).click();
-  await page.getByText('RED CROSS ELEMENTARY PTO INC10 hours1 HEART 1 MISSION3 hoursTotal13 hours').click();
-  await page.locator('#drawer_d4d-details-report-1').click();
-  await page.getByText('Total$1,000.00').click();
-  await page.getByText('RED CROSS ELEMENTARY PTO INC$').click();
-  await page.getByText('$500.00').first().click();
-  await page.getByText('Total$500.00').click();
-  await page.getByText('Redeemable').click();
-  await page.getByText('$500.00').nth(2).click();
-  await page.getByText('Hours Available').click();
-  await page.getByText('3', { exact: true }).nth(1).click();
-  await page.getByText('Redeemed', { exact: true }).click();
-  await page.getByText('$500.00').nth(3).click();
-  await page.getByText('Hours Logged').click();
-  await page.getByText('13', { exact: true }).click();
-  await page.getByRole('link', { name: 'Log Hours' }).click();
-      */
+      if(testData[tabName].span2Organization != ""){
+        await this.page.getByText(testData[tabName].span2Organization).isVisible
+        await this.page.getByText(testData[tabName].span2Hours).isVisible
+      }
+      await this.page.getByText("Redeemable").isVisible
+      await this.page.getByText(testData[tabName].redeemableAmount).isVisible
+      await this.page.getByText("Hours Available").isVisible
+      await this.page.getByText(testData[tabName].redeemHours).isVisible
+      await this.page.getByText("Redeemed").isVisible
+      await this.page.getByText(testData[tabName].redeemedAmount).isVisible
+      await this.page.getByText("Hours Logged").isVisible
+      await this.page.getByText(testData[tabName].hoursLogged).isVisible
     }
     
     // EVENTS PORTLET - Edit/Delete
@@ -232,5 +189,34 @@ export class examinePortletHelper {
         }
       }
     }
-  }
+    // Goals
+    // 1033 How am I Doing
+    else if (testData[tabName].TabType == 1033){ 
+      if (testData.Donated.hasText){
+        await expect(this.page.locator('div').filter({ hasText: testData.Donated })).toBeTruthy;
+      }
+      if (testData.HoursVolunteered.hasText){
+        await expect(this.page.locator('div').filter({ hasText: testData.HoursVolunteered })).toBeTruthy;
+      }
+        //class: container-query-blocs container-query-three-blocs      }
+    }
+    // 4014  Contribute Again
+    else if (testData[tabName].TabType == 4014){
+      await this.page.getByText(testData[tabName]);
+      //for the number of rows
+      for (let i = 0; i < testData[tabName].numText; i ++){
+        // if numText = 0 then nothing to do
+        if(testData[tabName].textArray[i].split('|') == 2){
+          let curStringArray = testData[tabName].textArray[i].split('|')
+          if(curStringArray.length == 2){ 
+            await expect(this.page.getByRole('cell', {name: curStringArray[0],exact: true}).nth(curStringArray[1])).toBeVisible();
+          }
+          else{
+            await expect(this.page.getByRole('cell', {name: testData[tabName].TextArray[0],exact: true})).toBeVisible();
+          }
+        }
+      }
+    }
+  }   
 }
+

@@ -1,15 +1,15 @@
 import { test } from "@playwright/test"  
-import { extPageManager }  from "../../../Page-Objects/ComcastPO/UO_regular/extPageManager"
-import { beforeEach } from "node:test";
+import { extPageManager }  from "../PageObjects/UO_regular/extPageManagerPO"
+import { beforeEach } from "node:test"
 
-const testHomeLocators = JSON.parse(JSON.stringify(require("../../../data/Comcast/UO_regular/UO_Home_Locators.json")));
-const testGivingLocators = JSON.parse(JSON.stringify(require("../../../data/Comcast/UO_regular/UO_Giving_Locators.json")));
-const testEventsLocators = JSON.parse(JSON.stringify(require("../../../data/Comcast/UO_regular/UO_Event_Locators.json")));
+const testHomeLocators = JSON.parse(JSON.stringify(require('../Data/UO_regular/UO_Home_Locators.json')));
+const testGivingLocators = JSON.parse(JSON.stringify(require("../Data/UO_regular/UO_Giving_Locators.json")));
+const testEventsLocators = JSON.parse(JSON.stringify(require("../Data/Comcast/UO_regular/UO_Event_Locators.json")));
 
-const testHomeData = JSON.parse(JSON.stringify(require('../../../data/Comcast/UO_regular/UO_Home_Data.json')));
-const testGivingData = JSON.parse(JSON.stringify(require('../../../data/Comcast/UO_regular/UO_Giving_Data.json')));
-const testEventsDataShort = JSON.parse(JSON.stringify(require('../../../data/Comcast/UO_regular/UO_Event_DataShort.json')));
-const testEventsDataLong = JSON.parse(JSON.stringify(require('../../../data/Comcast/UO_regular/UO_Event_DataLong.json')));
+const testHomeData = JSON.parse(JSON.stringify(require('../Data/Comcast/UO_regular/UO_Home_Data.json')));
+const testGivingData = JSON.parse(JSON.stringify(require('../Data/Comcast/UO_regular/UO_Giving_Data.json')));
+const testEventsDataShort = JSON.parse(JSON.stringify(require('../Data/Comcast/UO_regular/UO_Event_DataShort.json')));
+const testEventsDataLong = JSON.parse(JSON.stringify(require('../Data/Comcast/UO_regular/UO_Event_DataLong.json')));
 
 test.describe('Verify a portlets with data on each of the external pages',() => {
 

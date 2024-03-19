@@ -1,0 +1,19 @@
+{
+    "Board Service Menmerships": {
+        "TableLocator": "",
+        "Row0Locators": [""]
+    },
+    "Board Service Recorded Hours": {   
+        "TableLocator": "",
+        "Row0Locators": ""
+    },
+    "Board Service Matching Gifts": {
+        "TabLocator": "",
+        "TabRow0":  [""],  
+        "Row0": ""
+    },
+    "Community LeaderShip Gift Balance": {
+        "TabLocator":"",
+        "TabRow0":  ["","", "", ""]  
+    }
+}

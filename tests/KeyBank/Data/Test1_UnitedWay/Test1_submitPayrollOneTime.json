@@ -1,10 +1,10 @@
 {
     "extButton": "Make a Payroll Donation",
     "actionButton": "United Way One-Time Payroll",
-    "organizationName": "",
+    "organizationName": "RED CROSS ELEMENTARY PTO INC",
     "deductionAmount": "25",
     "designation": "One-Time payroll deduction",
     "privacyPreference": "ANONYMOUS",
-    "recognitionName": "",
-    "recognitionEmail": ""
+    "recognitionName": "Erica",
+    "recognitionEmail": "test@test.com"
 }

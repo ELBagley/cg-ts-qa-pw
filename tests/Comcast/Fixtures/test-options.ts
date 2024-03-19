@@ -1,5 +1,5 @@
 import {test as base } from '@playwright/test'
-import { extPageManager } from '../Page-Objects/ComcastPO/UO_regular/extPageManager'
+import { extPageManager } from '../PageObjects/UO_regular/extPageManager'
 
 export type TestOptions = {
     pageManager: extPageManager

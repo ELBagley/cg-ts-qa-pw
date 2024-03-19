@@ -1,0 +1,44 @@
+{ 
+    "NumTabs": 4,
+    "TabArray": ["Manage Open Events", "Manage Completed Events", "Events I Created", "Unsubmitted Events I Created"],
+    "Manage Completed Events": {
+        "TabType": 1010,
+        "TabElements": 0,
+        "TabRows":  0,
+        "TabAction": "none",
+        "TabRow0": ["Action", "Organization Information", "Type", "Description", "Status", "Enrolled","Completed"],
+        "TabRow1": [""],
+        "TabRow2": [""],
+        "TabRow3": [""]
+    },
+    "Manage Open Events": {
+        "TabType": 1010,
+        "TabElements": 0,
+        "TabRows": 0,
+        "TabAction":"none",
+        "TabRow0": [""],
+        "TabRow1": [""],
+        "TabRow2": [""],
+        "TabRow3": [""]
+    },
+    "Events I Created": {
+        "TabType": 1010,
+        "TabElements": 0,
+        "TabRows": 0,
+        "TabAction": "none",
+        "TabRow0": ["Action", "Organization Information", "Type", "Description", "Status", "Enrolled"],
+        "TabRow1": [""],
+        "TabRow2": [""],
+        "TabRow3": [""]
+    },
+    "Unsubmitted Events I Created": {
+        "TabType": 1016,
+        "TabElements": 0,
+        "TabRows": 0,
+        "TabAction": "none",
+        "TabRow0": ["Action", "Organization Information", "Type", "Description"],
+        "TabRow1": [""],
+        "TabRow2": [""],
+        "TabRow3": [""]
+    }
+}

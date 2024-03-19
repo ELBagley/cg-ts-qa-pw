@@ -13,6 +13,7 @@ import { extLogin } from "./extLoginPO"
 import { extManageEvents } from "./extManageEventsPO"
 import { MatchingGifts } from "./actMatchingGiftsPO"
 import { OrganizationSearch } from "./actOrganizationSearchPO"
+import { OrganizationSummary } from "./actOrganizationSummaryPO"
 import { PayrollDeduction } from "./actPayrollDeductionsPO"
 import { ReviewInformation} from "./actReviewInformationPO"
 import { SubmissionSuccessful } from "./actSubmissionSuccessfulPO"
@@ -34,6 +35,7 @@ export class extPageManager{
     private readonly extManageEventsPage: extManageEvents
     private readonly MatchingGiftsPage: MatchingGifts
     private readonly OrganizationSearchPage: OrganizationSearch
+    private readonly OrganizationSummaryPage: OrganizationSummary
     private readonly PayrollDeductionPage: PayrollDeduction
     private readonly ReviewInformationPage: ReviewInformation
     private readonly SubmissionSuccessfulPage: SubmissionSuccessful
@@ -57,6 +59,7 @@ export class extPageManager{
         this.extManageEventsPage = new extManageEvents (this.page)
         this.MatchingGiftsPage = new MatchingGifts(this.page)
         this.OrganizationSearchPage = new OrganizationSearch(this.page)
+        this.OrganizationSummaryPage = new OrganizationSummary(this.page)
         this.PayrollDeductionPage = new PayrollDeduction(this.page)
         this.ReviewInformationPage = new ReviewInformation(this.page)
         this.SubmissionSuccessfulPage = new SubmissionSuccessful(this.page)
@@ -102,6 +105,9 @@ export class extPageManager{
     }
     useOrganizationSearchPage(){
         return this.OrganizationSearchPage
+    }
+    useOrganizationSummaryPage(){
+        return this.OrganizationSummaryPage
     }
     usePayrollDeductionPage(){
         return this.PayrollDeductionPage

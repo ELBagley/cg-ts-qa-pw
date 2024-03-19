@@ -7,17 +7,17 @@ export class DonorMatching{
     constructor(page: Page) {
         this.page = page
     }
-    async matchAPreviousDonation (matchData: any){
+    async matchAPreviousDonation (testData: any){
         //await this.page.getByRole('link', { name: 'Request a Match for a' }).click();
         //await this.page.getByLabel('Select 1 HEART 1 MISSION').click();
-        await this.page.getByPlaceholder('MM/DD/YYYY').fill('02/02/2024'); // when was gift given
-        await this.page.getByLabel('*Total Gift Amount').fill('25');
-        await this.page.getByLabel('Match Amount Requested').fill('25');
-        await this.page.getByLabel('*Gift Payment Method').selectOption('Credit Card');
-        await this.page.getByLabel('Designation').fill('TEST of request a match');
-        await this.page.getByLabel('Privacy Preference').selectOption('ANONYMOUS');
-        await this.page.getByLabel('*Recognition Name').fill('Erica');
-        await this.page.getByLabel('*Recognition E-mail').fill('erica.bagley@cybergrants.com');
+        await this.page.getByPlaceholder('MM/DD/YYYY').fill(testData.originalGiftDate); // when was gift given
+        await this.page.getByLabel('*Total Gift Amount').fill(testData.originalGiftAmount);
+        await this.page.getByLabel('Match Amount Requested').fill(testData.matchAmountRequested);
+        await this.page.getByLabel('*Gift Payment Method').selectOption(testData.giftPaymentmethod);
+        await this.page.getByLabel('Designation').fill(testData.designation);
+        await this.page.getByLabel('Privacy Preference').selectOption(testData.privacyPreference);
+        await this.page.getByLabel('*Recognition Name').fill(testData.recognitionName);
+        await this.page.getByLabel('*Recognition E-mail').fill(testData.recognitionEmail);
         await this.page.getByLabel('I have read the terms and').check();
 
         /* PAGE: Donor Matching Gift  - Graphical portlet information

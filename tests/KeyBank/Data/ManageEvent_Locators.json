@@ -1,0 +1,24 @@
+{
+    "Manage Open Events": {
+        "TableLocator": "",
+        "Row0Locators": [""],
+        "Row1Locators": [""]
+    },
+    "Manage Completed Events": {   
+        "TableLocator": "",
+        "Row0Locators": "",
+        "Row1ViewOccurancesLink": true,
+        "Row1ViewLink": false,
+        "Row2ViewOccurancesLink": false,
+        "Row2ViewLink": true
+    },
+    "Events I Created": {
+        "TabLocator": "",
+        "TabRow0":  [""],  
+        "Row0": ""
+    },
+    "Unsubmitted Events I Created": {
+        "TabLocator":"",
+        "TabRow0":  [""]  
+    }
+}

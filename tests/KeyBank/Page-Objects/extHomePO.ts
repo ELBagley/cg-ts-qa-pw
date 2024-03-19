@@ -9,15 +9,6 @@ export class extHome extends examinePortletHelper{
     async navigateToHome(){
         await this.page.goto("https://sandbox.cybergrants.com/pls/cybergrants-sb/eg_portal.home?x_gm_id=10762&x_page=home")
     }
-    async checkGraphicPortletDonated(expectedAmount: string){
-        await this.page.getByText('Donated').isVisible;
-        await this.page.getByRole("textbox", {name: expectedAmount}).isVisible;
-    }
-    async checkGraphicPortletHoursVolunteered(expectedAmount: string){
-        await this.page.getByText('Hours Volunteered').isVisible;
-        await this.page.getByRole("textbox", {name: expectedAmount}).isVisible;
-
-    }
     async selectBTNGiving(){
         await this.page.locator('#10762').getByRole('link', { name: 'Giving' }).click();
     }

@@ -1,0 +1,21 @@
+{
+    "Matching Gift Balance": {
+    },
+    "Current Payroll Contribution":{
+        "TabRow0":  ["#cg368796Type", "#cg368796ContribAmt", "#cg368796Distribution", "#cg368796Action"],     
+        "TabRow1Locator": "",
+        "TabRow1ChangeLinkLocator": "Change[key=4211914]",
+        "TabRow1CancelLinkLocator": "Cancel[key=4211914]",
+        "TabRow2Locator": "",
+        "TabRow2ChangeLinkLocator": "",
+        "TabRow2CancelLinkLocator": ""
+    },
+    "Donation History": {
+        "Tab2Row0": ".css-gatevb",
+        "Tab2Row1": "",
+        "Tab2Row2": "",
+        "Tab2Row3": "",
+        "Tab2Row1ChangeLinkLocator": "",
+        "Tab2Row1CancelLinkLocator": ""
+    }
+}

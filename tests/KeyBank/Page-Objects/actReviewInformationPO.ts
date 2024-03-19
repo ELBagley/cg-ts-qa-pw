@@ -9,8 +9,8 @@ export class ReviewInformation{
     }
     //PAGE URL  https://sandbox.cybergrants.com/pls/cybergrants-sb/eg_req.formcheck?x_gm_id=10762
     async fillReviewInformation(CreditCardData: any){
-        await this.page.getByRole('heading', { name: 'Review Information' });
-        await this.page.locator('#rccDropdown').selectOption('One-time payment for the full amount');
+        //await this.page.getByRole('heading', { name: 'Review Information' });
+        // this.page.locator('#rccDropdown').selectOption('One-time payment for the full amount');
         //await this.page.locator('#rccDropdown').selectOption('MONTHLY');
         //await this.page.locator('#rccDropdown').selectOption('QUARTERLY');
         //await this.page.locator('#rccDropdown').selectOption('ANNUALLY');
@@ -35,5 +35,8 @@ export class ReviewInformation{
         await this.page.getByText('USD - estimated yearly donation').click();
         await this.page.locator('#estimated-total').click();
         */
+    }
+    async completeReview(){
+        await this.page.getByRole('button', {name: 'Submit'}).click()
     }
 }

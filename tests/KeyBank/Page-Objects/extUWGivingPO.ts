@@ -13,11 +13,10 @@ import { examinePortletHelper } from "../Fixtures/ExaminePortlet"
 // United Way Credit Card Transactions (giving History)
 // Payroll Contributions  (giving History)
 
-export class extUWGiving{
-    private readonly page: Page
+export class extUWGiving extends examinePortletHelper{
 
     constructor(page: Page) {
-        this.page = page
+        super(page)
     }
     async navigateToUWGivingPage(){ // NO PAGE TO GO TO??
         await this.page.goto('https://sandbox.cybergrants.com/pls/cybergrants-sb/eg_portal.home?x_gm_id=10762&x_pl_id=50464');
@@ -37,26 +36,13 @@ export class extUWGiving{
         const pm = new extPageManager(this.page)
         // call the PayrollDeduction page's makePayrollDeduction() method
         await this.page.getByRole('button', { name: 'Make a Payroll Donation' }).click(); //opens deduction options popup
-        await this.page.getByRole('link', { name: 'United Way One-Time Payroll' }).click();
-        await pm.useOrganizationSearchPage().selectOrganization(testData.organizationName) //select organization
-        await pm.usePayrollDeductionPage().makePayrollDeductionOneTime(testData) // return to home page
-        
+        await this.page.getByRole('link', { name: 'United Way One-Time Payroll Deduction' }).click();
     }
     // 96920 United Way Recurring Payroll Deduction
     async selectMakeAPayrollDeduction_UWR(testData: any){
         const pm = new extPageManager(this.page)
-        await this.page.getByRole('button', { name: 'Request a Match for a Previous Donation' }).click();
-        await pm.useOrganizationSearchPage().selectOrganization(testData.organizationName) //select organization
-        await pm.usePayrollDeductionPage().makePayrollDeductionRecurring(testData)
-        // fill out initial donation
-        // land on Organization Search but with Checkout portlet
-        //select checkout
-        // page: Additional Questions
-        //   proceed to review
-        // page: Review Infomation
-        //   select Submit | Retrun to Home Page | Make a Change
-        //
-
+        await this.page.getByRole('button', { name: 'Make a Payroll Donation' }).click(); //opens deduction options popup
+        await this.page.getByRole('link', { name: 'United Way Recurring Payroll Deduction' }).click();
     }
     
     // 96930 United Way Payroll Match

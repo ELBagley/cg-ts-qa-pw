@@ -1,0 +1,48 @@
+{
+    "NumTabs": 4,
+    "TabArray": ["Give Again","Matching Gift Balance", "Matching Gifts History","Credit Card Transactions", "My Nominations"],
+    "Matching Gift Balance": {
+        "TabType": 1006,
+        "TabElements": 5,
+        "TabRows": 4,
+        "TabRow0": ["Program Name", "Number of Transaction(s)", "Limit", "Total Match Amount", "Balance"],
+        "TabRow1": ["Employee Giving","$2,000.00","$1,873.00","x", "x"],
+        "TabRow2": ["Credit Card Match", "2", "$52.00","x", "x"],
+        "TabRow3": ["Request a Match for a Previous Donation", "2", "$50.00","x", "x"]
+    },
+    "Matching Gifts History": {
+        "Tab Type": 1002,
+        "TabElements": 4,
+        "TabRows": 5,
+        "TabRow0": ["Organization Information", "Type", "Description", "Status"],
+        "TabRow1": ["AMERICAN NATIONAL RED CROSS", "Credit Card Match", "27 USD", "Contribution has not been verified"],
+        "TabRow2": ["AMERICAN NATIONAL RED CROSS", "Credit Card Match", "26 USD", "Contribution has not been verified"],
+        "TabRow3": ["1 HEART 1 MISSION", "Request a Match for a Previous Donation", "27 USD","Contribution has not been verified"],
+        "TabRow4": ["1 HEART 1 MISSION", "Request a Match for a Previous Donation", "25 USD","Contribution has not been verified"]
+    },
+    "Credit Card Transactions": {
+        "TabType": 1002,
+        "TabElements": 4,
+        "TabRows": 2,
+        "TabRow0": ["Organization Information", "Type", "Description", "Status"],
+        "TabRow1": ["AMERICAN NATIONAL RED CROSS", "Credit Card Match", "27 USD", "Contribution has not been verified"]
+    },
+    "My Nominations": {
+        "TabType": 1002,
+        "TabElements": 0,
+        "TabRows": 0,
+        "TabRow0": ["x"],
+        "TabRow1": ["x"]
+    },
+    "Give Again":{
+        "TabType": 4014,
+        "TabElements": 0,
+        "numText": 4,
+        "textArray": ["ContentText1","ContentOrg1", "ContentText2", "ContentOrg2"],
+        "contentText1": "Donate Now Via Credit Card One Time or Recurring 27 USD",
+        "contentOrg1": "AMERICAN NATIONAL RED CROSS|0",
+        "contentText2": "Donate Now Via Credit Card One Time or Recurring 26 USD",
+        "contentOrg2": "AMERICAN NATIONAL RED CROSS|1"
+    }
+}
+

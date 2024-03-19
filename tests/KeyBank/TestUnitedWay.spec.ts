@@ -11,11 +11,11 @@ const GivingLocators = JSON.parse(JSON.stringify(require("./Data/Giving_Locators
 const UWGivingLocators = JSON.parse(JSON.stringify(require("./Data/UWGiving_Locators.json")));
 const BoardServiceLocators = JSON.parse(JSON.stringify(require("./Data/Boardservice_Locators.json")));
 const ManageEventsLocators = JSON.parse(JSON.stringify(require("./Data/ManageEvents_Locators.json")));
-const Test1_GivingData = JSON.parse(JSON.stringify(require('../Data/Test1_UnitedWay/Test1_verifyextGiving_Data.json')));
-const Test1_UWGivingData = JSON.parse(JSON.stringify(require('../Data/Test1_UnitedWay/Test1_verifyextUWGiving_Data.json')));
-const Test1_BoardServiceData = JSON.parse(JSON.stringify(require('../Data/Test1_UnitedWay/Test1_verifyextBoardService_Data.json')));
-const Test1_HomeData = JSON.parse(JSON.stringify(require('../Data/Test1_UnitedWay/Test1_verifyextHome_Data.json')));
-const Test1_ManageEventsData = JSON.parse(JSON.stringify(require('../Data/Test1_UnitedWay/Test1_verifyextManageEvents_Data.json')));
+const Test1_GivingData = JSON.parse(JSON.stringify(require('./Data/Test1_UnitedWay/Test1_verifyextGiving_Data.json')));
+const Test1_UWGivingData = JSON.parse(JSON.stringify(require('./Data/Test1_UnitedWay/Test1_verifyextUWGiving_Data.json')));
+const Test1_BoardServiceData = JSON.parse(JSON.stringify(require('./Data/Test1_UnitedWay/Test1_verifyextBoardService_Data.json')));
+const Test1_HomeData = JSON.parse(JSON.stringify(require('./Data/Test1_UnitedWay/Test1_verifyextHome_Data.json')));
+const Test1_ManageEventsData = JSON.parse(JSON.stringify(require('./Data/Test1_UnitedWay/Test1_verifyextManageEvents_Data.json')));
     /*
     96924 Donate Now Via Credit Card One Time or Recurring, all employees
     96928 Credit Card Match 1:1, all employees

@@ -3,18 +3,18 @@ import { extPageManager }  from "./Page-Objects/extPageManagerPO"
 
 
 // VERIFY DATA PORTLETS
-const HomeLocators = JSON.parse(JSON.stringify(require('../Data/Home_Locators.json')));
-const GivingLocators = JSON.parse(JSON.stringify(require("../Data/Giving_Locators.json")));
-const UWGivingLocators = JSON.parse(JSON.stringify(require("../Data/UWGiving_Locators.json")));
-const BoardServiceLocators = JSON.parse(JSON.stringify(require("../Data/BoardsService_Locators.json")));
-const ManageEventsLocators = JSON.parse(JSON.stringify(require("../Data/ManageEvent_Locators.json")));
+const HomeLocators = JSON.parse(JSON.stringify(require('./Data/Home_Locators.json')));
+const GivingLocators = JSON.parse(JSON.stringify(require("./Data/Giving_Locators.json")));
+const UWGivingLocators = JSON.parse(JSON.stringify(require("./Data/UWGiving_Locators.json")));
+const BoardServiceLocators = JSON.parse(JSON.stringify(require("./Data/BoardService_Locators.json")));
+const ManageEventsLocators = JSON.parse(JSON.stringify(require("./Data/ManageEvent_Locators.json")));
 
 // VERIFY DATA
-const Default_GivingData = JSON.parse(JSON.stringify(require('../Data/Default/Default_verifyextGiving_Data.json')));
-const Default_UWGivingData = JSON.parse(JSON.stringify(require('../Data/Default/Default_verifyextUWGiving_Data.json')));
-const Default_BoardServiceData = JSON.parse(JSON.stringify(require('../Data/Default/Default_verifyextBoardService_Data.json')));
-const Default_HomeData = JSON.parse(JSON.stringify(require('../Data/Default/Default_verifyextHome_Data.json')));
-const Default_ManageEventsData = JSON.parse(JSON.stringify(require('../Data/Default/Default_verifyextManageEvents_Data.json')));
+const Default_GivingData = JSON.parse(JSON.stringify(require('./Data/Default/Default_verifyextGiving_Data.json')));
+const Default_UWGivingData = JSON.parse(JSON.stringify(require('./Data/Default/Default_verifyextUWGiving_Data.json')));
+const Default_BoardServiceData = JSON.parse(JSON.stringify(require('./Data/Default/Default_verifyextBoardService_Data.json')));
+const Default_HomeData = JSON.parse(JSON.stringify(require('./Data/Default/Default_verifyextHome_Data.json')));
+const Default_ManageEventsData = JSON.parse(JSON.stringify(require('./Data/Default/Default_verifyextManageEvents_Data.json')));
 
 test.describe('Verify initial configuration',() => {
     test.beforeEach('Login to external portal', async ({page}) => {

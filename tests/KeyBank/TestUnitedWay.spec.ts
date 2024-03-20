@@ -73,7 +73,7 @@ test.describe('Create initial data for new execution of tests',() => {
         await pm.useGivingPage().examinePortletTab("Credit Card Transactions",Test1_GivingData, GivingLocators)
         await pm.useGivingPage().examinePortletTab("My Nominations",Test1_GivingData, GivingLocators)
         await pm.useUWGivingPage().examinePortletTab("United Way - Give Again",Test1_UWGivingData, UWGivingLocators)
-        await pm.useUWGivingPage().examinePortletTab("UW CC Transactions",Test1_UWGivingData, UWGivingLocators)
+        await pm.useUWGivingPage().examinePortletTab("United Way Credit Card Transactions",Test1_UWGivingData, UWGivingLocators)
         await pm.useUWGivingPage().examinePortletTab("Payroll Contributions",Test1_UWGivingData, UWGivingLocators)
         await pm.useBoardServicePage().examinePortletTab("BS Memberships",Test1_BoardServiceData, BoardServiceLocators)
         await pm.useBoardServicePage().examinePortletTab("BS Recorded Hours",Test1_BoardServiceData, BoardServiceLocators)

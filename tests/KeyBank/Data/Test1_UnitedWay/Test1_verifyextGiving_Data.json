@@ -1,7 +1,7 @@
 {
     "NumTabs": 4,
-    "TabArray": ["Give Again","Matching Gift Balance", "Matching Gifts History","Credit Card Transactions", "My Nominations"],
-    "Matching Gift Balance": {
+    "TabArray": ["Give Again","Matching Gifts Balance", "Matching Gifts History","Credit Card Transactions", "My Nominations"],
+    "Matching Gifts Balance": {
         "TabType": 1006,
         "TabElements": 5,
         "TabRows": 4,

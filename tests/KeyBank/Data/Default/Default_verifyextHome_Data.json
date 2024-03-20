@@ -1,6 +1,7 @@
 { 
+    "TabArray": ["How Am I Doing?"],
     "NumTabs": 1,
-    "HowAmIDoing": {
+    "How Am I Doing?": {
         "TabType": 1033,
         "Donated": "0",
         "HoursVolunteered": "0"

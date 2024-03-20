@@ -6,7 +6,7 @@ export class extBoardService extends examinePortletHelper{
     constructor(page: Page) {
         super(page)
     }
-    async navigateToBoardService(){
+    async navigateToBoardServicePage(){
         await this.page.goto("https://sandbox.cybergrants.com/pls/cybergrants-sb/eg_portal.home?x_gm_id=10762&x_page=boardservice")
     }
     async verifyD4Dportlet(){
@@ -14,7 +14,7 @@ export class extBoardService extends examinePortletHelper{
     }
     async selectBoardServiceHours(){
         // goes to organization search for the PT 97536
-        //https://sandbox.cybergrants.com/pls/cybergrants-sb/eg_search.search_screen?x_gm_id=10762&x_pt_id=97536&x_source_flag=EGD&x_search_mode=B&x_source_proc=
+        //await this.page.goto("https://sandbox.cybergrants.com/pls/cybergrants-sb/eg_search.search_screen?x_gm_id=10762&x_pt_id=97536&x_source_flag=EGD&x_search_mode=B&x_source_proc=")
         //select organization
         //form Volunteer Hours Information
         //  organization selectd

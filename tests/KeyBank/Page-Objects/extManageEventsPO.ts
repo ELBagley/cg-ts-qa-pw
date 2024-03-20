@@ -6,7 +6,7 @@ export class extManageEvents extends examinePortletHelper{
     constructor(page: Page) {
         super(page)
     }
-    async navigateToManageEvents(){
+    async navigateToManageEventsPage(){
         await this.page.goto("https://sandbox.cybergrants.com/pls/cybergrants-sb/eg_portal.home?x_gm_id=10762&x_page=eventmanagement")
 
     }

@@ -8,7 +8,7 @@ export class examinePortletHelper {
   }
     // use test data from JSON passed in
     // use the portlet locators for the page with the test data to perform the validation
-  async examinePortletTab(tabName: string, testData: any, testLocators: any) {
+  async examinePortletTab(tabName: string, testData: any, testLocators?: any) {
     //find the location of the tab in the tab list
     let currentTab = 0;
     while(currentTab <= 5){
@@ -17,20 +17,29 @@ export class examinePortletHelper {
         break
       }
       currentTab++
-    } // location of current tab in the array
-    // duplicate strings causing confusion
-    if(tabName == "Events I Created"){
-      //await this.page.locator(testLocators[tabName].TabLocator).click()
-      await this.page.getByRole('tab', {name: tabName, exact: true}).click()
     } 
-    else if(tabName == "Unsubmitted Events I Created"){ // need to use a better identifier
+    
+    // location of current tab in the array
+    // duplicate tab strings causing confusion
+    if(tabName.trim() === "Events I Created"){
       //await this.page.locator(testLocators[tabName].TabLocator).click()
+      await this.page.getByText("Events I Created", {exact: true}).click()
+    } 
+    else if(tabName.trim() === "Unsubmitted Events I Created"){ // need to use a better identifier
+      //await this.page.locator(testLocators[tabName].TabLocator).click()
+      await this.page.getByText("Unsubmitted Events I Created", {exact: true}).click()
+    }
+    else if(tabName == "How Am I Doing?"){
+      // do not click because this is not a tab
+    }
+    else if(tabName == "Board Service Matching Gifts"){
       await this.page.getByRole('tab', {name: tabName, exact: true}).click()
     }
     else {
       await this.page.getByText(tabName).click()
     }
-    await this.page.waitForTimeout(3000);
+
+    await this.page.waitForTimeout(1000);
 
     // HISTORY PORTLET
     //   Current Payroll Contribution 1019
@@ -39,14 +48,27 @@ export class examinePortletHelper {
       for(let currentRow = 0; currentRow < testData[tabName].TabRows; currentRow++){
         for(let currentElement = 0; currentElement < testData[tabName].TabElements; currentElement++){
           if(currentRow == 0){ // column headings
-            await expect(this.page.locator(testLocators[tabName].TabRow0[currentElement])).toHaveText(testData[tabName].TabRow0[currentElement]);
+            // DO WE NEED LOCATORS?
+            //await expect(this.page.locator(testLocators[tabName].TabRow0[currentElement])).toHaveText(testData[tabName].TabRow0[currentElement]);
+            await expect(this.page.getByRole('cell', {name: testData[tabName].TabRow0[currentElement], exact: true})).toBeVisible();
           }
-          else if ((currentRow == 1) && (testData[tabName].TabRow1[0] != 'No Result Found')){
-            await expect(this.page.getByRole('cell', {name: testData[tabName].TabRow1[currentElement], exact: true})).toBeVisible();
-            break
+          else if (currentRow == 1){
+            if (testData[tabName].TabRow1[0] == 'No Result Found'){
+              await expect(this.page.getByRole('cell', {name: testData[tabName].TabRow1[currentElement], exact: true})).toBeVisible();
+              break
+            }
+            else if ((currentRow == 1 ) && (testData[tabName].TabRow1[currentElement] != "x")){
+              await expect(this.page.getByRole('cell', {name: testData[tabName].TabRow1[currentElement], exact:true})).toBeVisible();
+            }
           }
-          else if (currentRow != 0 && currentRow != 1){
-            await expect(this.page.getByRole('cell', {name: testData[tabName].TabRow1[currentElement], exact:true})).toBeVisible();
+          else if ((currentRow == 2 ) && (testData[tabName].TabRow1[currentElement] != "x")){
+            await expect(this.page.getByRole('cell', {name: testData[tabName].TabRow2[currentElement], exact:true})).toBeVisible();
+          }
+          else if ((currentRow == 3 ) && (testData[tabName].TabRow1[currentElement] != "x")){
+            await expect(this.page.getByRole('cell', {name: testData[tabName].TabRow3[currentElement], exact:true})).toBeVisible();
+          }
+          else if ((currentRow == 4 ) && (testData[tabName].TabRow1[currentElement] != "x")){
+            await expect(this.page.getByRole('cell', {name: testData[tabName].TabRow4[currentElement], exact:true})).toBeVisible();
           }
         }
       }
@@ -60,13 +82,32 @@ export class examinePortletHelper {
             await expect(this.page.getByRole('cell', {name: testData[tabName].TabRow0[currentElement],exact: true})).toBeVisible();
           }
           if((currentRow == 1) && (testData[tabName].TabRow1[currentElement] != "x")){
-            await expect(this.page.getByRole('cell', {name: testData[tabName].TabRow1[currentElement],exact: true})).toBeVisible();
+            // if the string contains a '|'
+            let curStringArray = testData[tabName].TabRow1[currentElement].split('|')
+            if(curStringArray.length == 2){ 
+              await expect(this.page.getByRole('cell', {name: curStringArray[0],exact: true}).nth(curStringArray[1])).toBeVisible();
+            }
+            else{
+              await expect(this.page.getByRole('cell', {name: testData[tabName].TabRow1[currentElement],exact: true})).toBeVisible();
+            }
           }
           if((currentRow == 2) && (testData[tabName].TabRow2[currentElement] != "x")){
-            await expect(this.page.getByRole('cell', {name: testData[tabName].TabRow2[currentElement],exact: true})).toBeVisible();
+            let curStringArray = testData[tabName].TabRow2[currentElement].split('|')
+            if(curStringArray.length == 2){ 
+              await expect(this.page.getByRole('cell', {name: curStringArray[0],exact: true}).nth(curStringArray[1])).toBeVisible();
+            }
+            else{
+              await expect(this.page.getByRole('cell', {name: testData[tabName].TabRow2[currentElement],exact: true})).toBeVisible();
+            }
           }
           if((currentRow == 3) && (testData[tabName].TabRow3[currentElement] != "x")){
-            await expect(this.page.getByRole('cell', {name: testData[tabName].TabRow3[currentElement],exact: true})).toBeVisible();
+            let curStringArray = testData[tabName].TabRow3[currentElement].split('|')
+            if(curStringArray.length == 2){ 
+              await expect(this.page.getByRole('cell', {name: curStringArray[0],exact: true}).nth(curStringArray[1])).toBeVisible();
+            }
+            else{
+              await expect(this.page.getByRole('cell', {name: testData[tabName].TabRow3[currentElement],exact: true})).toBeVisible();
+            }          
           }
         }
       }
@@ -192,10 +233,10 @@ export class examinePortletHelper {
     // Goals
     // 1033 How am I Doing
     else if (testData[tabName].TabType == 1033){ 
-      if (testData.Donated.hasText){
+      if (testData[tabName].Donated != ""){
         await expect(this.page.locator('div').filter({ hasText: testData.Donated })).toBeTruthy;
       }
-      if (testData.HoursVolunteered.hasText){
+      if (testData.HoursVolunteered != ""){
         await expect(this.page.locator('div').filter({ hasText: testData.HoursVolunteered })).toBeTruthy;
       }
         //class: container-query-blocs container-query-three-blocs      }

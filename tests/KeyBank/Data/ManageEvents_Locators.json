@@ -13,12 +13,12 @@
         "Row2ViewLink": true
     },
     "Events I Created": {
-        "TabLocator": "",
+        "TabLocator": "#span-tab-550556",
         "TabRow0":  [""],  
         "Row0": ""
     },
     "Unsubmitted Events I Created": {
-        "TabLocator":"",
+        "TabLocator":"#span-tab-550558",
         "TabRow0":  [""]  
     }
 }

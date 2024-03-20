@@ -1,7 +1,7 @@
 { 
     "NumTabs": 4,
     "TabArray": ["United Way Match Balance", "United Way Credit Card Transactions", "Payroll Contributions", "United Way - Give Again"],
-    "Manage Completed Events": {
+    "United Way Match Balance": {
         "TabType": 1006,
         "TabElements": 5,
         "TabRows": 4,
@@ -16,15 +16,15 @@
         "TabRows": 2,
         "TabAction":"none",
         "TabRow0": ["Organization Information", "Description", "Status"],
-        "TabRow1": ["No results found","x"]
+        "TabRow1": ["No results found","x", "x"]
         },
     "Payroll Contributions": {
         "TabType": 1010,
         "TabElements": 5,
-        "TabRows": 7,
+        "TabRows": 2,
         "TabAction": "none",
         "TabRow0": ["Action", "Organization Information", "Type", "Description", "Status"],
-        "TabRow1": ["No results found","x"]    
+        "TabRow1": ["No results found","x","x","x","x"]    
     },
     "United Way - Give Again": {
         "TabType": 4014,

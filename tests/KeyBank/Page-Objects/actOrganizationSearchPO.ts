@@ -7,11 +7,13 @@ export class OrganizationSearch {
     constructor(page: Page) {
         this.page = page
     }
+    // first time searches can take a while
     async selectOrganization(testData: any){
         await this.page.getByPlaceholder('Organization Name').fill(testData.organizationName); //css-1q464cn
         await this.page.getByRole('button', { name: 'Search', exact: true }).click();  
-        await this.page.waitForTimeout(15000); 
-        await this.page.getByLabel(testData.organizationName).nth(0).click()    
+        //await this.page.waitForTimeout(30000); 
+        await this.page.getByRole('link', { name: testData.organizationName }).click();         
+        //await this.page.getByLabel(testData.organizationName).nth(0).click()    
     }
 
     async selectExistingOrganization(existingOrganization: any){

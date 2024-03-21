@@ -1,9 +1,10 @@
 import { Page, expect } from "@playwright/test";
 
 import { extBoardService } from "./extBoardServicePO"
+import { BoardServiceMembershipInformation } from "./actBoardServiceMembershipInformation"
 import { CreditCardDonation } from "./actCreditCardDonationPO"
 import { extDisasterRelief } from "./extDisasterReliefPO"
-import { extDollarsForDoers } from "./actDollarsForDoersPO"
+import { extEmployeeNomination } from "./extEmployeeNominationPO"
 import { DonorMatching } from "./actDonorMatchingGiftPO"
 import { eventInformation } from "./actEventInformationPO"
 import { extGiving } from "./extGivingPO"
@@ -23,10 +24,11 @@ import { extVolunteer } from "./extVolunteerPO"
 
 export class extPageManager{
     private readonly extBoardServicePage: extBoardService
+    private readonly BoardServiceMembershipInformationPage: BoardServiceMembershipInformation
     private readonly CreditCardDonationPage: CreditCardDonation
     private readonly extDisasterReliefPage: extDisasterRelief
-    private readonly extD4DPage: extDollarsForDoers
     private readonly DonorMatchingPage: DonorMatching
+    private readonly EmployeeNominationPage: extEmployeeNomination
     private readonly EventInformationPage: eventInformation
     private readonly extGivingPage: extGiving
     private readonly GivingReviewPage: GivingReview
@@ -47,10 +49,11 @@ export class extPageManager{
     constructor(page: Page) {
         this.page = page
         this.extBoardServicePage = new extBoardService (this.page)
+        this.BoardServiceMembershipInformationPage = new BoardServiceMembershipInformation (this.page)
         this.CreditCardDonationPage = new CreditCardDonation (this.page)
         this.extDisasterReliefPage = new extDisasterRelief (this.page)
-        this.extD4DPage = new extDollarsForDoers (this.page)
         this.DonorMatchingPage = new DonorMatching (this.page)
+        this.EmployeeNominationPage = new extEmployeeNomination(this.page)
         this.EventInformationPage = new eventInformation (this.page)
         this.extGivingPage = new extGiving(this.page)
         this.GivingReviewPage = new GivingReview (this.page)
@@ -70,17 +73,20 @@ export class extPageManager{
     useBoardServicePage(){
         return this.extBoardServicePage
     }
+    useBoardServiceMembershipInformationPage(){
+        return this.BoardServiceMembershipInformationPage
+    }
     useCreditCardDonationPage(){
         return this.CreditCardDonationPage
     }
     useDisasterReliefPage(){
         return this.extDisasterReliefPage
     }
-    useD4DPage(){
-        return this.extD4DPage
-    }
     useDonorMatchingPage(){
         return this.DonorMatchingPage
+    }
+    useEmployeeNominationPage(){
+        return this.EmployeeNominationPage
     }
     useEventInformationPage(){
         return this.EventInformationPage

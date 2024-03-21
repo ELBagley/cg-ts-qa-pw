@@ -35,14 +35,14 @@ export class extUWGiving extends examinePortletHelper{
     async selectMakeAPayrollDeduction_UWOT(testData: any){
         const pm = new extPageManager(this.page)
         // call the PayrollDeduction page's makePayrollDeduction() method
-        await this.page.getByRole('button', { name: 'Make a Payroll Donation' }).click(); //opens deduction options popup
-        await this.page.getByRole('link', { name: 'United Way One-Time Payroll Deduction' }).click();
+        await this.page.getByRole('link', { name: 'Make a Payroll Donation' }).click(); //opens deduction options popup
+        //await this.page.getByRole('link', { name: 'United Way One-Time Payroll Deduction' }).click();
     }
     // 96920 United Way Recurring Payroll Deduction
     async selectMakeAPayrollDeduction_UWR(testData: any){
         const pm = new extPageManager(this.page)
-        await this.page.getByRole('button', { name: 'Make a Payroll Donation' }).click(); //opens deduction options popup
-        await this.page.getByRole('link', { name: 'United Way Recurring Payroll Deduction' }).click();
+        await this.page.getByRole('link', { name: 'Make a Payroll Donation' }).click(); //opens deduction options popup
+        //await this.page.getByRole('link', { name: 'United Way Recurring Payroll Deduction' }).click();
     }
     
     // 96930 United Way Payroll Match

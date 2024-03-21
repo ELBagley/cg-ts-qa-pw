@@ -1,0 +1,15 @@
+
+{
+    "<tab title>": {
+        "TabType": "1006",
+        "TabElements": 5,
+        "TabRows": 1,
+        "TabRow0": ["Program Name", "Number of Transaction(s)", "Limit", "Total Match Amount", "Balance"],
+        "TabRow1": ["", "", "", "x", "x"],
+        "TabRow2": ["", "", "", "x", "x"],
+        "TabRow3": ["", "", "", "x", "x"],
+        "TabRow4": [" ", " "," ","x","x"],
+        "TabRow5": [" ", " "," ","x","x"]
+    }
+}
+

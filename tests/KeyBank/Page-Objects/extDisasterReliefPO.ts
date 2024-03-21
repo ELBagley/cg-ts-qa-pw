@@ -9,24 +9,60 @@ export class extDisasterRelief extends examinePortletHelper{
     async navigateToDisasterRelief(){
         await this.page.goto("https://sandbox.cybergrants.com/pls/cybergrants-sb/eg_portal.home?x_gm_id=10762&x_page=disasterrelief")
     }
-    async selectDonationOrganization(OrganizationName: string){
-        //titles are on the 
+    async selectDonateTodayOrganization(OrganizationName: string){
+        // organization names are on the cards
         await this.page.getByText(OrganizationName).getByRole('link', { name: 'Donate Today' }).click();
-        await this.page.locator('#cg550576').getByRole('link', { name: 'Donate Today' }).click(); //Project Hope
-        //await this.page.locator('#cg550580').getByRole('link', { name: 'Donate Today' }).click(); //Feeding America
-        //await this.page.locator('#cg550578').getByRole('link', { name: 'Donate Today' }).click(); //International Medical Corps
-        //await this.page.locator('#cg550574').getByRole('link', { name: 'Donate Today' }).click(); //DirectRelief
-        // lands on organization Search
+        if (OrganizationName == "Project Hope"){
+            await this.page.locator('#cg550576').getByRole('link', { name: 'Donate Today' }).click(); //Project Hope
+        }
+        else if (OrganizationName == "Feeding America"){
+            await this.page.locator('#cg550580').getByRole('link', { name: 'Donate Today' }).click(); //Feeding America
+        }
+        else if (OrganizationName == "International Medical Corps"){
+            await this.page.locator('#cg550578').getByRole('link', { name: 'Donate Today' }).click(); //International Medical Corps
+        }
+        else if (OrganizationName == "Direct Relief"){
+            await this.page.locator('#cg550574').getByRole('link', { name: 'Donate Today' }).click(); //DirectRelief
+        }
+        // transitions to Credit Card Donation Information
     }
+
+    async selectRequestAMatchOrganization(OrganizationName: string){
+        await this.page.getByText(OrganizationName).getByRole('link', { name: 'Donate Today' }).click();
+        if (OrganizationName == "Project Hope"){
+            await this.page.locator('#cg550576').getByRole('link', { name: 'Request a Match for a' }).click(); //Project Hope
+        }
+        else if (OrganizationName == "Feeding America"){
+            await this.page.locator('#cg550580').getByRole('link', { name: 'Request a Match for a' }).click(); //Feeding America
+        }
+        else if (OrganizationName == "International Medical Corps"){
+            await this.page.locator('#cg550578').getByRole('link', { name: 'Request a Match for a' }).click(); //International Medical Corps
+        }
+        else if (OrganizationName == "Direct Relief"){
+            await this.page.locator('#cg550574').getByRole('link', { name: 'Request a Match for a' }).click(); //DirectRelief
+        }
+        // transitions to Offline Donation Information
+    }    
+    /*
+        await page.locator('#cg550574').getByRole('link', { name: 'Donate Today' }).click();
+        await page.getByRole('heading', { name: 'Credit Card Donation' }).click();
+
+        await page.getByLabel('*Amount').click();
+        await page.getByLabel('Match Amount Requested').click();
+        await page.getByLabel('Designation').click();
+        await page.getByRole('link', { name: 'Return to Home Page' }).click();
+    */
+
+    
     async selectDonateWith1to1Match(){
         await this.page.getByRole('link', { name: 'Donate with 1:1 Match' }).click();
-        // lands on organization Search
+        // transitions to organization Search
     }
     async selectDonateWith2to1Match(){
         await this.page.getByRole('link', { name: 'Donate with 2:1 Match' }).click();
-        // lands on organization Search
+        // transitions to organization Search
     }
-    async selectContributeAgain(){
-        //needs recent donations
+    async selectContributeAgainOrganization(){
+        //needs recent donations populated
     }
 }

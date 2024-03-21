@@ -14,7 +14,7 @@ export class extGiving extends examinePortletHelper{
         super(page)
     }
     
-    async navigateToGivingpage(){ // NO PAGE TO GO TO??
+    async navigateToGivingPage(){ // NO PAGE TO GO TO??
         await this.page.goto('https://sandbox.cybergrants.com/pls/cybergrants-sb/eg_portal.home?x_gm_id=10762&x_page=giving');
     }
     // PT: 96924 Donate Now Via Credit Card One Time or Recurring

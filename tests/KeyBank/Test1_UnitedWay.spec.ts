@@ -27,7 +27,7 @@ test.describe('Create initial data for new execution of tests',() => {
     test.beforeEach('Login to external portal', async ({page}) => {
         const pm = new extPageManager(page);
         // Donor MUST have Event Creator role
-        await pm.useloginPage().loginToExternalPortal('DONOR1', '123!SilverFox');
+        await pm.useloginPage().loginToExternalPortal('DONOR0320', '123!SilverFox');
     })
 
     //test ('Portlet defaults for Donor without a role', async ({page})=>) {}
@@ -65,25 +65,37 @@ test.describe('Create initial data for new execution of tests',() => {
         await pm.useReviewInformationPage().completeReview()
         await pm.useSubmissionSuccessfulPage().selectReturnToHome()
     })
-    test ('United Way Data Verification of all portlets', async ({page})=>{
+    test ('United Way Data Verification of Home page', async ({page})=>{
         const pm = new extPageManager(page)
         await pm.useHomePage().examinePortletTab("How Am I Doing?",Test1_HomeData, HomeLocators)
+    })
+    test ('United Way Data Verification of Giving page', async ({page})=>{
+        const pm = new extPageManager(page)
         await pm.useGivingPage().examinePortletTab("Matching Gifts Balance",Test1_GivingData, GivingLocators)
         await pm.useGivingPage().examinePortletTab("Matching Gifts History",Test1_GivingData, GivingLocators)
         await pm.useGivingPage().examinePortletTab("Credit Card Transactions",Test1_GivingData, GivingLocators)
         await pm.useGivingPage().examinePortletTab("My Nominations",Test1_GivingData, GivingLocators)
+    })
+    test ('United Way Data Verification of United Way Giving page', async ({page})=>{
+        const pm = new extPageManager(page)
         await pm.useUWGivingPage().examinePortletTab("United Way - Give Again",Test1_UWGivingData, UWGivingLocators)
         await pm.useUWGivingPage().examinePortletTab("United Way Credit Card Transactions",Test1_UWGivingData, UWGivingLocators)
         await pm.useUWGivingPage().examinePortletTab("Payroll Contributions",Test1_UWGivingData, UWGivingLocators)
+    })
+    test ('United Way Data Verification of Board Service page', async ({page})=>{
+        const pm = new extPageManager(page)
         await pm.useBoardServicePage().examinePortletTab("BS Memberships",Test1_BoardServiceData, BoardServiceLocators)
         await pm.useBoardServicePage().examinePortletTab("BS Recorded Hours",Test1_BoardServiceData, BoardServiceLocators)
         await pm.useBoardServicePage().examinePortletTab("BS Matching Gifts",Test1_BoardServiceData, BoardServiceLocators)
         await pm.useBoardServicePage().examinePortletTab("Community Leadership Gift Balance",Test1_BoardServiceData, BoardServiceLocators)     
         await pm.useBoardServicePage().examinePortletTab("My Nominations",Test1_BoardServiceData, BoardServiceLocators)
         await pm.useBoardServicePage().examinePortletTab("Dollars For Doers",Test1_BoardServiceData, BoardServiceLocators)
+    })
+        test ('United Way Data Verification of Manage Events page', async ({page})=>{
+            const pm = new extPageManager(page)
         await pm.useManageEventsPage().examinePortletTab("Manage Open Events",Test1_ManageEventsData, ManageEventsLocators)
         await pm.useManageEventsPage().examinePortletTab("Manage Completed Events",Test1_ManageEventsData, ManageEventsLocators)
-        await pm.useManageEventsPage().examinePortletTab("Events I created",Test1_ManageEventsData, ManageEventsLocators)
-        await pm.useManageEventsPage().examinePortletTab("Unsubmitted Events I created",Test1_ManageEventsData, ManageEventsLocators)
+        await pm.useManageEventsPage().examinePortletTab("Events I Created",Test1_ManageEventsData, ManageEventsLocators)
+        await pm.useManageEventsPage().examinePortletTab("Unsubmitted Events I Created",Test1_ManageEventsData, ManageEventsLocators)
     })
 })

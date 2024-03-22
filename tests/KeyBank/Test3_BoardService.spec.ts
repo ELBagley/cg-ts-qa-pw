@@ -39,7 +39,7 @@ test.describe('Create initial data for new execution of tests',() => {
         // Repeat for each add a donation
         await pm.useBoardServicePage().createBoardServiceMembership(Test31_MembershipData)
         await pm.useOrganizationSearchPage().selectOrganization(Test31_MembershipData)
-        await pm.useBoardServiceMembershipInformationPage().BoardServiceMemberhipInformation(Test31_MembershipData)
+        await pm.useBoardServiceMembershipInformationPage().submitBoardServiceMemberhip(Test31_MembershipData)
         await pm.useReviewInformationPage().fillReviewInformation(Test31_MembershipData)
         await pm.useSubmissionSuccessfulPage().selectReturnToHome()
     })

@@ -10,4 +10,7 @@ export class SubmissionSuccessful{
     async selectReturnToHome(){
         await this.page.getByRole('link', { name: 'Return to Home Page' }).click();
     }
+    async confirmWithCharity(){
+        await this.page.getByRole('link', { name: 'Return to Home Page' }).click();
+    }
 }

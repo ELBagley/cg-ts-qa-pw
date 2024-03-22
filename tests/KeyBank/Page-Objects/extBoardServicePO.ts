@@ -10,7 +10,7 @@ export class extBoardService extends examinePortletHelper{
         await this.page.goto("https://sandbox.cybergrants.com/pls/cybergrants-sb/eg_portal.home?x_gm_id=10762&x_page=boardservice")
     }
     // PT 97538
-    async createBoardServiceMembership(testData: any){
+    async createBoardServiceMembership(){
         await this.page.getByRole('button', { name: 'Board Service Membership', exact: true}).click();
         // transitions to the Search organization page
         // transitions to the Membership Information page
@@ -33,6 +33,9 @@ export class extBoardService extends examinePortletHelper{
         // specify gift
         // review information page with Submit button
         //
+    }
+    async redeemDollarsForDoers(){
+        await this.page.getByRole('button', { name: 'Redeem', exact: true}).click();
     }
 }
 

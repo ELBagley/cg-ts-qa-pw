@@ -7,7 +7,7 @@ export class GivingReview{
     constructor(page: Page) {
         this.page = page
     }
-    async CreateInitialDonation(GiftAmount: string, MatchAmount: string){
+    async createInitialDonation(GiftAmount: string, MatchAmount: string){
         await this.page.getByLabel('*Total Gift Amount').fill(GiftAmount);
         await this.page.getByLabel('Match Amount Requested').fill(MatchAmount);
         await this.page.getByLabel('Privacy Preference').selectOption('ANONYMOUS');

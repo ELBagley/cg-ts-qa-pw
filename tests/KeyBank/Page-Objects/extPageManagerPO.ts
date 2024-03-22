@@ -8,18 +8,19 @@ import { extEmployeeNomination } from "./extEmployeeNominationPO"
 import { DonorMatching } from "./actDonorMatchingGiftPO"
 import { eventInformation } from "./actEventInformationPO"
 import { extGiving } from "./extGivingPO"
-import { GivingReview } from "./actGivingReviewPO"
+import { GivingReview } from "./xxxGivingReviewPO"
 import { extHome } from "./extHomePO"
 import { extLogin } from "./extLoginPO"
 import { extManageEvents } from "./extManageEventsPO"
-import { MatchingGifts } from "./actMatchingGiftsPO"
+import { BoardServiceMatchingGift } from "./actBoardServiceMatchingGiftPO"
 import { OrganizationSearch } from "./actOrganizationSearchPO"
 import { OrganizationSummary } from "./actOrganizationSummaryPO"
 import { PayrollDeduction } from "./actPayrollDeductionsPO"
+import { selectBoardServiceOrg } from "./actBoardServiceSelectOrgPO"
 import { ReviewInformation} from "./actReviewInformationPO"
 import { SubmissionSuccessful } from "./actSubmissionSuccessfulPO"
 import { extUWGiving } from "./extUWGivingPO"
-import { extVolunteerHours } from "./actVolunteerHoursPO"
+import { VolunteerHours } from "./actVolunteerHoursPO"
 import { extVolunteer } from "./extVolunteerPO"
 
 export class extPageManager{
@@ -35,14 +36,15 @@ export class extPageManager{
     private readonly extHomePage: extHome
     private readonly extLoginPage: extLogin
     private readonly extManageEventsPage: extManageEvents
-    private readonly MatchingGiftsPage: MatchingGifts
+    private readonly BoardServiceMatchingGiftPage: BoardServiceMatchingGift
     private readonly OrganizationSearchPage: OrganizationSearch
     private readonly OrganizationSummaryPage: OrganizationSummary
     private readonly PayrollDeductionPage: PayrollDeduction
+    private readonly BoardServiceOrgPage: selectBoardServiceOrg
     private readonly ReviewInformationPage: ReviewInformation
     private readonly SubmissionSuccessfulPage: SubmissionSuccessful
     private readonly extUWGivingPage: extUWGiving
-    private readonly extVolunteerHoursPage: extVolunteerHours
+    private readonly extVolunteerHoursPage: VolunteerHours
     private readonly extVolunteerPage: extVolunteer
     private readonly page: Page
 
@@ -60,14 +62,15 @@ export class extPageManager{
         this.extHomePage = new extHome(this.page)
         this.extLoginPage = new extLogin (this.page)
         this.extManageEventsPage = new extManageEvents (this.page)
-        this.MatchingGiftsPage = new MatchingGifts(this.page)
+        this.BoardServiceMatchingGiftPage = new BoardServiceMatchingGift(this.page)
         this.OrganizationSearchPage = new OrganizationSearch(this.page)
         this.OrganizationSummaryPage = new OrganizationSummary(this.page)
         this.PayrollDeductionPage = new PayrollDeduction(this.page)
+        this.BoardServiceOrgPage = new selectBoardServiceOrg(this.page)
         this.ReviewInformationPage = new ReviewInformation(this.page)
         this.SubmissionSuccessfulPage = new SubmissionSuccessful(this.page)
         this.extUWGivingPage = new extUWGiving(this.page)      
-        this.extVolunteerHoursPage = new extVolunteerHours(this.page)
+        this.extVolunteerHoursPage = new VolunteerHours(this.page)
         this.extVolunteerPage = new extVolunteer(this.page)
     }
     useBoardServicePage(){
@@ -106,8 +109,11 @@ export class extPageManager{
     useManageEventsPage(){
         return this.extManageEventsPage
     }
-    useMatchingGiftsPage(){
-        return this.MatchingGiftsPage
+    useBoardServiceMatchingGiftsPage(){
+        return this.BoardServiceMatchingGiftPage
+    }
+    useBoardServiceOrgPage(){
+        return this.BoardServiceOrgPage
     }
     useOrganizationSearchPage(){
         return this.OrganizationSearchPage

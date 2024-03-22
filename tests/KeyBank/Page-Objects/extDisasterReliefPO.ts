@@ -10,7 +10,7 @@ export class extDisasterRelief extends examinePortletHelper{
         await this.page.goto("https://sandbox.cybergrants.com/pls/cybergrants-sb/eg_portal.home?x_gm_id=10762&x_page=disasterrelief")
     }
     async selectDonateTodayOrganization(OrganizationName: string){
-        // organization names are on the cards
+        // organization names are on the page's cards; credit card donation
         await this.page.getByText(OrganizationName).getByRole('link', { name: 'Donate Today' }).click();
         if (OrganizationName == "Project Hope"){
             await this.page.locator('#cg550576').getByRole('link', { name: 'Donate Today' }).click(); //Project Hope
@@ -28,6 +28,7 @@ export class extDisasterRelief extends examinePortletHelper{
     }
 
     async selectRequestAMatchOrganization(OrganizationName: string){
+        // organization names are on the page's cards; credit card donation
         await this.page.getByText(OrganizationName).getByRole('link', { name: 'Donate Today' }).click();
         if (OrganizationName == "Project Hope"){
             await this.page.locator('#cg550576').getByRole('link', { name: 'Request a Match for a' }).click(); //Project Hope
@@ -63,6 +64,7 @@ export class extDisasterRelief extends examinePortletHelper{
         // transitions to organization Search
     }
     async selectContributeAgainOrganization(){
-        //needs recent donations populated
+        //needs more code for multiple previous donations
+        await this.page.getByRole('link', { name: 'Donate again' }).first().click();
     }
 }

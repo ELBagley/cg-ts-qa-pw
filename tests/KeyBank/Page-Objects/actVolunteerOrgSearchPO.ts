@@ -1,6 +1,6 @@
 import { Page, expect } from "@playwright/test";
 
-export class boardServiceHours{
+export class VolunteerHours{
 
     private readonly page: Page
 
@@ -8,7 +8,7 @@ export class boardServiceHours{
         this.page = page
     }
 
-    async addBoardServiceHours(testData: any){
+    async addVolunteerHours(testData: any){
         await this.page.getByLabel('*Volunteer Start Date').fill(testData.VolunteerStartDate);
         await this.page.getByLabel('*Volunteer End Date').fill(testData.VolunteerEndDate);
         await this.page.getByLabel('Hours Volunteered').fill(testData.hoursVolunteered);

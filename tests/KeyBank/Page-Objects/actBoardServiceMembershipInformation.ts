@@ -9,7 +9,7 @@ export class BoardServiceMembershipInformation{
         this.page = page
     }
     
-    async BoardServiceMemberhipInformation(testData: any){ 
+    async submitBoardServiceMemberhip(testData: any){ 
         await this.page.getByLabel('*Board Service Start Date').fill(testData.BoardServiceStartDate);
         await this.page.getByLabel('*Board Service End Date').fill(testData.BoardServiceEndDate);
         await this.page.getByLabel('Description').fill(testData.description);

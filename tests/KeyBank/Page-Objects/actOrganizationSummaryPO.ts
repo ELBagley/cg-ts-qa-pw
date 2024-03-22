@@ -7,7 +7,7 @@ export class OrganizationSummary {
     constructor(page: Page) {
         this.page = page
     }
-    async completeReview(testData: any){
+    async addReviewInformation(testData: any){
         await this.page.getByLabel('*Privacy Preference').selectOption(testData.privacyPreference)
         await this.page.getByLabel('Recognition Name').fill(testData.recognitionName)
         await this.page.getByLabel('Recognition E-mail').fill(testData.recognitionEmail)

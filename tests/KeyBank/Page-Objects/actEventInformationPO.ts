@@ -7,18 +7,7 @@ export class eventInformation{
     constructor(page: Page) {
         this.page = page
     }
-    // portlets
-    // event search (vc_search_responsive)
-    // Event Calendar (vc_event_calendar)
-    // My Upcoming Events (giving_history)
-    //    "Recorded Hours" (get giving history)
-    //    "My Nominations" ()
-    // My Completed Events ()
-        // "Recorded Hours" (get giving history)
-        // "My Nominations" ()
 
-
-    //candidate for helper form class using JSON data 
     async createAnEvent (newEventData: any){
         await this.page.getByLabel('*Opportunity Title').fill(newEventData.opportunityTitle);
         await this.page.getByLabel('*Event Frequency').selectOption(newEventData.eventFrequency); 
@@ -44,12 +33,18 @@ export class eventInformation{
         await this.page.getByLabel('*Team Leader E-mail Address').fill(newEventData.teamLeaderEmail);
         await this.page.getByLabel('Telephone').fill(newEventData.teamLeaderTelephone);
         await this.page.getByRole('button', { name: 'Save and Proceed' }).click();
-        /*
-        await this.page.getByRole('heading', { name: 'Review Information' }).click();
-        await this.page.getByRole('button', { name: 'Submit' }).click();
-        */
+        //transitions to Event Infomration page
+        //await this.page.getByRole('button', { name: 'Submit' }).click();
     }
-    async addvolunteersToEvent(){
-        
+    async signUpForEvent(){
+        await this.page.getByRole('button', { name: 'Sign Up' }).click();
     }
+    // this is after the Edit Roster is selected then press Go
+    async addEmployeeToRoster (){
+        await this.page.locator('#x-action-select').selectOption('Edit Enrollment');
+        await this.page.getByRole('button', { name: 'Go' }).click();
+        //transitions to EventSignUpInformation
+    }
+    async logHours(){} //TODO
+    // transitions to Log Hours page
 }

@@ -9,8 +9,8 @@ export class CreditCardDonation{
     constructor(page: Page) {
         this.page = page
     }
-    // condidate for helper class for forms using JSON data
-    async submitCreditCardOneTime(CreditCardData: any){
+
+    async submitCCOneTimeWithMatch(CreditCardData: any){
         const pm = new extPageManager(this.page)
         await this.page.getByLabel('*Total Gift Amount').fill(CreditCardData.donationAmount);
         if(CreditCardData.matchAmount != "0"){
@@ -22,10 +22,15 @@ export class CreditCardDonation{
         await this.page.getByRole('button', { name: 'Save and Proceed' }).press('Enter');
 
         // need to add credit card details on Review Information Page
-        //await pm.useReviewInformationPage().fillReviewInformation(CreditCardData)
+        // await pm.useReviewInformationPage().fillReviewInformation(CreditCardData)
     }
-    //TODO: Complete this function
-    async submitCreditCardRecurring(CreditCardData: any){
+    async submitOneTimeDeductionInformation(testData: any) {
+        await this.page.getByLabel('Deduction').fill(testData.donationDesignation);
+        await this.page.getByLabel('Designation').fill(testData.donationDesignation);
+    }
+
+    //TODO: Complete this function (not used for key Bank)
+    async submitCCRecurringWithMatch(CreditCardData: any){
         // test should have the credit card details page presented
       }
 }

@@ -10,5 +10,6 @@ export class CSAEmployeeNomination{
     async createEmployeeNomination(testData: any){
         await this.page.getByLabel('Name of Nominated Employee').fill(testData.nameOfNominatedEmployee);
         await this.page.getByLabel('Description').fill(testData.description);
+        await this.page.getByRole('button', { name: 'Submit' }).click();
     }
 }

@@ -6,7 +6,7 @@
         "TabElements": 5,
         "TabRows": 4,
         "TabRow0": ["Program Name", "Number of Transaction(s)", "Limit", "Total Match Amount", "Balance"],
-        "TabRow1": ["Employee Giving","$2,000.00","$1,873.00","x", "x"],
+        "TabRow1": ["Employee Matching Gift Program","$2,000.00","$1,873.00","x", "x"],
         "TabRow2": ["Credit Card Match", "2", "$52.00","x", "x"],
         "TabRow3": ["Request a Match for a Previous Donation", "2", "$50.00","x", "x"]
     },

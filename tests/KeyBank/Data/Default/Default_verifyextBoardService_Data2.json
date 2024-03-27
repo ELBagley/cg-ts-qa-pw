@@ -1,0 +1,39 @@
+{ 
+     "Portlet1": {
+        "PortletReference": "Board Service Memberships",
+        "Portlet1NumRows": 1,
+        "Portlet1Row1": ["No results found","x","x","x"]
+    },
+    "Portlet2": {
+        "PortletReference": "Board Service Recorded Hours",
+        "PortletNumRows": 1,
+        "PortletRow1": ["No results found","x","x","x"]
+    },
+    "Portlet3": {
+        "PortletReference": "Board Service Matching Gifts History",
+        "PortletNumRows": 1,
+        "PortletRow1": ["No results found","x","x","x"]
+    },
+    "Portlet4": {
+        "PortletReference": "Community Leadership Gift Balance", 
+        "PortletNumRows": 1,
+        "PortletRow1": ["Board Service - Community Leadership Gift", "0", "$2,000.00|0", "$0.00", "$2,000.00|1"]
+    },
+    "Portlet5": {
+        "PortletReference": "My Nominations",
+        "PortletNumRows": 0,
+        "PortletRow1": ["x"]
+    },
+    "Portlet6": {
+        "PortletReference": "Community Leadership Gift",
+        "message": "Volunteer to become eligible for a volunteer match!",
+        "span1Organization": "",
+        "span1Hours": "",
+        "span2Organization": "",
+        "span2Hours": "",
+        "redeemableAmount": "$0.00",
+        "redeemHours": "0",
+        "redeemedAmount": "$0.00",
+        "hoursLogged": "0"
+    }
+}

@@ -11,6 +11,7 @@ const GivingLocators = JSON.parse(JSON.stringify(require("./Data/Giving_Locators
 const UWGivingLocators = JSON.parse(JSON.stringify(require("./Data/UWGiving_Locators.json")));
 const BoardServiceLocators = JSON.parse(JSON.stringify(require("./Data/Boardservice_Locators.json")));
 const ManageEventsLocators = JSON.parse(JSON.stringify(require("./Data/ManageEvents_Locators.json")));
+
 const Test1_GivingData = JSON.parse(JSON.stringify(require('./Data/Test1_UnitedWay/Test1_verifyextGiving_Data.json')));
 const Test1_UWGivingData = JSON.parse(JSON.stringify(require('./Data/Test1_UnitedWay/Test1_verifyextUWGiving_Data.json')));
 const Test1_BoardServiceData = JSON.parse(JSON.stringify(require('./Data/Test1_UnitedWay/Test1_verifyextBoardService_Data.json')));
@@ -50,7 +51,6 @@ test.describe('Create initial data for new execution of tests',() => {
         await pm.useOrganizationSearchPage().selectOrganization(Test1_payrollDeductionOT)
         await pm.usePayrollDeductionPage().makePayrollDeductionOneTime(Test1_payrollDeductionOT)
         await pm.useOrganizationSearchPage().selectCheckout()
-        await pm.useOrganizationSummaryPage().completeReview(Test1_payrollDeductionOT)
         await pm.useReviewInformationPage().completeReview()
         await pm.useSubmissionSuccessfulPage().selectReturnToHome()
     })
@@ -61,7 +61,6 @@ test.describe('Create initial data for new execution of tests',() => {
         await pm.useOrganizationSearchPage().selectOrganization(Test1_payrollDeductionR)
         await pm.usePayrollDeductionPage().makePayrollDeductionRecurring(Test1_payrollDeductionR)
         await pm.useOrganizationSearchPage().selectCheckout()
-        await pm.useOrganizationSummaryPage().completeReview(Test1_payrollDeductionR)
         await pm.useReviewInformationPage().completeReview()
         await pm.useSubmissionSuccessfulPage().selectReturnToHome()
     })
@@ -79,14 +78,15 @@ test.describe('Create initial data for new execution of tests',() => {
     test ('United Way Data Verification of United Way Giving page', async ({page})=>{
         const pm = new extPageManager(page)
         await pm.useUWGivingPage().examinePortletTab("United Way - Give Again",Test1_UWGivingData, UWGivingLocators)
+        await pm.useUWGivingPage().examinePortletTab("United Way Matching Gifts History",Test1_UWGivingData, UWGivingLocators)
         await pm.useUWGivingPage().examinePortletTab("United Way Credit Card Transactions",Test1_UWGivingData, UWGivingLocators)
         await pm.useUWGivingPage().examinePortletTab("Payroll Contributions",Test1_UWGivingData, UWGivingLocators)
     })
     test ('United Way Data Verification of Board Service page', async ({page})=>{
         const pm = new extPageManager(page)
-        await pm.useBoardServicePage().examinePortletTab("BS Memberships",Test1_BoardServiceData, BoardServiceLocators)
-        await pm.useBoardServicePage().examinePortletTab("BS Recorded Hours",Test1_BoardServiceData, BoardServiceLocators)
-        await pm.useBoardServicePage().examinePortletTab("BS Matching Gifts",Test1_BoardServiceData, BoardServiceLocators)
+        await pm.useBoardServicePage().examinePortletTab("Board Service Memberships",Test1_BoardServiceData, BoardServiceLocators)
+        await pm.useBoardServicePage().examinePortletTab("Board Service Recorded Hours",Test1_BoardServiceData, BoardServiceLocators)
+        await pm.useBoardServicePage().examinePortletTab("Board Service Matching Gifts History",Test1_BoardServiceData, BoardServiceLocators)
         await pm.useBoardServicePage().examinePortletTab("Community Leadership Gift Balance",Test1_BoardServiceData, BoardServiceLocators)     
         await pm.useBoardServicePage().examinePortletTab("My Nominations",Test1_BoardServiceData, BoardServiceLocators)
         await pm.useBoardServicePage().examinePortletTab("Dollars For Doers",Test1_BoardServiceData, BoardServiceLocators)

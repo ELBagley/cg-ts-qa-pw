@@ -1,6 +1,6 @@
 { 
     "NumTabs": 6,
-    "TabArray": ["Board Service Membership", "Board Service Recorded Hours", "Board Service Matching Gifts", "Community Leadership Gift Balance", "My Nominations", "Dollars for Doers"],
+    "TabArray": ["Board Service Membership", "Board Service Recorded Hours", "Board Service Matching Gifts History", "Community Leadership Gift Balance", "My Nominations", "Dollars for Doers"],
     "Board Service Membership": {
         "TabType": 1002,
         "TabElements": 4,
@@ -18,7 +18,7 @@
         "TabRow1": ["RED CROSS ELEMENTARY PTO INC", "Board Service Log Hours", "10 hours on ", "You have successfully recorded your hours!"],
         "TabRow2": ["1 HEART 1 MISSION",            "Board Service Log Hours",  "3 hours on ", "You have successfully recorded your hours!"]
     },
-    "Board Service Matching GiftsEvents I Created": {
+    "Board Service Matching Gifts History": {
         "TabType": 1002,
         "TabElements": 4,
         "TabRows": 2,

@@ -1,6 +1,6 @@
 { 
     "NumTabs": 6,
-    "TabArray": ["Board Service Memberships", "Board Service Recorded Hours", "Board Service Matching Gifts", "Community Leadership Gift Balance", "My Nominations", "Dollars for Doers"],
+    "TabArray": ["Board Service Memberships", "Board Service Recorded Hours", "Board Service Matching Gifts History", "Community Leadership Gift Balance", "My Nominations", "Dollars for Doers"],
     "Board Service Memberships": {
         "TabType": 1002,
         "TabElements": 4,
@@ -16,7 +16,7 @@
         "TabRow0": ["Organization Information", "Type", "Description", "Status"],
         "TabRow1": ["No results found","x","x","x"]
     },
-    "Board Service Matching Gifts": {
+    "Board Service Matching Gifts History": {
         "TabType": 1002,
         "TabElements": 4,
         "TabRows": 2,
@@ -37,7 +37,7 @@
         "TabRow0": ["x"],
         "TabRow1": ["x"]
     },
-    "Dollars for Doers": {
+    "Community Leadership Gift": {
         "TabType": 4012,
         "message": "Volunteer to become eligible for a volunteer match!",
         "span1Organization": "",

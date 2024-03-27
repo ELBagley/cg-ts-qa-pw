@@ -1,18 +1,22 @@
 {
-    "Board Service Menmerships": {
+    "Portlet1": {
+        "PortletReference": "Board Service Memberships",
         "TableLocator": "",
         "Row0Locators": [""]
     },
-    "Board Service Recorded Hours": {   
+    "Portlet2": {
+        "PortletReference": "Board Service Recorded Hours",  
         "TableLocator": "",
         "Row0Locators": ""
     },
-    "Board Service Matching Gifts": {
+    "Portlet3": {
+        "PortletReference": "Board Service Matching Gifts History",
         "TabLocator": "",
         "TabRow0":  ["#span-tab-552840","#span-tab-551934","#span-tab-550584","#span-tab-550604","#span-tab-550582"],  
         "Row0": ""
     },
-    "Community LeaderShip Gift Balance": {
+    "Portlet4": {
+        "PortletReference": "Community Leadership Gift Balance", 
         "TabLocator":"",
         "TabRow0":  ["","", "", ""]  
     }

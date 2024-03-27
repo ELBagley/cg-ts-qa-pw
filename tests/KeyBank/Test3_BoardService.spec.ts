@@ -2,9 +2,9 @@ import { test } from "@playwright/test"
 import { extPageManager }  from "./Page-Objects/extPageManagerPO"
 
 // ADD DATA
-const Test31_MembershipData = JSON.parse(JSON.stringify(require('./Data/Test3_BoardService/Test3_FirstMembershipData.json')));
-const Test32_MembershipOrgData = JSON.parse(JSON.stringify(require('./Data/Test3_BoardService/Test3_SecondMembershipData.json')));
-
+const Test3_FirstMembershipData = JSON.parse(JSON.stringify(require('./Data/Test3_BoardService/Test3_FirstMembershipData.json')));
+const Test3_SecondMembershipData = JSON.parse(JSON.stringify(require('./Data/Test3_BoardService/Test3_SecondMembershipData.json')));
+const Test3_ThirdMembershipData = JSON.parse(JSON.stringify(require('./Data/Test3_BoardService/Test3_ThirdMembershipData.json')));
 // VERIFY Locators
 const HomeLocators = JSON.parse(JSON.stringify(require("./Data/Home_Locators.json")));
 const GivingLocators = JSON.parse(JSON.stringify(require("./Data/Giving_Locators.json")));
@@ -12,11 +12,11 @@ const UWGivingLocators = JSON.parse(JSON.stringify(require("./Data/UWGiving_Loca
 const BoardServiceLocators = JSON.parse(JSON.stringify(require("./Data/Boardservice_Locators.json")));
 const ManageEventsLocators = JSON.parse(JSON.stringify(require("./Data/ManageEvents_Locators.json")));
 //Verification Data
-const Test3_GivingData = JSON.parse(JSON.stringify(require('./Data/Test3_BoardService/Test3_verifyextGiving_Data.json')));
-const Test3_UWGivingData = JSON.parse(JSON.stringify(require('./Data/Test3_BoardService/Test3_verifyextUWGiving_Data.json')));
-const Test3_BoardServiceData = JSON.parse(JSON.stringify(require('./Data/Test3_BoardService/Test3_verifyextBoardService_Data.json')));
-const Test3_HomeData = JSON.parse(JSON.stringify(require('./Data/Test3_BoardService/Test3_verifyextHome_Data.json')));
-const Test3_ManageEventsData = JSON.parse(JSON.stringify(require('./Data/Test3_BoardService/Test3_verifyextManageEvents_Data.json')));
+const Test3_GivingData = JSON.parse(JSON.stringify(require('./Data/Test3_BoardService/Test31_verifyextGiving_Data.json')));
+const Test3_UWGivingData = JSON.parse(JSON.stringify(require('./Data/Test3_BoardService/Test31_verifyextUWGiving_Data.json')));
+const Test3_BoardServiceData = JSON.parse(JSON.stringify(require('./Data/Test3_BoardService/Test31_verifyextBoardService_Data.json')));
+const Test3_HomeData = JSON.parse(JSON.stringify(require('./Data/Test3_BoardService/Test31_verifyextHome_Data.json')));
+const Test3_ManageEventsData = JSON.parse(JSON.stringify(require('./Data/Test3_BoardService/Test31_verifyextManageEvents_Data.json')));
     /*
     96924 Donate Now Via Credit Card One Time or Recurring, all employees
     96928 Credit Card Match 1:1, all employees
@@ -37,14 +37,33 @@ test.describe('Create initial data for new execution of tests',() => {
         const pm = new extPageManager(page)
         await pm.useBoardServicePage().navigateToBoardServicePage()
         // Repeat for each add a donation
-        await pm.useBoardServicePage().createBoardServiceMembership(Test31_MembershipData)
-        await pm.useOrganizationSearchPage().selectOrganization(Test31_MembershipData)
-        await pm.useBoardServiceMembershipInformationPage().submitBoardServiceMemberhip(Test31_MembershipData)
-        await pm.useReviewInformationPage().fillReviewInformation(Test31_MembershipData)
+        await pm.useBoardServicePage().createBoardServiceMembership()
+        await pm.useOrganizationSearchPage().selectOrganization(Test3_FirstMembershipData)
+        await pm.useBoardServiceMembershipInformationPage().submitBoardServiceMemberhip(Test3_FirstMembershipData)
+        await pm.useReviewInformationPage().fillReviewInformation(Test3_FirstMembershipData)
+        await pm.useSubmissionSuccessfulPage().selectReturnToHome()
+    })
+    test ('Test Three - Create Second Board Membership', async ({page}) => {
+        const pm = new extPageManager(page)
+        await pm.useBoardServicePage().createBoardServiceMembership()
+        await pm.useOrganizationSearchPage().selectOrganization(Test3_SecondMembershipData)
+        await pm.useBoardServiceMembershipInformationPage().submitBoardServiceMemberhip(Test3_SecondMembershipData)
+        await pm.useReviewInformationPage().fillReviewInformation(Test3_SecondMembershipData)
+        await pm.useSubmissionSuccessfulPage().selectReturnToHome()
+    })
+    test ('Test Three - Create Third Board Membership', async ({page}) => {
+        const pm = new extPageManager(page)
+        await pm.useBoardServicePage().createBoardServiceMembership()
+        await pm.useOrganizationSearchPage().selectOrganization(Test3_ThirdMembershipData)
+        await pm.useBoardServiceMembershipInformationPage().submitBoardServiceMemberhip(Test3_ThirdMembershipData)
+        await pm.useReviewInformationPage().fillReviewInformation(Test3_ThirdMembershipData)
         await pm.useSubmissionSuccessfulPage().selectReturnToHome()
     })
 
-
+    test ('approve all of the memberships', async ({page}) =>{
+        await page.pause();
+    })
+    
     // Add hours to each of the four member organizations
 
 

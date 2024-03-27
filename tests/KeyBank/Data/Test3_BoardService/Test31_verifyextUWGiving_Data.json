@@ -1,7 +1,7 @@
 { 
     "NumTabs": 4,
-    "TabArray": ["United Way Match Balance", "United Way Credit Card Transactions", "Payroll Contributions", "United Way - Give Again"],
-    "Manage Completed Events": {
+    "TabArray": ["United Way Matching Gifts History", "United Way Credit Card Transactions", "Payroll Contributions", "United Way - Give Again"],
+    "United Way Matching Gifts History": {
         "TabType": 1006,
         "TabElements": 5,
         "TabRows": 4,

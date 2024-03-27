@@ -1,11 +1,11 @@
 import { Page, expect } from "@playwright/test";
 
 import { extBoardService } from "./extBoardServicePO"
-import { BoardServiceMembershipInformation } from "./actBoardServiceMembershipInformation"
+import { BoardServiceMembershipInformation } from "./actBoardServiceMembershipInformationPO"
 import { CreditCardDonation } from "./actCreditCardDonationPO"
 import { extDisasterRelief } from "./extDisasterReliefPO"
 import { extEmployeeNomination } from "./extEmployeeNominationPO"
-import { DonorMatching } from "./actDonorMatchingGiftPO"
+//import { DonorMatching } from "./actDonorMatchingGiftPO"
 import { eventInformation } from "./actEventInformationPO"
 import { extGiving } from "./extGivingPO"
 import { GivingReview } from "./xxxGivingReviewPO"
@@ -25,10 +25,11 @@ import { extVolunteer } from "./extVolunteerPO"
 
 export class extPageManager{
     private readonly extBoardServicePage: extBoardService
+    //private readonly extBoardServiceReferences: typeof BoardServicePortletReferences
     private readonly BoardServiceMembershipInformationPage: BoardServiceMembershipInformation
     private readonly CreditCardDonationPage: CreditCardDonation
     private readonly extDisasterReliefPage: extDisasterRelief
-    private readonly DonorMatchingPage: DonorMatching
+    //private readonly DonorMatchingPage: DonorMatching
     private readonly EmployeeNominationPage: extEmployeeNomination
     private readonly EventInformationPage: eventInformation
     private readonly extGivingPage: extGiving
@@ -54,7 +55,7 @@ export class extPageManager{
         this.BoardServiceMembershipInformationPage = new BoardServiceMembershipInformation (this.page)
         this.CreditCardDonationPage = new CreditCardDonation (this.page)
         this.extDisasterReliefPage = new extDisasterRelief (this.page)
-        this.DonorMatchingPage = new DonorMatching (this.page)
+        //this.DonorMatchingPage = new DonorMatching (this.page)
         this.EmployeeNominationPage = new extEmployeeNomination(this.page)
         this.EventInformationPage = new eventInformation (this.page)
         this.extGivingPage = new extGiving(this.page)
@@ -85,9 +86,9 @@ export class extPageManager{
     useDisasterReliefPage(){
         return this.extDisasterReliefPage
     }
-    useDonorMatchingPage(){
-        return this.DonorMatchingPage
-    }
+    //useDonorMatchingPage(){
+    //    return this.DonorMatchingPage
+    //}
     useEmployeeNominationPage(){
         return this.EmployeeNominationPage
     }

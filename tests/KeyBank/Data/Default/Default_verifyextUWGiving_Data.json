@@ -1,14 +1,12 @@
 { 
     "NumTabs": 4,
-    "TabArray": ["United Way Match Balance", "United Way Credit Card Transactions", "Payroll Contributions", "United Way - Give Again"],
-    "United Way Match Balance": {
+    "TabArray": ["United Way Matching Gifts History", "United Way Credit Card Transactions", "Payroll Contributions", "United Way - Give Again"],
+    "United Way Matching Gifts History": {
         "TabType": 1006,
-        "TabElements": 5,
-        "TabRows": 4,
-        "TabRow0": ["Program Name", "Number of Transaction(s)", "Limit", "Total Match Amount", "Balance"],
-        "TabRow1": ["United Way - CC Match",    "0|0", "$99,999,999.99|0","$0.00|0","$99,999,999.99|1"],
-        "TabRow2": ["United Way Payroll Match", "0|1", "$99,999,999.99|2","$0.00|1", "$99,999,999.99|3"],
-        "TabRow3": ["United Way-Request a Match for a Previous Donation", "0|2", "$99,999,999.99|4","$0.00|2", "$99,999,999.99|5"]
+        "TabElements": 4,
+        "TabRows": 2,
+        "TabRow0": ["Organization Information", "Description", "Type","Status"],
+        "TabRow1": ["No results found","x", "x", "x"]
     },
     "United Way Credit Card Transactions": {
         "TabType": 1002,

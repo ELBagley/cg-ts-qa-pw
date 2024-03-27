@@ -1,13 +1,15 @@
 import { test } from "@playwright/test"
 import { extPageManager }  from "./Page-Objects/extPageManagerPO"
 
-
 // VERIFY DATA PORTLETS
 const HomeLocators = JSON.parse(JSON.stringify(require('./Data/Home_Locators.json')));
 const GivingLocators = JSON.parse(JSON.stringify(require("./Data/Giving_Locators.json")));
 const UWGivingLocators = JSON.parse(JSON.stringify(require("./Data/UWGiving_Locators.json")));
 const BoardServiceLocators = JSON.parse(JSON.stringify(require("./Data/BoardService_Locators.json")));
 const ManageEventsLocators = JSON.parse(JSON.stringify(require("./Data/ManageEvents_Locators.json")));
+
+//Page specifica
+const BoardServicePageReferences = require('../KeyBank/Page-Objects/BoardServicePageReferences')
 
 // VERIFY DATA
 const Default_GivingData = JSON.parse(JSON.stringify(require('./Data/Default/Default_verifyextGiving_Data.json')));
@@ -30,6 +32,7 @@ test.describe('Verify initial configuration',() => {
     test ('Default Data Verification of Giving page portlets', async ({page})=>{
         const pm = new extPageManager(page)
         await pm.useGivingPage().navigateToGivingPage()
+        //await pm.useBoardServicePage().
         await pm.useGivingPage().examinePortletTab("Matching Gifts Balance",Default_GivingData, GivingLocators)
         await pm.useGivingPage().examinePortletTab("Matching Gifts History",Default_GivingData, GivingLocators)
         await pm.useGivingPage().examinePortletTab("Credit Card Transactions",Default_GivingData, GivingLocators)
@@ -39,19 +42,20 @@ test.describe('Verify initial configuration',() => {
         const pm = new extPageManager(page)
         await pm.useUWGivingPage().navigateToUWGivingPage()
         await pm.useUWGivingPage().examinePortletTab("United Way - Give Again",Default_UWGivingData, UWGivingLocators)
-        await pm.useUWGivingPage().examinePortletTab("United Way Match Balance",Default_UWGivingData, UWGivingLocators)
+        await pm.useUWGivingPage().examinePortletTab("United Way Matching Gifts History",Default_UWGivingData, UWGivingLocators)
         await pm.useUWGivingPage().examinePortletTab("United Way Credit Card Transactions",Default_UWGivingData, UWGivingLocators)
         await pm.useUWGivingPage().examinePortletTab("Payroll Contributions",Default_UWGivingData, UWGivingLocators)
      })
     test ('Default Data Verification of Board Service page portlets', async ({page})=>{
         const pm = new extPageManager(page)
         await pm.useBoardServicePage().navigateToBoardServicePage()
-        await pm.useBoardServicePage().examinePortletTab("Board Service Memberships",Default_BoardServiceData, BoardServiceLocators)
-        await pm.useBoardServicePage().examinePortletTab("Board Service Recorded Hours",Default_BoardServiceData, BoardServiceLocators)
-        await pm.useBoardServicePage().examinePortletTab("Board Service Matching Gifts",Default_BoardServiceData, BoardServiceLocators)
-        await pm.useBoardServicePage().examinePortletTab("Community Leadership Gift Balance",Default_BoardServiceData, BoardServiceLocators)     
-        await pm.useBoardServicePage().examinePortletTab("My Nominations",Default_BoardServiceData, BoardServiceLocators)
-        await pm.useBoardServicePage().examinePortletTab("Dollars For Doers",Default_BoardServiceData, BoardServiceLocators)
+        // using Page-Objects/BoardServicePageReferences.ts to hold all string references for the page
+        await pm.useBoardServicePage().examinePortletTab(BoardServicePageReferences,"Portlet1",Default_BoardServiceData, BoardServiceLocators)
+        await pm.useBoardServicePage().examinePortletTab(BoardServicePageReferences,"Portlet2",Default_BoardServiceData, BoardServiceLocators)
+        await pm.useBoardServicePage().examinePortletTab(BoardServicePageReferences,"Portlet3",Default_BoardServiceData, BoardServiceLocators)
+        await pm.useBoardServicePage().examinePortletTab(BoardServicePageReferences,"Portlet4",Default_BoardServiceData, BoardServiceLocators)     
+        await pm.useBoardServicePage().examinePortletTab(BoardServicePageReferences,"Portlet5",Default_BoardServiceData, BoardServiceLocators)
+        await pm.useBoardServicePage().examinePortletTab(BoardServicePageReferences,"Portlet6",Default_BoardServiceData, BoardServiceLocators)
     })
     test ('Default Data Verification of Manage Events page portlets', async ({page})=>{
         const pm = new extPageManager(page)

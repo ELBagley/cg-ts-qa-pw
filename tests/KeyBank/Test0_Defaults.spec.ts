@@ -9,12 +9,12 @@ const BoardServiceLocators = JSON.parse(JSON.stringify(require("./Data/BoardServ
 const ManageEventsLocators = JSON.parse(JSON.stringify(require("./Data/ManageEvents_Locators.json")));
 
 //Page specifica
-const BoardServicePageReferences = require('../KeyBank/Page-Objects/BoardServicePageReferences')
+const BoardServicePageReferences = JSON.parse(JSON.stringify(require('../KeyBank/Page-Objects/BoardServicePageReferences')));
 
 // VERIFY DATA
 const Default_GivingData = JSON.parse(JSON.stringify(require('./Data/Default/Default_verifyextGiving_Data.json')));
 const Default_UWGivingData = JSON.parse(JSON.stringify(require('./Data/Default/Default_verifyextUWGiving_Data.json')));
-const Default_BoardServiceData = JSON.parse(JSON.stringify(require('./Data/Default/Default_verifyextBoardService_Data.json')));
+const Default_BoardServiceData = JSON.parse(JSON.stringify(require('./Data/Default/Default_verifyextBoardService_Data2.json')));
 const Default_HomeData = JSON.parse(JSON.stringify(require('./Data/Default/Default_verifyextHome_Data.json')));
 const Default_ManageEventsData = JSON.parse(JSON.stringify(require('./Data/Default/Default_verifyextManageEvents_Data.json')));
 
@@ -50,12 +50,14 @@ test.describe('Verify initial configuration',() => {
         const pm = new extPageManager(page)
         await pm.useBoardServicePage().navigateToBoardServicePage()
         // using Page-Objects/BoardServicePageReferences.ts to hold all string references for the page
-        await pm.useBoardServicePage().examinePortletTab(BoardServicePageReferences,"Portlet1",Default_BoardServiceData, BoardServiceLocators)
+        await pm.useBoardServicePage().examinePortletTab(BoardServicePageReferences,Default_BoardServiceData, BoardServiceLocators)
+        /*
         await pm.useBoardServicePage().examinePortletTab(BoardServicePageReferences,"Portlet2",Default_BoardServiceData, BoardServiceLocators)
         await pm.useBoardServicePage().examinePortletTab(BoardServicePageReferences,"Portlet3",Default_BoardServiceData, BoardServiceLocators)
         await pm.useBoardServicePage().examinePortletTab(BoardServicePageReferences,"Portlet4",Default_BoardServiceData, BoardServiceLocators)     
         await pm.useBoardServicePage().examinePortletTab(BoardServicePageReferences,"Portlet5",Default_BoardServiceData, BoardServiceLocators)
         await pm.useBoardServicePage().examinePortletTab(BoardServicePageReferences,"Portlet6",Default_BoardServiceData, BoardServiceLocators)
+        */
     })
     test ('Default Data Verification of Manage Events page portlets', async ({page})=>{
         const pm = new extPageManager(page)

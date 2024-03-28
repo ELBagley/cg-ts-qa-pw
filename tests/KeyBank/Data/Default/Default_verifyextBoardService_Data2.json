@@ -1,8 +1,8 @@
 { 
      "Portlet1": {
         "PortletReference": "Board Service Memberships",
-        "Portlet1NumRows": 1,
-        "Portlet1Row1": ["No results found","x","x","x"]
+        "PortletNumRows": 1,
+        "PortletRow1": ["No results found","x","x","x"]
     },
     "Portlet2": {
         "PortletReference": "Board Service Recorded Hours",

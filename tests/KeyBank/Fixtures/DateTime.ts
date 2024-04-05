@@ -1,9 +1,9 @@
 export class DateHelper {
-    public static today (){
+    public static Today (){
         let today = new Date()
         return today.toString()
     }
-    public static tomorrow(){
+    public static Tomorrow(){
         let today = new Date()
         let tomorrow = new Date(); 
         tomorrow.setDate(today.getDate() + 1)
@@ -12,7 +12,13 @@ export class DateHelper {
     public static OneWeekFromToday(){
         let today = new Date()
         let OneWeekFromToday = new Date('dd/mm/yyyy')
-        OneWeekFromToday.setDate(today.getDate() -1)
+        OneWeekFromToday.setDate(today.getDate() + 7)
+        return OneWeekFromToday.toString()
+    }
+    public static OneWeekFromTodayPlusOneDay(){
+        let today = new Date()
+        let OneWeekFromToday = new Date('dd/mm/yyyy')
+        OneWeekFromToday.setDate(today.getDate() + 8)
         return OneWeekFromToday.toString()
     }
     public static PreviousWeekFromToday(){

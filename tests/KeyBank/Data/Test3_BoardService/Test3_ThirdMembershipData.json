@@ -1,7 +1,7 @@
 {
     "organizationName": "",
-    "BoardServiceStartDate": "03/15/2024",
-    "BoardServiceEndDate": "03/15/2025",
+    "BoardServiceStartDate": "Today",
+    "BoardServiceEndDate": "OneDayFromToday",
     "BoardServiceDocument1": "",
     "BoardServiceDocument2": "",
     "description": "Third Board service organization member"

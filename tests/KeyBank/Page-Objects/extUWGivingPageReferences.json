@@ -1,22 +1,20 @@
 { 
     "NumTabs": 4,
     "TabArray": ["United Way Matching Gifts History", "United Way Credit Card Transactions", "Payroll Contributions", "United Way - Give Again"],
-    "United Way Matching Gifts History": {
+    "Portlet1": {
+        "portletTitle": "United Way Matching Gifts History",
         "TabType": 1006,
         "TabElements": 4,
-        "TabRows": 2,
-        "TabRow0": ["Organization Information", "Description", "Type","Status"],
-        "TabRow1": ["No results found","x", "x", "x"]
+        "TabRow0": ["Organization Information", "Description", "Type","Status"]
     },
-    "United Way Credit Card Transactions": {
+    "Portlet2": {
+        "PortletTitle": "United Way Credit Card Transactions",
         "TabType": 1002,
         "TabElements": 3,
-        "TabRows": 2,
-        "TabAction":"none",
-        "TabRow0": ["Organization Information", "Description", "Status"],
-        "TabRow1": ["No results found","x", "x"]
+        "TabRow0": ["Organization Information", "Description", "Status"]
         },
-    "Payroll Contributions": {
+    "Portlet3": {
+        "PortletTitle": "Payroll Contributions",
         "TabType": 1010,
         "TabElements": 5,
         "TabRows": 2,
@@ -24,7 +22,8 @@
         "TabRow0": ["Action", "Organization Information", "Type", "Description", "Status"],
         "TabRow1": ["No results found","x","x","x","x"]    
     },
-    "United Way - Give Again": {
+    "Portlet4": {
+        "PortletTitle": "United Way - Give Again",
         "TabType": 4014,
         "TabElements": 0,
         "numText": 0,

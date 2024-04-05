@@ -1,0 +1,28 @@
+{
+    "numPortlets": 4,
+    "Portlet1": {
+        "PortletTitle": "Matching Gifts Balance",
+        "PortletType": 1006,
+        "PortletElements": 5,
+        "PortletHeader": ["Program Name", "Number of Transaction(s)", "Limit", "Total Match Amount", "Balance"]
+    },
+    "Portlet2": {
+        "PortletTitle": "Matching Gifts History",
+        "PortletType": 1002,
+        "PortletElements": 4,
+        "PortletHeader": ["Organization Information", "Type", "Description", "Status"]
+    },
+    "Portlet3": {
+        "PortletTitle": "Credit Card Transactions",
+        "PortletType": 1002,
+        "PortletElements": 4,
+        "PortletHeader": ["Organization Information", "Type", "Description", "Status"]
+    },
+    "Portlet4": {
+        "PortletTitle": "My Nominations",
+        "PortletType": 1002,
+        "PortletElements": 0,
+        "PortletHeader": ["", "", "", ""]
+    }
+}
+

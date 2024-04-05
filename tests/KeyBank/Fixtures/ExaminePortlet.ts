@@ -62,6 +62,10 @@ export class examinePortletHelper {
       }
       await this.page.waitForTimeout(1000);
 
+
+      // TODO need to check data for test to verify that the header is presented
+      // The Page-Object JSON heading must reflect if there was a table presented what would it look like
+
       // HISTORY Portlet
       //   Current Payroll Contribution 1019
       //   Donation History 1002
@@ -69,7 +73,7 @@ export class examinePortletHelper {
         
         //need to verify the headings first
         for(let curColumn = 0; curColumn < curPagePortletData.PortletElements; curColumn++){ //header's using array length
-          if (curPagePortletData.PortletElements != 0){ // there is no table for the portlet
+          if ((curPagePortletData.PortletElements != 0) && (curPagePortletData.PortletNumRows != 0)){ // there is no table for the portlet
             await expect(this.page.getByRole('cell', {name: curPagePortletData.PortletHeader[curColumn], exact: true})).toBeVisible();
           }
         }
@@ -103,37 +107,37 @@ export class examinePortletHelper {
       // BALANCE Portlet
       //   Matching Gift Balance
       else if (curPagePortletData.PortletType == 1006){ 
-        for(let currentRow = 0; curPagePortletData.PortletElements; currentRow++){ // columns
-          for(let currentElement = 0; currentElement < curPortletTestData.TabElements; currentElement++){ //rows
-            if((currentRow == 0) && (curPortletTestData.PortletRow0[currentElement] != "x")){ 
-              await expect(this.page.getByRole('cell', {name: curPortletTestData.PortletRow0[currentElement],exact: true})).toBeVisible();
+        for(let curColumn = 0; ((curColumn < curPagePortletData.PortletElements) && (curPortletTestData.PortletNumRows != 0)); curColumn++){ //columns using array length
+          for(let curRow = 0; curRow <= curPortletTestData.PortletNumRows; curRow++){ //rows
+            if((curColumn == 0) && (curPortletTestData.PortletRow0[curColumn] != "x")){ 
+              await expect(this.page.getByRole('cell', {name: curPortletTestData.PortletRow0[curColumn],exact: true})).toBeVisible();
             }
-            if((currentRow == 1) && (curPortletTestData.PortletRow1[currentElement] != "x")){
+            if((curColumn == 1) && (curPortletTestData.PortletRow1[curColumn] != "x")){
               // if the string contains a '|'
-              let curStringArray = curPortletTestData.PortletRow1[currentElement].split('|')
+              let curStringArray = curPortletTestData.PortletRow1[curColumn].split('|')
               if(curStringArray.length == 2){ 
                 await expect(this.page.getByRole('cell', {name: curStringArray[0],exact: true}).nth(curStringArray[1])).toBeVisible();
               }
               else{
-                await expect(this.page.getByRole('cell', {name: curPortletTestData.PortletRow1[currentElement],exact: true})).toBeVisible();
+                await expect(this.page.getByRole('cell', {name: curPortletTestData.PortletRow1[curColumn],exact: true})).toBeVisible();
               }
             }
-            if((currentRow == 2) && (curPortletTestData.PortletRow2[currentElement] != "x")){
-              let curStringArray = curPortletTestData.PortletRow2[currentElement].split('|')
+            if((curColumn == 2) && (curPortletTestData.PortletRow2[curColumn] != "x")){
+              let curStringArray = curPortletTestData.PortletRow2[curColumn].split('|')
               if(curStringArray.length == 2){ 
                 await expect(this.page.getByRole('cell', {name: curStringArray[0],exact: true}).nth(curStringArray[1])).toBeVisible();
               }
               else{
-                await expect(this.page.getByRole('cell', {name: curPortletTestData.PortletRow2[currentElement],exact: true})).toBeVisible();
+                await expect(this.page.getByRole('cell', {name: curPortletTestData.PortletRow2[curColumn],exact: true})).toBeVisible();
               }
             }
-            if((currentRow == 3) && (curPortletTestData.PortletRow3[currentElement] != "x")){
-              let curStringArray = curPortletTestData.PortletRow3[currentElement].split('|')
+            if((curColumn == 3) && (curPortletTestData.PortletRow3[curColumn] != "x")){
+              let curStringArray = curPortletTestData.PortletRow3[curColumn].split('|')
               if(curStringArray.length == 2){ 
                 await expect(this.page.getByRole('cell', {name: curStringArray[0],exact: true}).nth(curStringArray[1])).toBeVisible();
               }
               else{
-                await expect(this.page.getByRole('cell', {name: curPortletTestData.PortletRow3[currentElement],exact: true})).toBeVisible();
+                await expect(this.page.getByRole('cell', {name: curPortletTestData.PortletRow3[curColumn],exact: true})).toBeVisible();
               }          
             }
           }
@@ -142,7 +146,7 @@ export class examinePortletHelper {
 
       // DOLLARS FOR DOERS 
       else if (curPagePortletData.PortletType == 4012){
-        //TODO: if "Details" select it to expand more information
+        //TODO: if "Details" select it to expand more information. Details class is css-1eirz6y
         await this.page.waitForTimeout(5000);
         await this.page.getByText(curPortletTestData.message).click();
         if(curPortletTestData.span1Organization != ""){
@@ -162,24 +166,32 @@ export class examinePortletHelper {
         await this.page.getByText("Hours Logged").isVisible
         await this.page.getByText(curPortletTestData.hoursLogged).isVisible
       }
-      
+      else if (curPagePortletData.PortletType == 4012){
+        // class css-1eirz6y
+        await this.page.getByRole('button', { name: 'Details' }).click();
+        await this.page.getByText('RED CROSS ELEMENTARY PTO INC10 hours').click();
+        await this.page.getByText('HEART 1 MISSION3 hours').click();
+        await this.page.getByText('Total13 hours').click();
+        await this.page.getByText('RED CROSS ELEMENTARY PTO INC$500.00Total$').click();
+      }
+
       // EVENTS Portlet - Edit/Delete
       //   Unsubmitted Events I Created
       else if (curPagePortletData.PortletType == 1016){
         await this.page.waitForTimeout(5000);
-        for(let currentRow = 0; curPagePortletData.PortletHeader.lenght(); currentRow++){ //columns
-          for(let currentElement = 0; currentElement < curPortletTestData.TabElements; currentElement++){ //rows
+        for(let currentRow = 0; curPagePortletData.PortletHeader.length(); currentRow++){ //columns
+          for(let curColumn = 0; curColumn < curPortletTestData.TabElements; curColumn++){ //rows
             if(currentRow == 0){ 
-              await expect(this.page.getByRole('cell', {name: curPortletTestData.PortletRow0[currentElement],exact: true})).toBeVisible();
+              await expect(this.page.getByRole('cell', {name: curPortletTestData.PortletRow0[curColumn],exact: true})).toBeVisible();
             }
             if(currentRow == 1){
-              await expect(this.page.getByRole('cell', {name: curPortletTestData.PortletRow1[currentElement],exact: true})).toBeVisible();
+              await expect(this.page.getByRole('cell', {name: curPortletTestData.PortletRow1[curColumn],exact: true})).toBeVisible();
             }
             if(currentRow == 2){
-              await expect(this.page.getByRole('cell', {name: curPortletTestData.PortletRow2[currentElement],exact: true})).toBeVisible();
+              await expect(this.page.getByRole('cell', {name: curPortletTestData.PortletRow2[curColumn],exact: true})).toBeVisible();
             }
             if(currentRow == 3){
-              await expect(this.page.getByRole('cell', {name: curPortletTestData.PortletRow3[currentElement],exact: true})).toBeVisible();
+              await expect(this.page.getByRole('cell', {name: curPortletTestData.PortletRow3[curColumn],exact: true})).toBeVisible();
             }
           }
         }
@@ -195,7 +207,7 @@ export class examinePortletHelper {
         // 1: the order of rows positions the Summary row first in the list
         // 2: tests will only have one summary row
         for(let currentRow = 0; currentRow < curPagePortletData.PortletElements; currentRow++){
-          for(let currentElement = 0; currentElement < curPortletTestData.TabElements; currentElement++){
+          for(let curColumn = 0; curColumn < curPortletTestData.TabElements; curColumn++){
             if((curPortletTestData.TabAction == "open") && (expandedData == 0)){
               // select the cell with "View Occurrences" to expand the ongoing events
               await this.page.getByRole('link', {name: 'View Occurrences'}).click()
@@ -203,50 +215,50 @@ export class examinePortletHelper {
               expandedData = 1
             }
             if(currentRow == 0){ //headings
-              await expect(this.page.getByRole('cell', {name: curPortletTestData.PortletRow0[currentElement]})).toBeVisible();
+              await expect(this.page.getByRole('cell', {name: curPortletTestData.PortletRow0[curColumn]})).toBeVisible();
             }
-            if((currentRow == 1) && (curPortletTestData.PortletRow1[currentElement] != "x")){
+            if((currentRow == 1) && (curPortletTestData.PortletRow1[curColumn] != "x")){
               // attempt to understand where to find duplicates are in the table
               // split the contents of the string and where it is located in the table
-              let curStringArray = curPortletTestData.PortletRow1[currentElement].split('|')
+              let curStringArray = curPortletTestData.PortletRow1[curColumn].split('|')
               if(curStringArray.length == 2){ 
                 await expect(this.page.getByRole('cell', {name: curStringArray[0],exact: true}).nth(curStringArray[1])).toBeVisible();
               }
               else{
-                await expect(this.page.getByRole('cell', {name: curPortletTestData.PortletRow1[currentElement],exact: true})).toBeVisible();
+                await expect(this.page.getByRole('cell', {name: curPortletTestData.PortletRow1[curColumn],exact: true})).toBeVisible();
               }
             }
-            if((currentRow == 2) && (curPortletTestData.PortletRow2[currentElement] != "x")){
+            if((currentRow == 2) && (curPortletTestData.PortletRow2[curColumn] != "x")){
               // attempt to understand where to find duplicates are in the table
               // split the contents of the string and where it is located in the table
-              let curStringArray = curPortletTestData.PortletRow2[currentElement].split('|')
+              let curStringArray = curPortletTestData.PortletRow2[curColumn].split('|')
               if(curStringArray.length == 2){ 
                 await expect(this.page.getByRole('cell', {name: curStringArray[0],exact: true}).nth(curStringArray[1])).toBeVisible();
               }
               else{
-                await expect(this.page.getByRole('cell', {name: curPortletTestData.PortletRow2[currentElement],exact: true})).toBeVisible();
+                await expect(this.page.getByRole('cell', {name: curPortletTestData.PortletRow2[curColumn],exact: true})).toBeVisible();
               }
             }
-            if((currentRow == 3) && (curPortletTestData.PortletRow3[currentElement] != "x")){
+            if((currentRow == 3) && (curPortletTestData.PortletRow3[curColumn] != "x")){
               // attempt to understand where to find duplicates are in the table
               // split the contents of the string and where it is located in the table
-              let curStringArray = curPortletTestData.PortletRow3[currentElement].split('|')
+              let curStringArray = curPortletTestData.PortletRow3[curColumn].split('|')
               if(curStringArray.length == 2){ 
                 await expect(this.page.getByRole('cell', {name: curStringArray[0],exact: true}).nth(curStringArray[1])).toBeVisible();
               }
               else{
-                await expect(this.page.getByRole('cell', {name: curPortletTestData.PortletRow3[currentElement],exact: true})).toBeVisible();
+                await expect(this.page.getByRole('cell', {name: curPortletTestData.PortletRow3[curColumn],exact: true})).toBeVisible();
               }
             }
-            if((currentRow == 4) && (curPortletTestData.PortletRow4[currentElement] != "x")){
+            if((currentRow == 4) && (curPortletTestData.PortletRow4[curColumn] != "x")){
               // attempt to understand where to find duplicates are in the table
               // split the contents of the string and where it is located in the table
-              let curStringArray = curPortletTestData.PortletRow4[currentElement].split('|')
+              let curStringArray = curPortletTestData.PortletRow4[curColumn].split('|')
               if(curStringArray.length == 2){ 
                 await expect(this.page.getByRole('cell', {name: curStringArray[0],exact: true}).nth(curStringArray[1])).toBeVisible();
               }
               else{
-                await expect(this.page.getByRole('cell', {name: curPortletTestData.PortletRow4[currentElement],exact: true})).toBeVisible();
+                await expect(this.page.getByRole('cell', {name: curPortletTestData.PortletRow4[curColumn],exact: true})).toBeVisible();
               }
             }
           }

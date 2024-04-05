@@ -1,42 +1,32 @@
 { 
     "NumTabs": 6,
     "TabArray": ["Board Service Membership", "Board Service Recorded Hours", "Board Service Matching Gifts History", "Community Leadership Gift Balance", "My Nominations", "Dollars for Doers"],
-    "Board Service Membership": {
-        "TabType": 1002,
-        "TabElements": 4,
-        "TabRows":  4,
-        "TabRow0": ["Organization Information", "Type", "Description", "Status"],
+    "Portlet1": {
+        "PortletTitle": "Board Service Membership",
+        "TabRows":  3,
         "TabRow1": ["RED CROSS ELEMENTARY PTO INC",                 "Board Service Membership|0", "hours on|0", "You have successfully recorded your Board Service Membership|0"],
         "TabRow2": ["21ST CENTURY FUND FOR DELAWARES CHILDREN INC", "Board Service Membership|1", "hours on|1", "You have successfully recorded your Board Service Membership|1"],
         "TabRow3": ["AMERICAN NATIONAL RED CROSS",                  "Board Service Membership|2", "hours on|2", "You have successfully recorded your Board Service Membership|1"]
     },
-    "Board Service Recorded Hours": {
-        "TabType": 1002,
-        "TabElements": 4,
-        "TabRows": 3,
-        "TabRow0": ["Organization Information", "Type", "Description", "Status"],
+    "Portlet2": {
+        "PortletTitle": "Board Service Recorded Hours",
+        "TabRows": 2,
         "TabRow1": ["RED CROSS ELEMENTARY PTO INC", "Board Service Log Hours", "10 hours on ", "You have successfully recorded your hours!"],
         "TabRow2": ["1 HEART 1 MISSION",            "Board Service Log Hours",  "3 hours on ", "You have successfully recorded your hours!"]
     },
-    "Board Service Matching Gifts History": {
-        "TabType": 1002,
-        "TabElements": 4,
-        "TabRows": 2,
-        "TabRow0": ["Organization Information", "Type", "Description", "Status"],
+    "Portlet3": {
+        "PortletTitle": "Board Service Matching Gifts History",
+        "TabRows": 1,
         "TabRow1": ["RED CROSS ELEMENTARY PTO INC", "Board Service Matching Gifts", "25.00 USD on ", "You have successfully registered you Credit Card transaction"]
     },
-    "Community Leadership Gift Balance": {
-        "TabType": 1016,
-        "TabElements": 6,
-        "TabRows": 2,
-        "TabRow0": ["Program Name", "Number of Transaction(s)", "Limit", "Total Match Amount", "Balance"],
+    "Portlet4": {
+        "PortletTitle": "Community Leadership Gift Balance",
+        "TabRows": 1,
         "TabRow1": ["Board Service - Community Leadership Gift", "1", "$2,000.00", "$500.00", "$1,500.00"]
     },
-    "My Nominations": {
-        "TabType": 1002,
-        "TabElements": 0,
+    "Portlet5": {
+        "PortletTitle": "My Nominations",
         "TabRows": 0,
-        "TabRow0": ["x"],
         "TabRow1": ["x"]
     },
     "Dollars for Doers": {
@@ -49,6 +39,17 @@
         "redeemableAmount": "$500.00",
         "redeemHours": "3",
         "redeemedAmount": "$500.00",
-        "hoursLogged": "13"
+        "hoursLogged": "13",
+        "numDetails": 4,
+        "detailInformation1": "RED CROSS ELEMENTARY PTO INC10 hours",
+        "detailInformation2": "HEART 1 MISSION3 hours",   
+        "detailInformation3": "Total13 hours",
+        "detailInformation4": "RED CROSS ELEMENTARY PTO INC$500.00Total$", 
+        "detailInformation5": "",
+        "detailInformation6": "",
+        "detailInformation7": "",
+        "detailInformation8": "",
+        "detailInformation9": "",
+        "detailInformation10": ""
     }
 }

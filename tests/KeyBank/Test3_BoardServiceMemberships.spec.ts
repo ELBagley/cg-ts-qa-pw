@@ -2,9 +2,9 @@ import { test } from "@playwright/test"
 import { extPageManager }  from "./Page-Objects/extPageManagerPO"
 
 // ADD DATA
-const Test3_FirstMembershipData = JSON.parse(JSON.stringify(require('./Data/Test3_BoardService/Test3_FirstMembershipData.json')));
-const Test3_SecondMembershipData = JSON.parse(JSON.stringify(require('./Data/Test3_BoardService/Test3_SecondMembershipData.json')));
-const Test3_ThirdMembershipData = JSON.parse(JSON.stringify(require('./Data/Test3_BoardService/Test3_ThirdMembershipData.json')));
+const Test3_FirstMembershipData = JSON.parse(JSON.stringify(require('./Data/Test3_BoardService/Test3_addFirstMembershipData.json')));
+const Test3_SecondMembershipData = JSON.parse(JSON.stringify(require('./Data/Test3_BoardService/Test3_addSecondMembershipData.json')));
+const Test3_ThirdMembershipData = JSON.parse(JSON.stringify(require('./Data/Test3_BoardService/Test3_addThirdMembershipData.json')));
 // VERIFY Locators
 const HomeLocators = JSON.parse(JSON.stringify(require("./Data/Home_Locators.json")));
 const GivingLocators = JSON.parse(JSON.stringify(require("./Data/Giving_Locators.json")));
@@ -24,6 +24,9 @@ const Test3_ManageEventsData = JSON.parse(JSON.stringify(require('./Data/Test3_B
     // OneTimeOption, ANNUALLY, QUARTERLY, MONTHLY
     */ 
 
+// NEED A DONOR WITH PREVIOUSLY APPROVED BOARD SERVICE MEMBERSHIPS
+// until can approve via API or GM UI
+
 test.describe('Create initial data for new execution of tests',() => {
     test.beforeEach('Login to external portal', async ({page}) => {
         const pm = new extPageManager(page);
@@ -39,7 +42,7 @@ test.describe('Create initial data for new execution of tests',() => {
         // Repeat for each add a donation
         await pm.useBoardServicePage().createBoardServiceMembership()
         await pm.useOrganizationSearchPage().selectOrganization(Test3_FirstMembershipData)
-        await pm.useBoardServiceMembershipInformationPage().submitBoardServiceMemberhip(Test3_FirstMembershipData)
+        await pm.useBoardServiceMembershipInformationPage().submitBoardServiceMembership2(Test3_FirstMembershipData)
         await pm.useReviewInformationPage().fillReviewInformation(Test3_FirstMembershipData)
         await pm.useSubmissionSuccessfulPage().selectReturnToHome()
     })

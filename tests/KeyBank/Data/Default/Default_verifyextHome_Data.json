@@ -1,7 +1,6 @@
 { 
-    "TabArray": ["How Am I Doing?"],
-    "NumTabs": 1,
-    "How Am I Doing?": {
+    "Portlet1":{
+        "PortletTitle": "How Am I Doing?",
         "TabType": 1033,
         "Donated": "0",
         "HoursVolunteered": "0"

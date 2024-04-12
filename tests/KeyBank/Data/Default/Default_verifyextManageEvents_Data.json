@@ -1,44 +1,26 @@
 { 
-    "NumTabs": 4,
-    "TabArray": ["Manage Open Events", "Manage Completed Events", "Events I Created", "Unsubmitted Events I Created"],
-    "Manage Completed Events": {
-        "TabType": 1010,
-        "TabElements": 0,
+    "Portlet1": {
+        "PortletTitle": "Manage Completed Events",
         "TabRows":  0,
         "TabAction": "none",
-        "TabRow0": ["Action", "Organization Information", "Type", "Description", "Status", "Enrolled","Completed"],
-        "TabRow1": [""],
-        "TabRow2": [""],
-        "TabRow3": [""]
+        "TabRow1": [""]
     },
-    "Manage Open Events": {
-        "TabType": 1010,
-        "TabElements": 0,
+    "Portlet2": {
+        "PortletTitle": "Manage Open Events",
         "TabRows": 0,
         "TabAction":"none",
-        "TabRow0": [""],
-        "TabRow1": [""],
-        "TabRow2": [""],
-        "TabRow3": [""]
+        "TabRow1": [""]
     },
-    "Events I Created": {
-        "TabType": 1010,
-        "TabElements": 0,
+    "Portlet3": {
+        "PortletTitle": "Events I Created",
         "TabRows": 0,
         "TabAction": "none",
-        "TabRow0": ["Action", "Organization Information", "Type", "Description", "Status", "Enrolled"],
-        "TabRow1": [""],
-        "TabRow2": [""],
-        "TabRow3": [""]
+        "TabRow1": [""]
     },
-    "Unsubmitted Events I Created": {
-        "TabType": 1016,
-        "TabElements": 0,
+    "Portlet4": {
+        "PortletTitle": "Unsubmitted Events I Created",
         "TabRows": 0,
         "TabAction": "none",
-        "TabRow0": ["Action", "Organization Information", "Type", "Description"],
-        "TabRow1": [""],
-        "TabRow2": [""],
-        "TabRow3": [""]
+        "TabRow1": [""]
     }
 }

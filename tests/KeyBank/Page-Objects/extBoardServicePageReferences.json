@@ -1,7 +1,7 @@
 {
     "numPortlets": 3,
     "Portlet1": {
-        "PortletTitle": "Board Service Membership",
+        "PortletTitle": "Board Service Memberships",
         "PortletType": 1002,
         "PortletElements": 4,
         "PortletHeader": ["Organization Information", "Type", "Description", "Status"]

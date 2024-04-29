@@ -2,31 +2,28 @@
     "NumTabs": 4,
     "TabArray": ["United Way Matching Gifts History", "United Way Credit Card Transactions", "Payroll Contributions", "United Way - Give Again"],
     "Portlet1": {
-        "portletTitle": "United Way Matching Gifts History",
-        "TabType": 1006,
-        "TabElements": 4,
-        "TabRow0": ["Organization Information", "Description", "Type","Status"]
+        "PortletTitle": "United Way Matching Gifts History",
+        "PortletType": 1006,
+        "PortletElements": 4,
+        "PortletHeader": ["Organization Information", "Description", "Type","Status"]
     },
     "Portlet2": {
         "PortletTitle": "United Way Credit Card Transactions",
-        "TabType": 1002,
-        "TabElements": 3,
-        "TabRow0": ["Organization Information", "Description", "Status"]
+        "PortletType": 1002,
+        "PortletElements": 3,
+        "PortletHeader": ["Organization Information", "Description", "Status"]
         },
     "Portlet3": {
         "PortletTitle": "Payroll Contributions",
-        "TabType": 1010,
-        "TabElements": 5,
-        "TabRows": 2,
-        "TabAction": "none",
-        "TabRow0": ["Action", "Organization Information", "Type", "Description", "Status"],
-        "TabRow1": ["No results found","x","x","x","x"]    
+        "PortletType": 1010,
+        "PortletElements": 5,
+        "PortletAction": "none",
+        "PortletHeader": ["Action", "Organization Information", "Type", "Description", "Status"]
     },
     "Portlet4": {
         "PortletTitle": "United Way - Give Again",
-        "TabType": 4014,
-        "TabElements": 0,
-        "numText": 0,
-        "textArray": [""]
+        "PortletType": 4014,
+        "PortletElements": 0,
+        "textHeader": [""]
     }
 }

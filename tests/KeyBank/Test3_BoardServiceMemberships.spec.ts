@@ -2,9 +2,9 @@ import { test } from "@playwright/test"
 import { extPageManager }  from "./Page-Objects/extPageManagerPO"
 
 // ADD DATA
-const Test3_FirstMembershipData = JSON.parse(JSON.stringify(require('./Data/Test3_BoardService/Test3_addFirstMembershipData.json')));
-const Test3_SecondMembershipData = JSON.parse(JSON.stringify(require('./Data/Test3_BoardService/Test3_addSecondMembershipData.json')));
-const Test3_ThirdMembershipData = JSON.parse(JSON.stringify(require('./Data/Test3_BoardService/Test3_addThirdMembershipData.json')));
+const Test3_FirstMembershipData = JSON.parse(JSON.stringify(require('./Data/Test3_BoardService/Test3_DONOR1-BS_addFirstMembershipData.json')));
+const Test3_SecondMembershipData = JSON.parse(JSON.stringify(require('./Data/Test3_BoardService/Test3_DONOR1-BS_addSecondMembershipData.json')));
+const Test3_ThirdMembershipData = JSON.parse(JSON.stringify(require('./Data/Test3_BoardService/Test3_DONOR1-BS_addThirdMembershipData.json')));
 // VERIFY Locators
 const HomeLocators = JSON.parse(JSON.stringify(require("./Data/Home_Locators.json")));
 const GivingLocators = JSON.parse(JSON.stringify(require("./Data/Giving_Locators.json")));
@@ -36,38 +36,50 @@ test.describe('Create initial data for new execution of tests',() => {
 
     //test ('Portlet defaults for Donor without a role', async ({page})=>) {}
 
-    test ('Test Three - Create First Board Membership', async ({page}) => {
+    test.skip ('Test DONOR1-BS-<ddmm> - Create First Board Membership', async ({page}) => {
         const pm = new extPageManager(page)
         await pm.useBoardServicePage().navigateToBoardServicePage()
         // Repeat for each add a donation
         await pm.useBoardServicePage().createBoardServiceMembership()
-        await pm.useOrganizationSearchPage().selectOrganization(Test3_FirstMembershipData)
+        await pm.useOrganizationSearchPage().selectOrganization(Test3_FirstMembershipData, "BoardService")
         await pm.useBoardServiceMembershipInformationPage().submitBoardServiceMembership2(Test3_FirstMembershipData)
+        await pm.useAddFileUploadPage().fillOutForm(Test3_FirstMembershipData)
         await pm.useReviewInformationPage().fillReviewInformation(Test3_FirstMembershipData)
         await pm.useSubmissionSuccessfulPage().selectReturnToHome()
     })
-    test ('Test Three - Create Second Board Membership', async ({page}) => {
+    test.skip ('Test DONOR1-BS-<ddmm> - Create Second Board Membership', async ({page}) => {
         const pm = new extPageManager(page)
+        await pm.useBoardServicePage().navigateToBoardServicePage()
         await pm.useBoardServicePage().createBoardServiceMembership()
-        await pm.useOrganizationSearchPage().selectOrganization(Test3_SecondMembershipData)
-        await pm.useBoardServiceMembershipInformationPage().submitBoardServiceMemberhip(Test3_SecondMembershipData)
+        await pm.useOrganizationSearchPage().selectOrganization(Test3_SecondMembershipData, "BoardService")
+        await pm.useBoardServiceMembershipInformationPage().submitBoardServiceMembership2(Test3_SecondMembershipData)
         await pm.useReviewInformationPage().fillReviewInformation(Test3_SecondMembershipData)
         await pm.useSubmissionSuccessfulPage().selectReturnToHome()
     })
-    test ('Test Three - Create Third Board Membership', async ({page}) => {
+    test.skip ('Test DONOR1-BS-<ddmm> - Create Third Board Membership', async ({page}) => {
         const pm = new extPageManager(page)
+        await pm.useBoardServicePage().navigateToBoardServicePage()
         await pm.useBoardServicePage().createBoardServiceMembership()
-        await pm.useOrganizationSearchPage().selectOrganization(Test3_ThirdMembershipData)
-        await pm.useBoardServiceMembershipInformationPage().submitBoardServiceMemberhip(Test3_ThirdMembershipData)
+        await pm.useOrganizationSearchPage().selectOrganization(Test3_ThirdMembershipData, "BoardService")
+        await pm.useBoardServiceMembershipInformationPage().submitBoardServiceMembership2(Test3_ThirdMembershipData)
         await pm.useReviewInformationPage().fillReviewInformation(Test3_ThirdMembershipData)
         await pm.useSubmissionSuccessfulPage().selectReturnToHome()
     })
 
-    test ('approve all of the memberships', async ({page}) =>{
+    test.skip ('approve all of the memberships', async ({page}) =>{
         await page.pause();
     })
     
     // Add hours to each of the four member organizations
+    test.skip ('Add Hours to first membership Board Membership', async ({page}) => {
+        const pm = new extPageManager(page)
+        await pm.useBoardServicePage().navigateToBoardServicePage()
+        // select the add hours button
+        await pm.useBoardServicePage().selectBoardServiceHours()
+        // select the first membership organization
+        await pm.useOrganizationSearchPage().selectExistingOrganization(Test3_ThirdMembershipData)
+        await pm.useVolunteerHoursPage().addVolunteerHours(Test3_ThirdMembershipData)
+    })
 
 
     // add donations to each of the four member organizations

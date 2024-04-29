@@ -8,17 +8,22 @@ export class OrganizationSearch {
         this.page = page
     }
     // first time searches can take a while
-    async selectOrganization(testData: any){
+    // If the organization is already in the "My Recent Organizations" area then cannot readd an application
+    // It is possible that an application has been submitted just not approved. Not sure how the feature should respond
+
+    async selectOrganization(testData: any, searchType: string){
         await this.page.getByPlaceholder('Organization Name').fill(""); //clear any existing text
-        // check "My Recent Organizations"
-        if (await this.page.locator('.css-1baztyh')){
-            await this.page.getByLabel(testData.organizationButton).click()
-        }
-        else { // otherwise search for the organization
+
+        if (searchType == "BoardService"){
             await this.page.getByPlaceholder('Organization Name').fill(testData.organizationName); //css-1q464cn
             await this.page.getByRole('button', { name: 'Search', exact: true }).click();  
-            await this.page.waitForTimeout(60000); 
+            //await this.page.waitForTimeout(60000); 
             await this.page.getByLabel(testData.organizationName).click()
+        }
+        // check "My Recent Organizations"
+        else {
+            console.log('Organization has already been applied to')
+            //await this.page.getByLabel(testData.organizationButton).click()
         }
         //await this.page.getByRole("link", {name: "select " + testData.organizationName}).click();         
         //await this.page.getByLabel(testData.organizationName).nth(0).click()    

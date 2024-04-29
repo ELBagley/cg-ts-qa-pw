@@ -1,26 +1,33 @@
 export class DateHelper {
 
+   public date_TO_String(date_Object: Date): string {
+        // get the year, month, date, hours, and minutes seprately and append to the string.
+        let date_String: string =
+            (date_Object.getMonth() + 1) + "/" +
+            date_Object.getDate() + "/" +
+            date_Object.getFullYear()
+        return date_String;
+      }
+
     public findDate(getDate: string) {
 
         if (getDate == "Today") {        
-            let today = new Date()
-            let todayString = ""
-            todayString = today.setDate(today.getDate() + 7).toString()
-            return todayString
+            let today: Date = new Date()
+            //let todayString: string = ""
+            //todayString = today.setDate(today.getDate() + 7)
+            return this.date_TO_String(today)
         }
         else if (getDate == "Tomorrow"){
             let today = new Date()
             let tomorrow = new Date()
-            let tomorrowString = ""
-            tomorrowString = tomorrow.setDate(today.getDate() + 1).toString()
-            return tomorrowString
+            tomorrow.setDate(today.getDate() + 1)
+            return this.date_TO_String(tomorrow)
         }
         else if (getDate == "OneWeekFromToday"){
             let today = new Date()
             var OneWeekFromToday = new Date()
-            let OneWeekFromTodayString = ""
-            OneWeekFromTodayString = OneWeekFromToday.setDate(today.getDate() + 7).toString()
-            return OneWeekFromTodayString
+            OneWeekFromToday.setDate(today.getDate() + 7).toLocaleString('en-US')
+            return this.date_TO_String(OneWeekFromToday)
         }
         /*
         else if (getDate == "OneWeekFromTodayPlusOneDay"){

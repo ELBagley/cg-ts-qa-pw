@@ -1,0 +1,47 @@
+{ 
+    "NumTabs": 6,
+    "TabArray": ["Board Service Membership", "Board Service Recorded Hours", "Board Service Matching Gifts History", "Community Leadership Gift Balance", "My Nominations", "Dollars for Doers"],
+    "Portlet1": {
+        "PortletTitle": "Board Service Membership",
+        "TabType": 1002,
+        "TabElements": 4,
+        "TabRow0": ["Organization Information", "Type", "Description", "Status"]
+   },
+   "Portlet2": {
+        "PortletTitle": "Board Service Recorded Hours",
+        "TabType": 1002,
+        "TabElements": 4,
+        "TabRow0": ["Organization Information", "Type", "Description", "Status"]
+    },
+    "Portlet3": {
+        "PortletTitle": "Board Service Matching Gifts History",
+        "TabType": 1002,
+        "TabElements": 4,
+        "TabRow0": ["Organization Information", "Type", "Description", "Status"]
+    },
+    "Portlet4": {
+        "PortletTitle": "Community Leadership Gift Balance",
+        "TabType": 1016,
+        "TabElements": 6,
+        "TabRow0": ["Program Name", "Number of Transaction(s)", "Limit", "Total Match Amount", "Balance"]
+    },
+    "Portlet5": {
+        "PortletTitle": "My Nominations",
+        "TabType": 1002,
+        "TabElements": 0,
+        "TabRow0": ["x"]
+    },
+    "Portlet6": {
+        "PortletTitle": "Dollars for Doers",
+        "TabType": 4012,
+        "message": "Congratulations! You are eligible to redeem a volunteer match!",
+        "span1Organization": "1 HEART 1 MISSION",
+        "span1Hours": "3/1 hours",
+        "span2Organization": "RED CROSS ELEMENTARY PTO INC",
+        "span2Hours": "10/1 hours",
+        "redeemableAmount": "$500.00",
+        "redeemHours": "3",
+        "redeemedAmount": "$500.00",
+        "hoursLogged": "13"
+    }
+}

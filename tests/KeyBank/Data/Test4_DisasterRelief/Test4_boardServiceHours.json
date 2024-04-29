@@ -1,6 +1,6 @@
 {
-    "VolunteerStartDate": "03/25/2024",
-    "VolunteerEndDate": "03/26/2024",
+    "VolunteerStartDate": "today",
+    "VolunteerEndDate": "tomorrow",
     "hoursVolnteered": 10,
     "description": "SQA test"
 }

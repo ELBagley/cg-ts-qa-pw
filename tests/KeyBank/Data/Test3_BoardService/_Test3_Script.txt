@@ -1,0 +1,24 @@
+For the donor DONOR1-BS<ddmm> 
+Portal: create four membership applications
+    yesterday -> today, for a United Way organization
+    yesterday -> today
+    1 week before today -> one week from today
+    1 week before today -> one week from today
+
+GM: approve all four of the memberships
+
+Portal: verify only three approved memberships are presented in BS Org page
+Portal: add service hours to each of the fout approved memberships
+Portal: add gifts to each of the four approved memberships
+Portal: Redeem hours for three memberships
+Portal: Verify the portlet details for D4D
+Portal: Verify all of the other status portlets
+
+
+
+
+
+
+
+
+

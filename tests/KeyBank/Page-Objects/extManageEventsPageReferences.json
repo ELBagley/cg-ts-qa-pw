@@ -3,24 +3,25 @@
     "Portlet1": {
         "PortletTitle": "Manage Completed Events",
         "PortletType": 1010,
-        "PortletElements": 0,
+        "PortletElements": 7,
         "PortletRow0": ["Action", "Organization Information", "Type", "Description", "Status", "Enrolled","Completed"]
     },
     "Portlet2": {
         "PortletTitle": "Manage Open Events",
         "PortletType": 1010,
-        "PortletElements": 0
+        "PortletElements": 0,
+        "PortletRow0": ["x"]
     },
     "Portlet3": {
         "PortletTitle": "Events I Created",
         "PortletType": 1010,
-        "PortletElements": 0,
+        "PortletElements": 6,
         "PortletRow0": ["Action", "Organization Information", "Type", "Description", "Status", "Enrolled"]
     },
     "Portlet4": {
         "PortletTitle": "Unsubmitted Events I Created",
         "PortletType": 1016,
-        "PortletElements": 0,
+        "PortletElements": 4,
         "PortletRow0": ["Action", "Organization Information", "Type", "Description"]
     }
 }

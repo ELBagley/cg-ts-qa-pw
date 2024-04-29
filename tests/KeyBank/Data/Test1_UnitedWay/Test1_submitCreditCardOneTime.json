@@ -1,6 +1,6 @@
 {
     "organizationName": "RED CROSS ELEMENTARY PTO INC",
-    "deductionType": "OneTime",
+    "deductionType": "One-time payment for the full amount",
     "donationAmount": "25",
     "matchAmount": "25",
     "donationDesignation": "test",

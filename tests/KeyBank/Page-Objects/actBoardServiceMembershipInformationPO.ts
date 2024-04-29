@@ -1,6 +1,5 @@
 import { Page, expect } from "@playwright/test";
 import { DateHelper } from "../Fixtures/DateTime"
-import { stringify } from "querystring";
 
 export class BoardServiceMembershipInformation{
 
@@ -19,62 +18,31 @@ export class BoardServiceMembershipInformation{
 
     async submitBoardServiceMembership2(testData: any){
         const DateFinder = new DateHelper
-        let startDateString = ""
-        let endDateString = ""
-        startDateString = DateFinder.findDate(testData.BoardServiceStartDate) as string
-        endDateString = DateFinder.findDate(testData.BoardServiceEndDate) as string
-        await this.page.locator('#CG2828314').fill(startDateString)
-        await this.page.locator('#CG2828308').fill(endDateString); 
-        //await this.page.getByLabel('*Board Service Start Date').fill(startDateString) //id=CG2828314
-        //await this.page.keyboard.press('Tab') // close the datepicker widget
-        //await this.page.getByLabel('*Board Service End Date').fill(endDate.toString())     //id=CG2828308
+        let startDate = DateFinder.findDate(testData.BoardServiceStartDate)
+        let endDate = DateFinder.findDate(testData.BoardServiceEndDate)
+        
+        //fill out form then navigate to the File Upload page. The page Manager will fill out the form using a PO class
+        await this.page.locator('#CG2828314').fill(startDate as string)
+        await this.page.locator('#CG2828308').fill(endDate as string); 
+        // THIS DOESN"T WORK. there are two exact locators
+        await this.page.getByLabel('Description').fill(testData.Description);
 
-        //await this.page.keyboard.press('Tab')
 
-        //await this.page.locator('#CG2828308').fill(endDate.toString()); 
-        /*
-        //https://playwright.dev/docs/api/class-page#page-event-dialog
-        this.page.on('dialog', dialog => {
-            expect(dialog.message()).toEqual('File Upload')
-            //dialog.
-        })
-        */
-        // https://www.youtube.com/watch?v=Vxt7xzZNqBM
-        //codegen
-        const page1Promise = this.page.waitForEvent('popup');
-        const page1 = await page1Promise;
-        await page1.getByLabel('Upload File: Upload Documents').click();
-        await page1.getByLabel('Upload File: Upload Documents').setInputFiles('C:\Users\\erica.bagley\\OneDrive - Bonterra\\Documents\\Grant Makers\\_Dummy Files\\11802148_PO_03282023101945.pdf');
-        await page1.getByRole('button', { name: 'Upload File' }).click();
-        await page1.getByRole('button', { name: 'Close Window' }).click();
+        //.formRowCG2848544.row
+        //await expect(this.page.locator("div.row.formRow.#CG28283082848544::after")).toBeVisible()
+        //let content = this.page.evaluate("window.getComputedStyle(document.getElementById('div.row.formRow.#CG28283082848544'), '::after')['content']")
+        
+        // get current request ID
+        //let curRequest = await this.page.locator('input[type="hidden"][name="x_req_id"]').getAttribute('value');
 
-        /*
-        this.page.on('popup', async popup =>{
-            //await newPage.waitForLoadState()
-            //const newPage = await Promise;
-            await popup.getByLabel('Upload File: Upload Documents').setInputFiles('C:\Users\erica.bagley\OneDrive - Bonterra\Documents\Grant Makers\_Dummy Files\\11802148_PO_03282023101945.pdf');
-            await popup.getByRole('button', { name: 'Upload File' }).click();
-            await this.page.waitForTimeout(20000);
-            await popup.getByRole('button', { name: 'Close Window' }).click();
-        })
-        */
-        await this.page.getByLabel('*Upload Documents').click();
+        // create the URL
+        //let firstPart = "https://sandbox.cybergrants.com/pls/cybergrants-sb/upload.entry?x_gm_id=10762&x_ut=DONOR&x_custom_field_id=2848544&x_key="
+        //let URLToUse = firstPart + curRequest + "&x_parent_table_name=eg_request&x_proposal_type_id=" + testData.proposalType + "&x_section_id=1868070&x_internal_flag=N&x_style_id=&x_invitation_id=&x_language_code=en-US"
+        //navigate to the URL
+        //await this.page.goto(URLToUse)
  
-        await this.page.getByLabel('Description').fill('automation with upload');
-        await this.page.getByRole('button', { name: 'Save and Proceed' }).click();
         //await page.getByRole('button', { name: 'Submit' }).click();
         //await page.getByRole('link', { name: 'Return to Home Page' }).click();
+      
     }
-/*
-D4D redemption status
-
-My Submitted Hours
-Dollars for Doers History
-My Nominations
-
-"Add Hours" button
-goes to "Organization Search"
-goes to "Volunteer Hours Information"
-then submit
-*/
 }

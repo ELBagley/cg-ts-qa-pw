@@ -1,31 +1,25 @@
 { 
     "NumTabs": 4,
     "TabArray": ["United Way Matching Gifts History", "United Way Credit Card Transactions", "Payroll Contributions", "United Way - Give Again"],
-    "United Way Matching Gifts History": {
-        "TabType": 1006,
-        "TabElements": 5,
-        "TabRows": 4,
-        "TabRow0": ["Program Name", "Number of Transaction(s)", "Limit", "Total Match Amount", "Balance"],
+    "Portlet1": {
+        "PortletTitle": "United Way Matching Gifts History",
+        "TabRows": 3,
         "TabRow1": ["United Way - CC Match", "2", "$99,999,999.99|0","$50.00","$99,999,949.99"],
         "TabRow2": ["United Way Payroll Match", "0", "$99,999,999.99|1","$0.00", "$99,999,949.99"],
         "TabRow3": ["United Way-Request a Match for a Previous Donation", "0", "$99,999,999.99|2","$0.00", "$99,999,949.99"]
     },
-    "United Way Credit Card Transactions": {
-        "TabType": 1002,
-        "TabElements": 3,
-        "TabRows": 4,
+    "Portlet2": {
+        "PortletTitle": "United Way Credit Card Transactions",
+        "TabRows": 3,
         "TabAction":"none",
-        "TabRow0": ["Organization Information", "Description", "Status"],
         "TabRow1": ["AMERICAN NATIONAL RED CROSS|0","25.00 USD Yearly", "Canceled on"],
         "TabRow2": ["AMERICAN NATIONAL RED CROSS|1","25.00 USD on", "You have successfully registered|0"],
         "TabRow3": ["RED CROSS ELEMENTARY PTO INC","25.00 USD on", "You have successfully registered|0"]
         },
-    "Payroll Contributions": {
-        "TabType": 1010,
-        "TabElements": 5,
-        "TabRows": 7,
+    "Portlet3": {
+        "PortletTitle": "Payroll Contributions",
+        "TabRows": 6,
         "TabAction": "none",
-        "TabRow0": ["Action", "Organization Information", "Type", "Description", "Status"],
         "TabRow1": ["Change", "RED CROSS ELEMENTARY PTO INC|0", "United Way One-Time Payroll Deduction|0",  "$26.00 per pay period", "You have successfully registered|0"],
         "TabRow2": ["",       "RED CROSS ELEMENTARY PTO INC|1", "United Way One-Time Payroll Deduction|1",  "$25.00 per pay period", "Canceled on|0"],
         "TabRow3": ["",       "RED CROSS ELEMENTARY PTO INC|2", "United Way Recurring Payroll Deduction|0",  "$5.00 per pay period", "Canceled on|1"],
@@ -33,9 +27,8 @@
         "TabRow5": ["", "1 HEART 1 MISSION", "", "$5.00 per pay period|0", ""],
         "TabRow6": ["", "RED CROSS ELEMENTARY PTO INC", "", "$5.00 per pay period|1", ""]        
     },
-    "United Way - Give Again": {
-        "TabType": 4014,
-        "TabElements": 0,
+    "Portlet4": {
+        "PortletTitle": "United Way - Give Again",
         "numText": 9,
         "textArray": ["ContentText1","ContentOrg1", "ContentText2", "ContentOrg2a", "ContentOrg2b", "ContentText3", "ContentOrg3","ContentText4", "ContentOrg4"],
         "contentText1": "United Way One-Time Payroll Deduction $26.00 - Active",

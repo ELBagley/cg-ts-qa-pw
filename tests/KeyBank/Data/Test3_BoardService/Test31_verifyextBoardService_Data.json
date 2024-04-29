@@ -1,38 +1,38 @@
 { 
-    "NumTabs": 6,
-    "TabArray": ["Board Service Membership", "Board Service Recorded Hours", "Board Service Matching Gifts History", "Community Leadership Gift Balance", "My Nominations", "Dollars for Doers"],
+    "NumPortlets": 6,
+    "PortletArray": ["Board Service Membership", "Board Service Recorded Hours", "Board Service Matching Gifts History", "Community Leadership Gift Balance", "My Nominations", "Dollars for Doers"],
     "Portlet1": {
         "PortletTitle": "Board Service Membership",
-        "TabRows":  3,
-        "TabRow1": ["RED CROSS ELEMENTARY PTO INC",                 "Board Service Membership|0", "hours on|0", "You have successfully recorded your Board Service Membership|0"],
-        "TabRow2": ["21ST CENTURY FUND FOR DELAWARES CHILDREN INC", "Board Service Membership|1", "hours on|1", "You have successfully recorded your Board Service Membership|1"],
-        "TabRow3": ["AMERICAN NATIONAL RED CROSS",                  "Board Service Membership|2", "hours on|2", "You have successfully recorded your Board Service Membership|1"]
+        "PortletRows":  3,
+        "PortletRow1": ["RED CROSS ELEMENTARY PTO INC",                 "Board Service Membership|0", "hours on|0", "You have successfully recorded your Board Service Membership|0"],
+        "PortletRow2": ["21ST CENTURY FUND FOR DELAWARES CHILDREN INC", "Board Service Membership|1", "hours on|1", "You have successfully recorded your Board Service Membership|1"],
+        "PortletRow3": ["AMERICAN NATIONAL RED CROSS",                  "Board Service Membership|2", "hours on|2", "You have successfully recorded your Board Service Membership|1"]
     },
     "Portlet2": {
         "PortletTitle": "Board Service Recorded Hours",
-        "TabRows": 2,
-        "TabRow1": ["RED CROSS ELEMENTARY PTO INC", "Board Service Log Hours", "10 hours on ", "You have successfully recorded your hours!"],
-        "TabRow2": ["1 HEART 1 MISSION",            "Board Service Log Hours",  "3 hours on ", "You have successfully recorded your hours!"]
+        "PortletRows": 2,
+        "PortletRow1": ["RED CROSS ELEMENTARY PTO INC", "Board Service Log Hours", "10 hours on ", "You have successfully recorded your hours!"],
+        "PortletRow2": ["1 HEART 1 MISSION",            "Board Service Log Hours",  "3 hours on ", "You have successfully recorded your hours!"]
     },
     "Portlet3": {
         "PortletTitle": "Board Service Matching Gifts History",
-        "TabRows": 1,
-        "TabRow1": ["RED CROSS ELEMENTARY PTO INC", "Board Service Matching Gifts", "25.00 USD on ", "You have successfully registered you Credit Card transaction"]
+        "PortletRows": 1,
+        "PortletRow1": ["RED CROSS ELEMENTARY PTO INC", "Board Service Matching Gifts", "25.00 USD on ", "You have successfully registered you Credit Card transaction"]
     },
     "Portlet4": {
         "PortletTitle": "Community Leadership Gift Balance",
-        "TabRows": 1,
-        "TabRow1": ["Board Service - Community Leadership Gift", "1", "$2,000.00", "$500.00", "$1,500.00"]
+        "PortletRows": 1,
+        "PortletRow1": ["Board Service - Community Leadership Gift", "1", "$2,000.00", "$500.00", "$1,500.00"]
     },
     "Portlet5": {
         "PortletTitle": "My Nominations",
-        "TabRows": 0,
-        "TabRow1": ["x"]
+        "PortletRows": 0,
+        "PortletRow1": ["x"]
     },
     "Dollars for Doers": {
-        "TabType": 4012,
+        "PortletType": 4012,
         "message": "Congratulations! You are eligible to redeem a volunteer match!",
-        "span1Organization": "1 HEART 1 MISSION",
+        "span1Organization": "21ST CENTURY FUND",
         "span1Hours": "3/1 hours",
         "span2Organization": "RED CROSS ELEMENTARY PTO INC",
         "span2Hours": "10/1 hours",
@@ -42,7 +42,7 @@
         "hoursLogged": "13",
         "numDetails": 4,
         "detailInformation1": "RED CROSS ELEMENTARY PTO INC10 hours",
-        "detailInformation2": "HEART 1 MISSION3 hours",   
+        "detailInformation2": "21ST CENTURY FUND3 hours",   
         "detailInformation3": "Total13 hours",
         "detailInformation4": "RED CROSS ELEMENTARY PTO INC$500.00Total$", 
         "detailInformation5": "",

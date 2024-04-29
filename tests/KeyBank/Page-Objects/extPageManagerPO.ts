@@ -22,8 +22,10 @@ import { SubmissionSuccessful } from "./actSubmissionSuccessfulPO"
 import { extUWGiving } from "./extUWGivingPO"
 import { VolunteerHours } from "./actVolunteerHoursPO"
 import { extVolunteer } from "./extVolunteerPO"
+import { addFileUpload } from "./actFileUpload"
 
 export class extPageManager{
+    private readonly AddFileUploadPage: addFileUpload
     private readonly extBoardServicePage: extBoardService
     //private readonly extBoardServiceReferences: typeof BoardServicePortletReferences
     private readonly BoardServiceMembershipInformationPage: BoardServiceMembershipInformation
@@ -51,6 +53,7 @@ export class extPageManager{
 
     constructor(page: Page) {
         this.page = page
+        this.AddFileUploadPage = new addFileUpload (this.page)
         this.extBoardServicePage = new extBoardService (this.page)
         this.BoardServiceMembershipInformationPage = new BoardServiceMembershipInformation (this.page)
         this.CreditCardDonationPage = new CreditCardDonation (this.page)
@@ -73,6 +76,9 @@ export class extPageManager{
         this.extUWGivingPage = new extUWGiving(this.page)      
         this.extVolunteerHoursPage = new VolunteerHours(this.page)
         this.extVolunteerPage = new extVolunteer(this.page)
+    }
+    useAddFileUploadPage(){
+        return this.AddFileUploadPage
     }
     useBoardServicePage(){
         return this.extBoardServicePage

@@ -1,5 +1,5 @@
 import { Page, expect } from "@playwright/test";
-import { examinePortletHelper } from "../Fixtures/ExaminePortlet"
+import { examinePortletHelper } from "../Fixtures/ExaminePortlet2"
 
 export class extDisasterRelief extends examinePortletHelper{
 

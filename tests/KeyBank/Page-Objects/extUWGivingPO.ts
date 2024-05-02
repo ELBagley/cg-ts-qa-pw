@@ -1,7 +1,7 @@
 import { Page, expect } from "@playwright/test";
 import { extPageManager }  from "../Page-Objects/extPageManagerPO"
 
-import { examinePortletHelper } from "../Fixtures/ExaminePortlet"
+import { examinePortletHelper } from "../Fixtures/ExaminePortlet2"
 
 
 // Closed campaign: Sept 1 to Dec 10th
@@ -49,8 +49,8 @@ export class extUWGiving extends examinePortletHelper{
     async selectRequestaMatchForAPreviousDonation(testData: any){ //needs previous donation verification from charity
         const pm = new extPageManager(this.page)
         await this.page.getByRole('link', { name: 'Request a Match for a' }).click();
-        await pm.useOrganizationSearchPage().selectOrganization(testData.organizationName) //select organization
-        await pm.useMatchingGiftsPage().submitMatchingGift(testData)
+        await pm.useOrganizationSearchPage().selectOrganization(testData.organizationName,"") //select organization
+        await pm.useBoardServiceMatchingGiftsPage().submitBoardServiceMatch(testData)
     }
     //TODO: select from previus organizations
     async checkUnitedWayGiveAgain(ExistingOrganization: string){

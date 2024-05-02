@@ -1,5 +1,5 @@
 import { Page, expect } from "@playwright/test";
-import { examinePortletHelper } from "../Fixtures/ExaminePortlet"
+import { examinePortletHelper } from "../Fixtures/ExaminePortlet2"
 
 //Page string references
 const BoardServicePageReferences = JSON.parse(JSON.stringify(require("./extBoardServicePageReferences.json")));

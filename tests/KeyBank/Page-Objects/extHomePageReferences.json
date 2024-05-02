@@ -5,6 +5,7 @@
         "PortletType": 1033,
         "PortletElements": 0,
         "HoursVolunteered": 0,
+        "HoursGoal": 0,
         "PortletHeader": [""] 
     }
 }

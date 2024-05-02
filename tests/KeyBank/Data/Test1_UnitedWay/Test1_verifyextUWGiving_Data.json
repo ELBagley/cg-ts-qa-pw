@@ -1,43 +1,31 @@
 { 
-    "NumTabs": 4,
-    "TabArray": ["United Way Matching Gifts Balance", "United Way Credit Card Transactions", "Payroll Contributions", "United Way - Give Again"],
-    "Portlet1": {
+    "PortletData1": {
         "PortletTitle": "United Way Matching Gifts History",
-        "TabRows": 2,
-        "TabRow1": ["1 HEART 1 MISSION", "Credit Card match", "$25.00","Contribution has been successfully submitted."],
-        "TabRow2": ["1 HEART 1 MISSION", "Request a Match for a Previous Donation","$25.00", "Contribution has not been verified by the organization."]
+        "PortletDataRows": 1,
+        "PortletDataRow1": ["RED CROSS ELEMENTARY PTO INC", "United Way - CC Match", "25.00 USD","Contribution has been successfully submitted."]
     },
-    "Portlet2": {
+    "PortletData2": {
         "PortletTitle": "United Way Credit Card Transactions",
-        "TabRows": 3,
-        "TabAction":"none",
-        "TabRow1": ["AMERICAN NATIONAL RED CROSS|0","25.00 USD Yearly", "Canceled on"],
-        "TabRow2": ["AMERICAN NATIONAL RED CROSS|1","25.00 USD on", "You have successfully registered|0"],
-        "TabRow3": ["RED CROSS ELEMENTARY PTO INC","25.00 USD on", "You have successfully registered|0"]
+        "PortletDataRows": 1,
+        "PortletDataAction":"none",
+        "PortletDataRow1": ["RED CROSS ELEMENTARY PTO INC","25.00 USD on", "Contribution has been approved, but not yet scheduled for payment"]
         },
-    "Portlet3": {
+    "PortletData3": {
         "PortletTitle": "Payroll Contributions",
-        "TabRows": 6,
-        "TabAction": "none",
-        "TabRow1": ["Change", "RED CROSS ELEMENTARY PTO INC|0", "United Way One-Time Payroll Deduction|0",  "$26.00 per pay period", "You have successfully registered|0"],
-        "TabRow2": ["",       "RED CROSS ELEMENTARY PTO INC|1", "United Way One-Time Payroll Deduction|1",  "$25.00 per pay period", "Canceled on|0"],
-        "TabRow3": ["",       "RED CROSS ELEMENTARY PTO INC|2", "United Way Recurring Payroll Deduction|0",  "$5.00 per pay period", "Canceled on|1"],
-        "TabRow4": ["Change", "(2 Organizations)",              "United Way Recurring Payroll Deduction|1", "$10.00 per pay period", "You have successfully registered|1"],
-        "TabRow5": ["", "1 HEART 1 MISSION", "", "$5.00 per pay period|0", ""],
-        "TabRow6": ["", "RED CROSS ELEMENTARY PTO INC", "", "$5.00 per pay period|1", ""]        
+        "PortletDataRows": 2,
+        "PortletDataAction": "none",
+        "PortletDataRow1": ["1 HEART 1 MISSION", "United Way Recurring Payroll Deduction", "$25.00 per pay period|0", "You have successfully registered your payroll deduction"],
+        "PortletDataRow2": ["RED CROSS ELEMENTARY PTO INC", "United Way One-Time Payroll Deduction", "$25.00", "You have successfully registered your payroll deduction."]        
     },
-    "Portlet4": {
+    "PortletData4": {
         "PortletTitle": "United Way - Give Again",
-        "numText": 9,
-        "textArray": ["ContentText1","ContentOrg1", "ContentText2", "ContentOrg2a", "ContentOrg2b", "ContentText3", "ContentOrg3","ContentText4", "ContentOrg4"],
-        "contentText1": "United Way One-Time Payroll Deduction $26.00 - Active",
+        "numText": 7,
+        "textArray": ["ContentText1","ContentOrg1", "ContentText2", "ContentOrg2a", "ContentText3", "ContentOrg3"],
+        "contentText1": "United Way One-Time Payroll Deduction $25.00 - Active",
         "contentOrg1": "RED CROSS ELEMENTARY PTO INC|0",
-        "contentText2": "United Way Recurring Payroll Deduction $10.00 - Active",
-        "contentOrg2a": "AMERICAN NATIONAL RED CROSS|0",
-        "contentOrg2b": "RED CROSS ELEMENTARY PTO INC|1",
+        "contentText2": "United Way Recurring Payroll Deduction $25.00 - Active",
+        "contentOrg2a": "1 HEART 1 MISSION|0",
         "contentText3": "United Way Donate Via Credit Card 25 USD|0",
-        "contentOrg3": "AMERICAN NATIONAL RED CROSS|1",
-        "contentText4": "United Way Donate Via Credit Card 25 USD|1",
-        "contentOrg4": "RED CROSS ELEMENTARY PTO INC|2"
+        "contentOrg3": "RED CROSS ELEMENTARY PTO INC|1"
     }
 }

@@ -18,7 +18,7 @@ export class CreditCardDonation{
         }
         await this.page.getByLabel('Designation').fill(CreditCardData.donationDesignation);
         await this.page.getByLabel('Privacy Preference').selectOption(CreditCardData.privacyPreference);
-        await this.page.getByLabel('I have read the terms and').check();
+        await this.page.getByLabel('I have read the terms and').check(); // should select to confirm
         await this.page.getByRole('button', { name: 'Save and Proceed' }).press('Enter');
 
         // need to add credit card details on Review Information Page

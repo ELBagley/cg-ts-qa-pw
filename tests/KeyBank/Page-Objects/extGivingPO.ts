@@ -1,6 +1,6 @@
 import { Page, expect } from "@playwright/test";
 import { extPageManager }  from "../Page-Objects/extPageManagerPO"
-import { examinePortletHelper } from "../Fixtures/ExaminePortlet"
+import { examinePortletHelper } from "../Fixtures/ExaminePortlet2"
 
     // portlets
     //Matching Gifts Balance
@@ -23,8 +23,8 @@ export class extGiving extends examinePortletHelper{
         // goes to Organization Search with Graphic Balance portlet
         const pm = new extPageManager(this.page)
         await this.page.getByRole('link', { name: 'Donate via Credit Card' }).click();
-        await pm.useOrganizationSearchPage().selectOrganization(CreditCardDonationData.organizationName) //select organization
-        await pm.useCreditCardDonationPage().submitCreditCardOneTime(CreditCardDonationData)
+        await pm.useOrganizationSearchPage().selectOrganization(CreditCardDonationData.organizationName, "") //select organization
+        await pm.useCreditCardDonationPage().submitCCOneTimeWithMatch(CreditCardDonationData)
 
     }
     // PT: 96922 Request a Match for a Previous Donation

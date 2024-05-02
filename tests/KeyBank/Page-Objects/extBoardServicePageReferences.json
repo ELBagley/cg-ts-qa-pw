@@ -1,5 +1,5 @@
 {
-    "numPortlets": 3,
+    "numPortlets": 6,
     "Portlet1": {
         "PortletTitle": "Board Service Memberships",
         "PortletType": 1002,
@@ -21,8 +21,8 @@
     "Portlet4": {
         "PortletTitle": "Community Leadership Gift Balance", 
         "PortletType": 1006,
-        "PortletElements": 5,
-        "PortletHeader": ["Program Name", "Number of Transaction(s)", "Limit", "Total Match Amount", "Balance"]
+        "PortletElements": 4,
+        "PortletHeader": ["Organization Information", "Type", "Description", "Status"]
     },
     "Portlet5": {
         "PortletTitle": "My Nominations",
@@ -35,5 +35,6 @@
         "PortletType": 4012,
         "PortletElements": 0,
         "PortletHeader": ["x"]
+
     }
 }

@@ -37,7 +37,7 @@ test.describe('Create initial data for new execution of tests',() => {
         await pm.useGivingPage().navigateToGivingPage()
         // Repeat for each add a donation
         await pm.useGivingPage().selectDonateViaCreditCard(Test2_creditCardDonationData)
-        await pm.useOrganizationSearchPage().selectOrganization(Test2_creditCardDonationData)
+        await pm.useOrganizationSearchPage().selectOrganization(Test2_creditCardDonationData,"")
         await pm.useCreditCardDonationPage().submitCCOneTimeWithMatch(Test2_creditCardDonationData)
         await pm.useReviewInformationPage().fillReviewInformation(Test2_creditCardDonationData)
         await pm.useSubmissionSuccessfulPage().selectReturnToHome()

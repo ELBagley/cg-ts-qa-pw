@@ -27,7 +27,7 @@ test.describe('Verify initial configuration',() => {
     test.beforeEach('Login to external portal', async ({page}) => {
         const pm = new extPageManager(page);
         // donor with event creator role
-        await pm.useloginPage().loginToExternalPortal('DONORdefault', '123!SilverFox');
+        await pm.useloginPage().loginToExternalPortal('DONOR0430', '123!SilverFox');
     })
     test ('Default Data Verification of Home page portlets', async ({page}) =>{
         const pm = new extPageManager(page)

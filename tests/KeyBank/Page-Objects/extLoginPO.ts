@@ -1,5 +1,5 @@
 import { Page, expect } from "@playwright/test";
-import { examinePortletHelper } from "../Fixtures/ExaminePortlet"
+import { examinePortletHelper } from "../Fixtures/ExaminePortlet2"
 
 const extLoginPage = "https://sandbox.cybergrants.com/pls/cybergrants-sb/eg_portal.home?x_gm_id=10762&x_source_flag=EGD&x_style_id=&x_language_code=en-US"
 const extHomePage = "https://sandbox.cybergrants.com/pls/cybergrants-sb/eg_portal.home?x_gm_id=10762&x_source_flag=EGD&x_style_id=&x_language_code=en-US"

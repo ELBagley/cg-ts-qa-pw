@@ -1,5 +1,5 @@
 import { Page, expect } from "@playwright/test";
-import { examinePortletHelper } from "../Fixtures/ExaminePortlet"
+import { examinePortletHelper } from "../Fixtures/ExaminePortlet2"
 
 export class extHome extends examinePortletHelper{
 
@@ -15,7 +15,6 @@ export class extHome extends examinePortletHelper{
     async selectBTNVolunteer(){
         await this.page.locator('#10762').getByRole('link', { name: 'Volunteer' }).click();
     }
-    
 }
 
 

@@ -29,25 +29,23 @@ export class DateHelper {
             OneWeekFromToday.setDate(today.getDate() + 7).toLocaleString('en-US')
             return this.date_TO_String(OneWeekFromToday)
         }
-        /*
         else if (getDate == "OneWeekFromTodayPlusOneDay"){
             let today = new Date()
             let OneWeekFromToday = new Date()
-            OneWeekFromToday.setDate(today.getDate() + 8)
-            return OneWeekFromToday.toLocaleDateString()
+            OneWeekFromToday.setDate(today.getDate() + 8).toLocaleString('en-US')
+            return this.date_TO_String(OneWeekFromToday)
         }       
         else if (getDate == "PreviousWeekFromToday"){
             let today = new Date()
             let PreviousWeekFromToday = new Date() 
-            PreviousWeekFromToday.setDate(today.getDate() - 7)
-            return PreviousWeekFromToday.toLocaleDateString()
+            PreviousWeekFromToday.setDate(today.getDate() - 7).toLocaleString('en-US')
+            return this.date_TO_String(PreviousWeekFromToday)
         }
         else if (getDate == "SixDaysPriorFromToday"){
             let today = new Date()
             let SixDaysPriorFromToday = new Date()
-            SixDaysPriorFromToday.setDate(today.getDate() - 6)
-            return SixDaysPriorFromToday.toLocaleDateString()
+            SixDaysPriorFromToday.setDate(today.getDate() - 6).toLocaleString('en-US')
+            return this.date_TO_String(SixDaysPriorFromToday)
         }
-        */
     }
 }

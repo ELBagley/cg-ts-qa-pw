@@ -1,8 +1,8 @@
 { 
-    "NumTabs": 1,
-    "HowAmIDoing": {
-        "TabType": 1033,
-        "Donated": "180",
-        "HoursVolunteered": "13"
+    "portlet1": {
+        "PortletTitle": "HowAmIDoing",
+        "Donated": "25 USD",
+        "HoursVolunteered": 0,
+        "HoursGoal": "0 %"
     }
 }

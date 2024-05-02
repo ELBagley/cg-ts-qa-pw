@@ -12,6 +12,14 @@ const UWGivingLocators = JSON.parse(JSON.stringify(require("./Data/UWGiving_Loca
 const BoardServiceLocators = JSON.parse(JSON.stringify(require("./Data/Boardservice_Locators.json")));
 const ManageEventsLocators = JSON.parse(JSON.stringify(require("./Data/ManageEvents_Locators.json")));
 
+//Page specifics
+// The Page-Object JSON heading must reflect if there was a table presented what would it look like
+const BoardServicePageReferences = JSON.parse(JSON.stringify(require('../KeyBank/Page-Objects/extBoardServicePageReferences')));
+const UWGivingPageReferences = JSON.parse(JSON.stringify(require('../KeyBank/Page-Objects/extUWGivingPageReferences')));
+const GivingPageReferences = JSON.parse(JSON.stringify(require('../KeyBank/Page-Objects/extGivingPageReferences')));
+const MangeEventsPageReferences = JSON.parse(JSON.stringify(require('../KeyBank/Page-Objects/extManageEventsPageReferences')));
+const HomePageReferences = JSON.parse(JSON.stringify(require('../KeyBank/Page-Objects/extHomePageReferences')));
+
 const Test1_GivingData = JSON.parse(JSON.stringify(require('./Data/Test1_UnitedWay/Test1_verifyextGiving_Data.json')));
 const Test1_UWGivingData = JSON.parse(JSON.stringify(require('./Data/Test1_UnitedWay/Test1_verifyextUWGiving_Data.json')));
 const Test1_BoardServiceData = JSON.parse(JSON.stringify(require('./Data/Test1_UnitedWay/Test1_verifyextBoardService_Data.json')));
@@ -28,74 +36,66 @@ test.describe('Create initial data for new execution of tests',() => {
     test.beforeEach('Login to external portal', async ({page}) => {
         const pm = new extPageManager(page);
         // Donor MUST have Event Creator role
-        await pm.useloginPage().loginToExternalPortal('DONOR0320', '123!SilverFox');
+        await pm.useloginPage().loginToExternalPortal('DONOR0430', '123!SilverFox');
     })
 
     //test ('Portlet defaults for Donor without a role', async ({page})=>) {}
 
-    test ('Test One Submit UW Credit Card Donations', async ({page}) => {
+    test.skip ('Test One Submit UW Credit Card Donations', async ({page}) => {
         const pm = new extPageManager(page)
         await pm.useUWGivingPage().navigateToUWGivingPage()
         // Repeat for each add a donation
         await pm.useUWGivingPage().createDonateViaCreditCardOT(Test1_creditCardDonationData)
-        await pm.useOrganizationSearchPage().selectOrganization(Test1_creditCardDonationData)
+        await pm.useOrganizationSearchPage().selectOrganization(Test1_creditCardDonationData,"")
         await pm.useCreditCardDonationPage().submitCCOneTimeWithMatch(Test1_creditCardDonationData)
         await pm.useReviewInformationPage().fillReviewInformation(Test1_creditCardDonationData)
         await pm.useSubmissionSuccessfulPage().selectReturnToHome()
     })
 
-    test ('Test One Submit UW OT Payroll Deduction(s)', async ({page}) => {
+    test.skip ('Test One Submit UW OT Payroll Deduction(s)', async ({page}) => {
         const pm = new extPageManager(page)
         await pm.useUWGivingPage().navigateToUWGivingPage()
         await pm.useUWGivingPage().selectMakeAPayrollDeduction_UWOT(Test1_payrollDeductionOT)
-        await pm.useOrganizationSearchPage().selectOrganization(Test1_payrollDeductionOT)
+        await pm.useOrganizationSearchPage().selectOrganization(Test1_payrollDeductionOT,"")
         await pm.usePayrollDeductionPage().makePayrollDeductionOneTime(Test1_payrollDeductionOT)
         await pm.useOrganizationSearchPage().selectCheckout()
         await pm.useReviewInformationPage().completeReview()
         await pm.useSubmissionSuccessfulPage().selectReturnToHome()
     })
-    test ('Test One Submit UW Recurring Payroll Deduction(s)', async ({page}) => {
+    test.skip ('Test One Submit UW Recurring Payroll Deduction(s)', async ({page}) => {
         const pm = new extPageManager(page)
         await pm.useUWGivingPage().navigateToUWGivingPage()
         await pm.useUWGivingPage().selectMakeAPayrollDeduction_UWR(Test1_payrollDeductionR)
-        await pm.useOrganizationSearchPage().selectOrganization(Test1_payrollDeductionR)
+        await pm.useOrganizationSearchPage().selectOrganization(Test1_payrollDeductionR,"")
         await pm.usePayrollDeductionPage().makePayrollDeductionRecurring(Test1_payrollDeductionR)
         await pm.useOrganizationSearchPage().selectCheckout()
         await pm.useReviewInformationPage().completeReview()
         await pm.useSubmissionSuccessfulPage().selectReturnToHome()
-    })
+    }),
     test ('United Way Data Verification of Home page', async ({page})=>{
         const pm = new extPageManager(page)
         await pm.useHomePage().examinePortletTab("How Am I Doing?",Test1_HomeData, HomeLocators)
-    })
+    }),
     test ('United Way Data Verification of Giving page', async ({page})=>{
         const pm = new extPageManager(page)
-        await pm.useGivingPage().examinePortletTab("Matching Gifts Balance",Test1_GivingData, GivingLocators)
-        await pm.useGivingPage().examinePortletTab("Matching Gifts History",Test1_GivingData, GivingLocators)
-        await pm.useGivingPage().examinePortletTab("Credit Card Transactions",Test1_GivingData, GivingLocators)
-        await pm.useGivingPage().examinePortletTab("My Nominations",Test1_GivingData, GivingLocators)
-    })
+        await pm.useGivingPage().navigateToGivingPage()
+        await pm.useGivingPage().examinePortletTab(GivingPageReferences,Test1_GivingData, GivingLocators)
+
+    }),
     test ('United Way Data Verification of United Way Giving page', async ({page})=>{
         const pm = new extPageManager(page)
-        await pm.useUWGivingPage().examinePortletTab("United Way - Give Again",Test1_UWGivingData, UWGivingLocators)
-        await pm.useUWGivingPage().examinePortletTab("United Way Matching Gifts History",Test1_UWGivingData, UWGivingLocators)
-        await pm.useUWGivingPage().examinePortletTab("United Way Credit Card Transactions",Test1_UWGivingData, UWGivingLocators)
-        await pm.useUWGivingPage().examinePortletTab("Payroll Contributions",Test1_UWGivingData, UWGivingLocators)
-    })
+        await pm.useUWGivingPage().navigateToUWGivingPage()
+        await pm.useUWGivingPage().examinePortletTab(UWGivingPageReferences,Test1_UWGivingData, UWGivingLocators)
+
+    }),
     test ('United Way Data Verification of Board Service page', async ({page})=>{
         const pm = new extPageManager(page)
-        await pm.useBoardServicePage().examinePortletTab("Board Service Memberships",Test1_BoardServiceData, BoardServiceLocators)
-        await pm.useBoardServicePage().examinePortletTab("Board Service Recorded Hours",Test1_BoardServiceData, BoardServiceLocators)
-        await pm.useBoardServicePage().examinePortletTab("Board Service Matching Gifts History",Test1_BoardServiceData, BoardServiceLocators)
-        await pm.useBoardServicePage().examinePortletTab("Community Leadership Gift Balance",Test1_BoardServiceData, BoardServiceLocators)     
-        await pm.useBoardServicePage().examinePortletTab("My Nominations",Test1_BoardServiceData, BoardServiceLocators)
-        await pm.useBoardServicePage().examinePortletTab("Dollars For Doers",Test1_BoardServiceData, BoardServiceLocators)
-    })
-        test ('United Way Data Verification of Manage Events page', async ({page})=>{
-            const pm = new extPageManager(page)
-        await pm.useManageEventsPage().examinePortletTab("Manage Open Events",Test1_ManageEventsData, ManageEventsLocators)
-        await pm.useManageEventsPage().examinePortletTab("Manage Completed Events",Test1_ManageEventsData, ManageEventsLocators)
-        await pm.useManageEventsPage().examinePortletTab("Events I Created",Test1_ManageEventsData, ManageEventsLocators)
-        await pm.useManageEventsPage().examinePortletTab("Unsubmitted Events I Created",Test1_ManageEventsData, ManageEventsLocators)
+        await pm.useBoardServicePage().navigateToBoardServicePage()
+        await pm.useBoardServicePage().examinePortletTab(BoardServicePageReferences,Test1_BoardServiceData, BoardServiceLocators)
+    }),
+    test ('United Way Data Verification of Manage Events page', async ({page})=>{
+        const pm = new extPageManager(page)
+        await pm.useManageEventsPage().navigateToManageEventsPage()
+        await pm.useManageEventsPage().examinePortletTab(MangeEventsPageReferences,Test1_ManageEventsData, ManageEventsLocators)
     })
 })

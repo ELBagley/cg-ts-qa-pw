@@ -2,7 +2,7 @@ import { test } from "@playwright/test"
 import { extPageManager }  from "./Page-Objects/extPageManagerPO"
 
 // ADD DATA
-const Test3_FirstMembershipData = JSON.parse(JSON.stringify(require('./Data/Test3_BoardService/Test3_DONOR1-BS_addFirstMembershipData.json')));
+const Test3_FirstMembershipData = JSON.parse(JSON.stringify(require('./Data/Test3_BoardService/Test3_DONOR1_BS_addFirstMembershipData.json')));
 const Test3_SecondMembershipData = JSON.parse(JSON.stringify(require('./Data/Test3_BoardService/Test3_DONOR1-BS_addSecondMembershipData.json')));
 const Test3_ThirdMembershipData = JSON.parse(JSON.stringify(require('./Data/Test3_BoardService/Test3_DONOR1-BS_addThirdMembershipData.json')));
 // VERIFY Locators
@@ -42,6 +42,8 @@ test.describe('Create initial data for new execution of tests',() => {
         // Repeat for each add a donation
         await pm.useBoardServicePage().createBoardServiceMembership()
         await pm.useOrganizationSearchPage().selectOrganization(Test3_FirstMembershipData, "BoardService")
+        // only works in headless mode: npx playwright test --project=chromium --headed
+        //await page.pause()
         await pm.useBoardServiceMembershipInformationPage().submitBoardServiceMembership2(Test3_FirstMembershipData)
         await pm.useAddFileUploadPage().fillOutForm(Test3_FirstMembershipData)
         await pm.useReviewInformationPage().fillReviewInformation(Test3_FirstMembershipData)
@@ -71,7 +73,7 @@ test.describe('Create initial data for new execution of tests',() => {
     })
     
     // Add hours to each of the four member organizations
-    test.skip ('Add Hours to first membership Board Membership', async ({page}) => {
+    test ('Add Hours to first membership Board Membership', async ({page}) => {
         const pm = new extPageManager(page)
         await pm.useBoardServicePage().navigateToBoardServicePage()
         // select the add hours button

@@ -24,6 +24,8 @@ export class BoardServiceMembershipInformation{
         //fill out form then navigate to the File Upload page. The page Manager will fill out the form using a PO class
         await this.page.locator('#CG2828314').fill(startDate as string)
         await this.page.locator('#CG2828308').fill(endDate as string); 
+
+        await this.page.pause()
         // THIS DOESN"T WORK. there are two exact locators
         await this.page.getByLabel('Description').fill(testData.Description);
 

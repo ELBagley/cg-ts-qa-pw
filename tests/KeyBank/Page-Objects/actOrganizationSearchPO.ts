@@ -15,6 +15,7 @@ export class OrganizationSearch {
         await this.page.getByPlaceholder('Organization Name').fill(""); //clear any existing text
 
         if (searchType == "BoardService"){
+
             await this.page.getByPlaceholder('Organization Name').fill(testData.organizationName); //css-1q464cn
             await this.page.getByRole('button', { name: 'Search', exact: true }).click();  
             //await this.page.waitForTimeout(60000); 

@@ -1,36 +1,26 @@
 { 
-    "NumTabs": 4,
-    "TabArray": ["Manage Open Events", "Manage Completed Events", "Events I Created", "Unsubmitted Events I Created"],
     "Portlet1": {
         "PortletTitle": "Manage Completed Events",
-        "TabRows":  4,
-        "TabAction": "open",
-        "TabRow1": ["Hide Occurrences", "UNIVERSAL EDUCATION CENTER|0", "Universal Orlando Volunteer Events|0", "SQA Test R|0", "x", "x", "x"],
-        "TabRow2": ["View|0",           "UNIVERSAL EDUCATION CENTER|1", "Universal Orlando Volunteer Events|1", "SQA Test R|1", "Closed|0", "0|0", "2|0"],
-        "TabRow3": ["View|1",           "Boulder Universal",            "Universal Orlando Volunteer Events|2", "SQA Test OT",  "Closed|1", "0|1", "2|1"],
-        "TabRow4": ["View|2",           "UNIVERSAL EDUCATION CENTER|2", "Universal Orlando Volunteer Events|3", "SQA Test R|2", "Closed|2", "0|2", "2|2"]
+        "PortletDataRows":  0,
+        "PortletDataAction": "none",
+        "PortletDataRow1": [""]
     },
     "Portlet2": {
         "PortletTitle": "Manage Open Events",
-        "TabRows": 0,
-        "TabAction":"none",
-        "TabRow1": ["Upload Photos"],
-        "TabRow2": ["x"]
+        "PortletDataRows": 0,
+        "PortletDataAction":"none",
+        "PortletDataRow1": [""]
     },
     "Portlet3": {
         "PortletTitle": "Events I Created",
-        "TabRows": 4,
-        "TabAction": "open",
-        "TabRow1": ["Hide Occurrences", "UNIVERSAL EDUCATION CENTER|0", "Universal Orlando Volunteer Events|0", "SQA Test R|0", "x", "x"],
-        "TabRow2": ["View|0",           "UNIVERSAL EDUCATION CENTER|1", "Universal Orlando Volunteer Events|1", "SQA Test R|1", "Closed|0", "0|0"],
-        "TabRow3": ["View|1",           "Boulder Universal",            "Universal Orlando Volunteer Events|2", "SQA Test OT",  "Closed|1", "0|1"],
-        "TabRow4": ["View|2",           "UNIVERSAL EDUCATION CENTER|2", "Universal Orlando Volunteer Events|3", "SQA Test R|2", "Closed|2", "0|2"]
+        "PortletDataRows": 0,
+        "PortletDataAction": "none",
+        "PortletDataRow1": [""]
     },
     "Portlet4": {
         "PortletTitle": "Unsubmitted Events I Created",
-        "TabRows": 1,
-        "TabAction": "none",
-        "TabRow1": ["Edit | Delete", "SACRED HEART GREENWICH", "Universal Orlando Volunteer Events", "SQA Test Ongoing"],
-        "TabRow2": ["x"]
+        "PortletDataRows": 0,
+        "PortletDataAction": "none",
+        "PortletDataRow1": [""]
     }
 }

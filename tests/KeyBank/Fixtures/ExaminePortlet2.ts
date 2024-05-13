@@ -24,71 +24,87 @@ export class examinePortletHelper {
   async examinePortletTab(pageReference: any, pagetestData: any, testLocators?: any) {
     await expect(pageReference.numPortlets <= 6).toBeTruthy
     let testData: any
-    let curPagePortletData: any
-    let count = 1 
-    //look through the portlet title array to find which portlet data to use
-    for(let curPortlet = 1; curPortlet <= pageReference.numPortlets; curPortlet++){
-      if (curPortlet == 1){
-        curPagePortletData = pageReference["Portlet1"] 
-        testData = pagetestData["Portlet1"]
+    let curPagePortletData: any 
+    
+    //look through the portlet title array to find which portlet reference in the JSON data to use
+    for(let curPortlet = 0; curPortlet < pageReference.numPortlets; curPortlet++){
+      // for the each portlet title find the reference match
+      // does portlet1's PortletReference match with the first title in the array
+      if(pageReference.Portlet1.PortletTitle == pageReference.PortletArray[curPortlet]){
+          curPagePortletData = pageReference["Portlet1"] 
+          testData = pagetestData["Portlet1"]
       }
-      if (curPortlet == 2){
+      else if(pageReference.Portlet2.PortletTitle == pageReference.PortletArray[curPortlet]){
         curPagePortletData = pageReference["Portlet2"] 
         testData = pagetestData["Portlet2"]
       }
-      if (curPortlet == 3){
-        curPagePortletData = pageReference["Portlet3"]
-        testData = pagetestData["Portlet3"]
+      else if(pageReference.Portlet3.PortletTitle == pageReference.PortletArray[curPortlet]){
+          curPagePortletData = pageReference["Portlet3"]
+          testData = pagetestData["Portlet3"]
       }
-      if (curPortlet == 4){
+      else if(pageReference.Portlet4.PortletTitle == pageReference.PortletArray[curPortlet]){
         curPagePortletData = pageReference["Portlet4"]
         testData = pagetestData["Portlet4"]
       }
-      if (curPortlet == 5){
+      else if(pageReference.Portlet5.PortletTitle == pageReference.PortletArray[curPortlet]){
         curPagePortletData = pageReference["Portlet5"]
         testData = pagetestData["Portlet5"]
       }
-      if (curPortlet == 6){
+      else if(pageReference.Portlet6.PortletTitle == pageReference.PortletArray[curPortlet]){
         curPagePortletData = pageReference["Portlet6"]
         testData = pagetestData["Portlet6"]
       }
-    
-      if (curPagePortletData.PortletType != 4012){
-        //need to verify the portlet's headings first
-        for(let curColumn = 0; curColumn < curPagePortletData.PortletElements; curColumn++){ 
-          if (curPagePortletData.PortletElements != 0){ // there is no table for the portlet
-            await expect(this.page.getByRole('cell', {name: curPagePortletData.PortletHeader[curColumn], exact: true})).toBeVisible();
-          }
+
+      if((curPagePortletData.PortletTitle != 'Give Again') && (curPagePortletData.PortletTitle != 'How Am I Doing?')){
+        await this.page.getByText(curPagePortletData.PortletTitle, {exact: true}).click()
+      }
+
+      // Verify the table headings, if any
+      for(let curColumn = 0; curColumn < curPagePortletData.PortletElements; curColumn++){ 
+        if (testData.PortletHeadings != 0){ 
+          await expect(this.page.getByRole('cell', {name: curPagePortletData.PortletHeader[curColumn], exact: true})).toBeVisible();
         }
+      }
 
-        // some portlets have nested rows. Expand them if test data specifies
-        let expandedData = 0 // flag to indicate if rows were expanded
-        // TODO: CAN NOT assume
-        // 1: the order of rows positions the Summary row first in the list
-        // 2: FUTURE: tests will only have one summary row
-        if((testData.TabAction == "open") && (expandedData == 0)){
-            // select the cell with "View Occurrences" to expand the ongoing events
-            await this.page.getByRole('link', {name: 'View Occurrences'}).click()
-            await this.page.waitForTimeout(3000);
-            expandedData = 1 
-        }
+      // some portlets have nested rows. Expand them if test data specifies
+      // Portlet 1010  EVENTS - multi occurrences 
+      // all portlet data will either has "none" or "open"
+      let expandedData = 0 // flag to indicate if rows were expanded
+      // TODO: CAN NOT ASSUME
+      // 1: the order of rows positions the Summary row first in the list
+      // 2: tests will only have one summary row
+      if((testData.TabAction == "open") && (expandedData == 0)){
+          // select the cell with "View Occurrences" to expand the ongoing events
+          await this.page.getByRole('link', {name: 'View Occurrences'}).click()
+          await this.page.waitForTimeout(3000);
+          expandedData = 1 
+      }
 
-        // need to verify the data presented in the portlet
-        await expect(testData.PortletNumRows |= 0 ).toBeTruthy
-
+      // 4012 is Dollars for Doers
+      //  this section hadles portlets that do not follwow the same format 
+      //      as standard portlets with headers and data tables
+      //
+      // 1033 is home page graphical portets
+      //
+      // need to verify the data presented in the portlet
+      if ((curPagePortletData.PortletType != 4012) && (curPagePortletData.PortletType != 1033) && (testData.PortletNumRows != 0 )){
         //Verify the data for the portlet
-        // review each column of each row for verification
-        // each portlet type has a different number of columns; PortletElements however there may not be a table for data
-        for(let curColumn = 0; ((curColumn < curPagePortletData.PortletElements) && (testData.PortletNumRows != 0)); curColumn++){ //columns using array length
-          // There is a table so continue to review each row column by column. Each test may have any number of rows; PortletDataRows
-          for(let curRow = 0; curRow <= testData.PortletDataRows; curRow++){ 
-            // 
-            if((curColumn == 0) && (curPagePortletData.PortletElements != 0)){ // make sure there is a table for the portlet
-              await expect(this.page.getByRole('cell', {name: curPagePortletData.PortletHeader[curColumn],exact: true})).toBeVisible();
-            }
-            if((curColumn == 1) && (testData.PortletDataRow1[curColumn] != "x")){ //there may not be any data in this column/row location in the table
-              // handle duplicaate locators, if any. The JASON data will indicate if the string contains a '|'  // 
-              let curStringArray = testData.PortletDataRow1[curColumn].split('|')
+        //  review each column of each row for verification
+        //  each portlet type has a different number of columns; PortletElements. 
+        //  each test may have any number of rows; PortletDataRows
+        var curStringArray = []
+        for(let curRow = 0; curRow <= testData.PortletNumRows; curRow++){ 
+          for(let curColumn = 0; (curColumn < curPagePortletData.PortletElements); curColumn++){ //columns using array length
+            // if curRow = 1 then start with that rows array of data, then go accross each column
+            //     split that value and select correct locator based on its nth
+            if((curRow == 1) && (testData.PortletDataRow1[curColumn] != 'x')){ //there may not be any data in this column/row location in the table
+              //if there is a css locator for row 1 ("No Results Found") use the css locator 
+              if(testData.PortletDataRow1[curColumn] == "No results Found" && curPagePortletData.TabRow1Locator != ""){
+                await expect(this.page.locator(curPagePortletData.TabRow1Locator)).toHaveText("No results Found");
+                continue;
+              }
+              // handle duplicate locators, if any. The JASON data will indicate if the string contains a '|'  // 
+              curStringArray = testData.PortletDataRow1[curColumn].split('|')
               if(curStringArray.length == 2){ 
                 await expect(this.page.getByRole('cell', {name: curStringArray[0],exact: true}).nth(curStringArray[1])).toBeVisible();
               }
@@ -96,7 +112,7 @@ export class examinePortletHelper {
                 await expect(this.page.getByRole('cell', {name: testData.PortletDataRow1[curColumn],exact: true})).toBeVisible();
               }
             }
-            if((curColumn == 2) && (testData.PortletDataRow2[curColumn] != "x")){
+            if((curRow == 2) && (testData.PortletDataRow2[curColumn] != 'x')){
               let curStringArray = testData.PortletDataRow2[curColumn].split('|')// handle duplicate locators, if any
               if(curStringArray.length == 2){ 
                 await expect(this.page.getByRole('cell', {name: curStringArray[0],exact: true}).nth(curStringArray[1])).toBeVisible();
@@ -105,7 +121,7 @@ export class examinePortletHelper {
                 await expect(this.page.getByRole('cell', {name: testData.PortletDataRow2[curColumn],exact: true})).toBeVisible();
               }
             } 
-            if((curColumn == 3) && (testData.PortletDataRow3[curColumn] != "x")){
+            if((curRow == 3) && (testData.PortletDataRow3[curColumn] != 'x')){
               let curStringArray = testData.PortletDataRow3[curColumn].split('|')// handle duplicate locators, if any
               if(curStringArray.length == 2){ 
                 await expect(this.page.getByRole('cell', {name: curStringArray[0],exact: true}).nth(curStringArray[1])).toBeVisible();
@@ -114,25 +130,27 @@ export class examinePortletHelper {
                 await expect(this.page.getByRole('cell', {name: testData.PortletDataRow3[curColumn],exact: true})).toBeVisible();
               }          
             }
-          } 
-          if((curColumn == 4) && (testData.PortletDataRow3[curColumn] != "x")){
-            let curStringArray = testData.PortletDataRow3[curColumn].split('|')// handle duplicate locators, if any
-            if(curStringArray.length == 2){ 
-              await expect(this.page.getByRole('cell', {name: curStringArray[0],exact: true}).nth(curStringArray[1])).toBeVisible();
+            if((curRow == 4) && (testData.PortletDataRow4[curColumn] != 'x')){
+              let curStringArray = testData.PortletDataRow4[curColumn].split('|')// handle duplicate locators, if any
+              if(curStringArray.length == 2){ 
+                await expect(this.page.getByRole('cell', {name: curStringArray[0],exact: true}).nth(curStringArray[1])).toBeVisible();
+              }
+              else{
+                await expect(this.page.getByRole('cell', {name: testData.PortletDataRow4[curColumn],exact: true})).toBeVisible();
+              }          
             }
-            else{
-              await expect(this.page.getByRole('cell', {name: testData.PortletDataRow4[curColumn],exact: true})).toBeVisible();
-            }          
-          }
-          if((curColumn == 5) && (testData.PortletDataRow3[curColumn] != "x")){
-            let curStringArray = testData.PortletDataRow3[curColumn].split('|')// handle duplicate locators, if any
-            if(curStringArray.length == 2){ 
-              await expect(this.page.getByRole('cell', {name: curStringArray[0],exact: true}).nth(curStringArray[1])).toBeVisible();
+            if((curColumn == 5) && (testData.PortletDataRow5[curColumn] != 'x')){
+              let curStringArray = testData.PortletDataRow5[curColumn].split('|')// handle duplicate locators, if any
+              if(curStringArray.length == 2){ 
+                await expect(this.page.getByRole('cell', {name: curStringArray[0],exact: true}).nth(curStringArray[1])).toBeVisible();
+              }
+              else{
+                await expect(this.page.getByRole('cell', {name: testData.PortletDataRow5[curColumn],exact: true})).toBeVisible();
+              }          
             }
-            else{
-              await expect(this.page.getByRole('cell', {name: testData.PortletDataRow5[curColumn],exact: true})).toBeVisible();
-            }          
           }
+        }
+      }
       // DOLLARS FOR DOERS 
       else if (curPagePortletData.PortletType == 4012){
         //TODO: if "Details" select it to expand more information. Details class is css-1eirz6y
@@ -155,6 +173,23 @@ export class examinePortletHelper {
         await this.page.getByText("Hours Logged").isVisible
         await this.page.getByText(testData.hoursLogged).isVisible
       }
+      //Could not use standard locators for these
+      else if (curPagePortletData.PortletType == 1033){ 
+        if (testData.Donated != ''){
+          //expect(this.page.getByText(testData.Donated, { exact: true })).toBeVisible();
+          expect(this.page.locator('div:nth-of-type(1) > .blocs-content > .goals__circle-outer > .goals__progress > .goals__value')).toHaveText(testData.Donated)
+        }
+        if (testData.HoursVolunteered != ''){
+          //expect(this.page.getByText(testData.HoursVolunteered, { exact: true })).toBeVisible();
+          expect(this.page.locator(':nth-of-type(2) > .blocs-content > .goals__circle-outer > .goals__progress > .goals__value')).toHaveText(testData.HoursVolunteered)
+        }
+        if (testData.HoursGoal != ''){
+          //expect(this.page.getByText(testData.HoursGoal, { exact: true })).toBeVisible();
+          expect(this.page.locator('.goals__percent > .goals__value')).toHaveText(testData.HoursGoal)
+        }
+      }
+          //class: container-query-blocs container-query-three-blocs      }
+    }
         /*
         // duplicate tab strings causing confusion
         if(curPagePortletData.PortletTitle === "Events I Created"){
@@ -176,7 +211,7 @@ export class examinePortletHelper {
           await this.page.getByText(curPagePortletData.PortletTitle).click()
         }
         await this.page.waitForTimeout(1000);
-        */
+
 
         // HISTORY Portlet
         //   Current Payroll Contribution 1019
@@ -185,9 +220,9 @@ export class examinePortletHelper {
         // BALANCE Portlet
         //   Matching Gift Balance 1006
         
+        */
+  }
+}
 
-    }
-  }
-  }
-}}
+
 

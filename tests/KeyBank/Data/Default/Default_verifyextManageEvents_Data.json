@@ -1,24 +1,28 @@
 { 
     "Portlet1": {
         "PortletTitle": "Manage Completed Events",
+        "PortletHeadings": 0,
         "PortletNumRows":  0,
         "PortletDataAction": "none",
         "PortletDataRow1": [""]
     },
     "Portlet2": {
         "PortletTitle": "Manage Open Events",
+        "PortletHeadings": 0,
         "PortletNumRows": 0,
         "PortletDataAction":"none",
         "PortletDataRow1": [""]
     },
     "Portlet3": {
         "PortletTitle": "Events I Created",
+        "PortletHeadings": 0,
         "PortletNumRows": 0,
         "PortletDataAction": "none",
         "PortletDataRow1": [""]
     },
     "Portlet4": {
         "PortletTitle": "Unsubmitted Events I Created",
+        "PortletHeadings": 0,
         "PortletNumRows": 0,
         "PortletDataAction": "none",
         "PortletDataRow1": [""]

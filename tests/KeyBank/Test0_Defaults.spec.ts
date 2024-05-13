@@ -12,7 +12,7 @@ const ManageEventsLocators = JSON.parse(JSON.stringify(require("./Data/ManageEve
 // The Page-Object JSON heading must reflect if there was a table presented what would it look like
 const BoardServicePageReferences = JSON.parse(JSON.stringify(require('../KeyBank/Page-Objects/extBoardServicePageReferences')));
 const UWGivingPageReferences = JSON.parse(JSON.stringify(require('../KeyBank/Page-Objects/extUWGivingPageReferences')));
-const GivingPageReferences = JSON.parse(JSON.stringify(require('../KeyBank/Page-Objects/extGivingPageReferences')));
+const GivingPageReferences = JSON.parse(JSON.stringify(require('../KeyBank/Page-Objects/extGivingPageReferences2')));
 const MangeEventsPageReferences = JSON.parse(JSON.stringify(require('../KeyBank/Page-Objects/extManageEventsPageReferences')));
 const HomePageReferences = JSON.parse(JSON.stringify(require('../KeyBank/Page-Objects/extHomePageReferences')));
 
@@ -27,7 +27,7 @@ test.describe('Verify initial configuration',() => {
     test.beforeEach('Login to external portal', async ({page}) => {
         const pm = new extPageManager(page);
         // donor with event creator role
-        await pm.useloginPage().loginToExternalPortal('DONOR0430', '123!SilverFox');
+        await pm.useloginPage().loginToExternalPortal('DonorDefault', '123!SilverFox');
     })
     test ('Default Data Verification of Home page portlets', async ({page}) =>{
         const pm = new extPageManager(page)

@@ -5,34 +5,34 @@
         "PortletTitle": "Board Service Membership",
         "PortletRows":  3,
         "TabAction":"none",
-        "PortletRow1": ["RED CROSS ELEMENTARY PTO INC",                 "Board Service Membership|0", "hours on|0", "You have successfully recorded your Board Service Membership|0"],
-        "PortletRow2": ["21ST CENTURY FUND FOR DELAWARES CHILDREN INC", "Board Service Membership|1", "hours on|1", "You have successfully recorded your Board Service Membership|1"],
-        "PortletRow3": ["AMERICAN NATIONAL RED CROSS",                  "Board Service Membership|2", "hours on|2", "You have successfully recorded your Board Service Membership|1"]
+        "PortletDataRow1": ["RED CROSS ELEMENTARY PTO INC",                 "Board Service Membership|0", "hours on|0", "You have successfully recorded your Board Service Membership|0"],
+        "PortletDataRow2": ["21ST CENTURY FUND FOR DELAWARES CHILDREN INC", "Board Service Membership|1", "hours on|1", "You have successfully recorded your Board Service Membership|1"],
+        "PortletDataRow3": ["AMERICAN NATIONAL RED CROSS",                  "Board Service Membership|2", "hours on|2", "You have successfully recorded your Board Service Membership|1"]
     },
     "Portlet2": {
         "PortletTitle": "Board Service Recorded Hours",
         "PortletRows": 2,
         "TabAction":"none",
-        "PortletRow1": ["RED CROSS ELEMENTARY PTO INC", "Board Service Log Hours", "10 hours on ", "You have successfully recorded your hours!"],
-        "PortletRow2": ["1 HEART 1 MISSION",            "Board Service Log Hours",  "3 hours on ", "You have successfully recorded your hours!"]
+        "PortletDataRow1": ["RED CROSS ELEMENTARY PTO INC", "Board Service Log Hours", "10 hours on ", "You have successfully recorded your hours!"],
+        "PortletDataRow2": ["1 HEART 1 MISSION",            "Board Service Log Hours",  "3 hours on ", "You have successfully recorded your hours!"]
     },
     "Portlet3": {
         "PortletTitle": "Board Service Matching Gifts History",
         "PortletRows": 1,
         "TabAction":"none",
-        "PortletRow1": ["RED CROSS ELEMENTARY PTO INC", "Board Service Matching Gifts", "25.00 USD on ", "You have successfully registered you Credit Card transaction"]
+        "PortletDataRow1": ["RED CROSS ELEMENTARY PTO INC", "Board Service Matching Gifts", "25.00 USD on ", "You have successfully registered you Credit Card transaction"]
     },
     "Portlet4": {
         "PortletTitle": "Community Leadership Gift Balance",
         "PortletRows": 1,
         "TabAction":"none",
-        "PortletRow1": ["Board Service - Community Leadership Gift", "1", "$2,000.00", "$500.00", "$1,500.00"]
+        "PortletDataRow1": ["Board Service - Community Leadership Gift", "1", "$2,000.00", "$500.00", "$1,500.00"]
     },
     "Portlet5": {
         "PortletTitle": "My Nominations",
         "PortletRows": 0,
         "TabAction":"none",
-        "PortletRow1": ["x"]
+        "PortletDataRow1": ["x"]
     },
     "Dollars for Doers": {
         "PortletType": 4012,

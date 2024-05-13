@@ -1,28 +1,33 @@
 { 
      "Portlet1": {
         "PortletTitle": "Board Service Memberships",
+        "PortletHeadings": "",
         "PortletNumRows": 1,
-        "PortletRow1": ["No results found","x","x","x"]
+        "PortletDataRow1": ["No results found","x","x","x"]
     },
     "Portlet2": {
         "PortletTitle": "Board Service Recorded Hours",
+        "PortletHeadings": "",
         "PortletNumRows": 1,
-        "PortletRow1": ["No results found","x","x","x"]
+        "PortletDataRow1": ["No results found","x","x","x"]
     },
     "Portlet3": {
         "PortletTitle": "Board Service Matching Gifts History",
+        "PortletHeadings": "",
         "PortletNumRows": 1,
-        "PortletRow1": ["No results found","x","x","x"]
+        "PortletDataRow1": ["No results found","x","x","x"]
     },
     "Portlet4": {
         "PortletTitle": "Community Leadership Gift Balance", 
+        "PortletHeadings": "",
         "PortletNumRows": 1,
-        "PortletRow1": ["Board Service - Community Leadership Gift", "0", "$2,000.00|0", "$0.00", "$2,000.00|1"]
+        "PortletDataRow1": ["Board Service - Community Leadership Gift", "0", "$2,000.00|0", "$0.00", "$2,000.00|1"]
     },
     "Portlet5": {
         "PortletTitle": "My Nominations",
+        "PortletHeadings": "",
         "PortletNumRows": 0,
-        "PortletRow1": ["x"]
+        "PortletDataRow1": ["x"]
     },
     "Portlet6": {
         "PortletTitle": "Community Leadership Gift",

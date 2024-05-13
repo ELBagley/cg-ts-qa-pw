@@ -1,24 +1,27 @@
 { 
-    "NumTabs": 4,
-    "TabArray": ["United Way Matching Gifts History", "United Way Credit Card Transactions", "Payroll Contributions", "United Way - Give Again"],
+    "numPortlets": 4,
+    "PortletArray": ["United Way Matching Gifts History", "United Way Credit Card Transactions", "Payroll Contributions", "United Way - Give Again"],
     "Portlet1": {
         "PortletTitle": "United Way Matching Gifts History",
         "PortletType": 1006,
         "PortletElements": 4,
-        "PortletHeader": ["Organization Information", "Description", "Type","Status"]
+        "PortletHeader": ["Organization Information", "Description", "Type","Status"],
+        "TabRow1Locator": "[data-url='eg_portlet_data/.get_giving_history/?x_mod_id/=553888/&x_language_code/=en-US'] [class=' css-1xrjnll']"
     },
     "Portlet2": {
         "PortletTitle": "United Way Credit Card Transactions",
         "PortletType": 1002,
         "PortletElements": 3,
-        "PortletHeader": ["Organization Information", "Description", "Status"]
+        "PortletHeader": ["Organization Information", "Description", "Status"],
+        "TabRow1Locator": "[data-url='eg_portlet_data/.get_giving_history/?x_mod_id/=552212/&x_language_code/=en-US'] [class=' css-1xrjnll']"
         },
     "Portlet3": {
         "PortletTitle": "Payroll Contributions",
         "PortletType": 1010,
-        "PortletElements": 5,
+        "PortletElements": 4,
         "PortletAction": "none",
-        "PortletHeader": ["Action", "Organization Information", "Type", "Description", "Status"]
+        "PortletHeader": ["Organization Information", "Type", "Description", "Status"],
+        "TabRow1Locator": "[data-url='eg_portlet_data/.get_giving_history/?x_mod_id/=550538/&x_language_code/=en-US'] [class=' css-1xrjnll']"
     },
     "Portlet4": {
         "PortletTitle": "United Way - Give Again",

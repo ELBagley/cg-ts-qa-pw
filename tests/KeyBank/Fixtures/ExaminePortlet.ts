@@ -308,7 +308,7 @@ export class examinePortletHelper {
         if (testData.HoursVolunteered != ""){
           await expect(this.page.locator('div').filter({ hasText: testData.HoursVolunteered })).toBeTruthy;
         }
-        if (testData.HoursGoal != 0){
+        if (testData.HoursGoal != ""){
           await expect(this.page.locator('div').filter({ hasText: testData.HoursGoal })).toBeTruthy;
         }
           //class: container-query-blocs container-query-three-blocs      }

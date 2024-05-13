@@ -1,33 +1,32 @@
 {
     "numPortlets": 5,
-    "PortetTitles": ["Matching Gifts Balance","Matching Gifts History","Credit Card Transactions","My Nominations","Give Again"],
+    "PortletArray": ["Matching Gifts Balance","Matching Gifts History","Credit Card Transactions","My Nominations","Give Again"],
     "Portlet1": {
-        "PortletReference": "Matching Gifts Balance",
+        "PortletTitle": "Matching Gifts Balance",
         "PortletType": 1006,
         "PortletElements": 5,
         "PortletHeader": ["Program Name", "Number of Transaction(s)", "Limit", "Total Match Amount", "Balance"]
     },
     "Portlet2": {
-        "PortletReference": "Matching Gifts History",
+        "PortletTitle": "Matching Gifts History",
         "PortletType": 1002,
         "PortletElements": 4,
         "PortletHeader": ["Organization Information", "Type", "Description", "Status"]
     },
     "Portlet3": {
-        "PortletReference": "Credit Card Transactions",        
-        "PortletTitle": "Credit Card Transactions",
+        "PortletTitle": "Credit Card Transactions",        
         "PortletType": 1002,
         "PortletElements": 4,
         "PortletHeader": ["Organization Information", "Type", "Description", "Status"]
     },
     "Portlet4": {
-        "PortletReference": "My Nominations",   
+        "PortletTitle": "My Nominations",   
         "PortletType": 1002,
         "PortletElements": 0,
-        "PortletHeader": ["", "", "", ""]
+        "PortletHeader": [""]
     },
     "Portlet5": {
-        "PortletReference": "Give Again", 
+        "PortletTitle": "Give Again", 
         "PortletType": 4014
     }
 }

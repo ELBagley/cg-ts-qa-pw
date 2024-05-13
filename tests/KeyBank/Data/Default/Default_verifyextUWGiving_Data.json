@@ -1,23 +1,27 @@
 { 
     "Portlet1": {
         "PortletTitle": "United Way Matching Gifts History",
+        "PortletHeadings": "",
         "PortletNumRows": 1,
-        "PortletDataRow1": ["No results found|0","x", "x", "x"]
+        "PortletDataRow1": ["No results found","x", "x", "x"]
     },
     "Portlet2": {
         "PortletTitle": "United Way Credit Card Transactions",
+        "PortletHeadings": "",
         "PortletNumRows": 1,
         "PortletDataAction":"none",
-        "PortletDataRow1": ["No results found|1","x", "x"]
+        "PortletDataRow1": ["No results found","x", "x", "x"]
         },
     "Portlet3": {
         "PortletTitle": "Payroll Contributions",
+        "PortletHeadings": "",
         "PortletNumRows": 1,
         "PortletDataAction": "none",
-        "PortletDataRow1": ["No results found|2","x","x","x","x"]    
+        "PortletDataRow1": ["No results found","x","x","x","x"]    
     },
     "Portlet4": {
         "PortletTitle": "United Way - Give Again",
+        "PortletHeadings": "",
         "numText": 0,
         "textArray": [""]
     }

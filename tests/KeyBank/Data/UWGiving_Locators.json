@@ -3,7 +3,7 @@
     },
     "United Way Credit Card Transactions":{
         "TabRow0":  [""],     
-        "TabRow1Locator": "",
+        "TabRow1Locator": "[data-url='eg_portlet_data/.get_giving_history/?x_mod_id/=553888/&x_language_code/=en-US'] [class=' css-1xrjnll']",
         "TabRow1ChangeLinkLocator": "",
         "TabRow1CancelLinkLocator": "",
         "TabRow2Locator": "",
@@ -11,14 +11,12 @@
         "TabRow2CancelLinkLocator": ""
     },
     "Payroll Contributions": {
-        "Tab2Row0": "",
-        "Tab2Row1": "",
-        "Tab2Row2": "",
-        "Tab2Row3": "",
+        "TabRow1Locator": "[data-url='eg_portlet_data/.get_giving_history/?x_mod_id/=552212/&x_language_code/=en-US'] [class=' css-1xrjnll']",
         "Tab2Row1ChangeLinkLocator": "",
         "Tab2Row1CancelLinkLocator": ""
     },
     "United Way - Give Again": {
-        "Tab2Row0": ""
+        "Tab2Row0": "",
+        "TabRow1Locator": "[data-url='eg_portlet_data/.get_giving_history/?x_mod_id/=550538/&x_language_code/=en-US'] [class=' css-1xrjnll']"
     }
 }

@@ -12,8 +12,23 @@ export class BoardServiceMembershipInformation{
     async submitBoardServiceMemberhip(testData: any){ 
         await this.page.getByLabel('*Board Service Start Date').fill(testData.BoardServiceStartDate);
         await this.page.getByLabel('*Board Service End Date').fill(testData.BoardServiceEndDate);
+        await this.page.getByLabel('*Upload Documents').click();
+
+        this.page.on('filechooser', async fileChooser => {
+            const fileChooserPromise = this.page.waitForEvent('filechooser');
+            await fileChooser.setFiles('C:\Users\erica.bagley\OneDrive - Bonterra\Documents\Grant Makers\_Dummy Files\\11802148_PO_03282023101945.pdf');
+            await this.page.getByText('Upload file').click();
+            await this.page.getByText('Close Window').click();
+        })
+
+        /*
+        await page1.getByLabel('Upload File: Upload Documents').click();
+        await page1.getByLabel('Upload File: Upload Documents').setInputFiles('11802148_PO_03282023101945.pdf');
+        await page1.getByRole('button', { name: 'Upload File' }).click();
+        await page1.getByRole('button', { name: 'Close Window' }).click();
+        */
         await this.page.getByLabel('Description').fill(testData.description);
-        await this.page.getByRole('button', { name: 'Save and Proceed' }).click();
+        await this.page.getByRole('button', { name: 'Save and Proceed' }).click()
     }
 
     async submitBoardServiceMembership2(testData: any){

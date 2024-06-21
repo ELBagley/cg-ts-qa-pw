@@ -47,5 +47,11 @@ export class DateHelper {
             SixDaysPriorFromToday.setDate(today.getDate() - 6).toLocaleString('en-US')
             return this.date_TO_String(SixDaysPriorFromToday)
         }
+        else if (getDate == "OneMonthPriorFromToday"){
+            let today = new Date()
+            let OneMonthPriorFromToday = new Date()
+            OneMonthPriorFromToday.setDate(today.getDate() - 30).toLocaleString('en-US')
+            return this.date_TO_String(OneMonthPriorFromToday)
+        }
     }
 }

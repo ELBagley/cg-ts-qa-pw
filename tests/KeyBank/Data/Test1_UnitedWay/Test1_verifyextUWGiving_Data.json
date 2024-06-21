@@ -1,17 +1,20 @@
 { 
     "PortletData1": {
         "PortletTitle": "United Way Matching Gifts History",
+        "PortletHeadings": 99,
         "PortletDataRows": 1,
         "PortletDataRow1": ["RED CROSS ELEMENTARY PTO INC", "United Way - CC Match", "25.00 USD","Contribution has been successfully submitted."]
     },
     "PortletData2": {
         "PortletTitle": "United Way Credit Card Transactions",
+        "PortletHeadings": 99,
         "PortletDataRows": 1,
         "PortletDataAction":"none",
         "PortletDataRow1": ["RED CROSS ELEMENTARY PTO INC","25.00 USD on", "Contribution has been approved, but not yet scheduled for payment"]
         },
     "PortletData3": {
         "PortletTitle": "Payroll Contributions",
+        "PortletHeadings": 99,
         "PortletDataRows": 2,
         "PortletDataAction": "none",
         "PortletDataRow1": ["1 HEART 1 MISSION", "United Way Recurring Payroll Deduction", "$25.00 per pay period|0", "You have successfully registered your payroll deduction"],
@@ -19,8 +22,9 @@
     },
     "PortletData4": {
         "PortletTitle": "United Way - Give Again",
+        "PortletHeadings": 99,
         "numText": 7,
-        "textArray": ["ContentText1","ContentOrg1", "ContentText2", "ContentOrg2a", "ContentText3", "ContentOrg3"],
+        "textArray": ["contentText1","contentOrg1", "contentText2", "contentOrg2a", "contentText3", "contentOrg3"],
         "contentText1": "United Way One-Time Payroll Deduction $25.00 - Active",
         "contentOrg1": "RED CROSS ELEMENTARY PTO INC|0",
         "contentText2": "United Way Recurring Payroll Deduction $25.00 - Active",

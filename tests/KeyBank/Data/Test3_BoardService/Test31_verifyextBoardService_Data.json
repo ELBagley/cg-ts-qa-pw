@@ -3,6 +3,7 @@
     "PortletArray": ["Board Service Membership", "Board Service Recorded Hours", "Board Service Matching Gifts History", "Community Leadership Gift Balance", "My Nominations", "Dollars for Doers"],
     "Portlet1": {
         "PortletTitle": "Board Service Membership",
+        "PortletHeadings": "",
         "PortletRows":  3,
         "TabAction":"none",
         "PortletDataRow1": ["RED CROSS ELEMENTARY PTO INC",                 "Board Service Membership|0", "hours on|0", "You have successfully recorded your Board Service Membership|0"],
@@ -11,6 +12,7 @@
     },
     "Portlet2": {
         "PortletTitle": "Board Service Recorded Hours",
+        "PortletHeadings": "",
         "PortletRows": 2,
         "TabAction":"none",
         "PortletDataRow1": ["RED CROSS ELEMENTARY PTO INC", "Board Service Log Hours", "10 hours on ", "You have successfully recorded your hours!"],
@@ -18,18 +20,21 @@
     },
     "Portlet3": {
         "PortletTitle": "Board Service Matching Gifts History",
+        "PortletHeadings": "",
         "PortletRows": 1,
         "TabAction":"none",
         "PortletDataRow1": ["RED CROSS ELEMENTARY PTO INC", "Board Service Matching Gifts", "25.00 USD on ", "You have successfully registered you Credit Card transaction"]
     },
     "Portlet4": {
         "PortletTitle": "Community Leadership Gift Balance",
+        "PortletHeadings": "",
         "PortletRows": 1,
         "TabAction":"none",
         "PortletDataRow1": ["Board Service - Community Leadership Gift", "1", "$2,000.00", "$500.00", "$1,500.00"]
     },
     "Portlet5": {
         "PortletTitle": "My Nominations",
+        "PortletHeadings": "",
         "PortletRows": 0,
         "TabAction":"none",
         "PortletDataRow1": ["x"]
@@ -38,24 +43,21 @@
         "PortletType": 4012,
         "TabAction":"none",
         "message": "Congratulations! You are eligible to redeem a volunteer match!",
-        "span1Organization": "21ST CENTURY FUND",
-        "span1Hours": "3/1 hours",
-        "span2Organization": "RED CROSS ELEMENTARY PTO INC",
-        "span2Hours": "10/1 hours",
-        "redeemableAmount": "$500.00",
-        "redeemHours": "3",
-        "redeemedAmount": "$500.00",
-        "hoursLogged": "13",
-        "numDetails": 4,
+        "span1Organization": "RED CROSS ELEMENTARY PTO INC",
+        "span1Hours": "10/1 hours",
+        "span2Organization": "21ST CENTURY FUND FOR DELAWARES CHILDREN INC",
+        "span2Hours": "3/1 hours",
+        "hoursLogged": "Total13 hours",
+        "numDetails": 9,
         "detailInformation1": "RED CROSS ELEMENTARY PTO INC10 hours",
-        "detailInformation2": "21ST CENTURY FUND3 hours",   
+        "detailInformation2": "21ST CENTURY FUND FOR DELEWARES CHILDREN INC3 hours",   
         "detailInformation3": "Total13 hours",
-        "detailInformation4": "RED CROSS ELEMENTARY PTO INC$500.00Total$", 
-        "detailInformation5": "",
-        "detailInformation6": "",
-        "detailInformation7": "",
-        "detailInformation8": "",
-        "detailInformation9": "",
+        "detailInformation4": "Total amount accrued", 
+        "detailInformation5": "Total$500.00", 
+        "detailInformation6": "Amount previously redeemed",
+        "detailInformation7": "Total$0.00",
+        "detailInformation8": "RedeemableHours AvailableRedeemedHours Logged",
+        "detailInformation9": "$500.0013$0.0013",
         "detailInformation10": ""
     }
 }

@@ -3,6 +3,7 @@
     "TabArray": ["Give Again","Matching Gifts Balance", "Matching Gifts History","Credit Card Transactions", "My Nominations"],
     "Portlet1":{
         "PortletTitle": "Matching Gifts Balance",
+        "PortletHeadings": 99,
         "TabRows": 3,
         "TabAction":"none",
         "TabRow1": ["Employee Matching Gift Program","$2,000.00","$1,873.00","x", "x"],
@@ -11,6 +12,7 @@
     },
     "Portlet2":{
         "PortletTitle": "Matching Gifts History",
+        "PortletHeadings": 99,
         "TabRows": 4,
         "TabAction":"none",
         "TabRow1": ["AMERICAN NATIONAL RED CROSS", "Credit Card Match", "27 USD", "Contribution has not been verified"],
@@ -20,18 +22,21 @@
     },
     "Portlet3":{
         "PortletTitle": "Credit Card Transactions",
+        "PortletHeadings": 99,
         "TabRows": 1,
         "TabAction":"none",
         "TabRow1": ["AMERICAN NATIONAL RED CROSS", "Credit Card Match", "27 USD", "Contribution has not been verified"]
     },
     "Portlet4":{
         "PortletTitle": "My Nominations",
+        "PortletHeadings": 0,
         "TabRows": 0,
         "TabAction":"none",
         "TabRow1": ["x"]
     },
     "Portlet5":{
         "PortletTitle": "Give Again",
+        "PortletHeadings": 99,
         "numText": 4,
         "TabAction":"none",
         "textArray": ["ContentText1","ContentOrg1", "ContentText2", "ContentOrg2"],

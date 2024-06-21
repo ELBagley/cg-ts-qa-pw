@@ -1,6 +1,7 @@
 {
     "Portlet1": {
         "PortletTitle": "Matching Gifts Balance",
+        "PortletHeadings": 99,
         "PortletDataRows": 3,
         "PortletDataRow1": ["Employee Matching Gift Program","$2,000.00|0","$2,000.00|1", "x", "x"],
         "PortletDataRow2": ["Credit Card Match", "0|0", "$0.00|0", "x", "x"],
@@ -8,21 +9,25 @@
     },
     "Portlet2": {
         "PortletTitle": "Matching Gifts History",
+        "PortletHeadings": 99,
         "PortletDataRows": 1,
         "PortletDataRow1": ["No results found", "x"]
     },
     "Portlet3": {
         "PortletTitle": "Credit Card Transactions",
+        "PortletHeadings": 99,
         "PortletDataRows": 1,
         "PortletDataRow1": ["No results found", "x"]
     },
     "Portlet4": {
         "PortletTitle": "My Nominations",
+        "PortletHeadings": 0,
         "PortletDataRows": 0,
         "PortletDataRow1": ["x"]
     },
     "Portlet5": {
         "PortletTitle": "Give Again",
+        "PortletHeadings": 0,
         "numText": 0,
         "textArray": [""],
         "contentText1": "",

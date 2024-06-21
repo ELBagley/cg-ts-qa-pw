@@ -9,5 +9,6 @@
     "VolunteerStartDate": "Yesterday",
     "VolunteerEndDate": "Today",
     "VolunteerHours": 10,
-    "VolunteerDescription": "Membership1 hours SQA test"
+    "VolunteerDescription": "Membership1 hours SQA test",
+    "ProposalType": "97538"
 }

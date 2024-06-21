@@ -32,7 +32,7 @@ export class addFileUpload{
         // BUILD URL TO FILE UPLOAD DIALOG
         let requestID = await this.page.locator('input[type="hidden"][name="x_req_id"]').getAttribute('value');
         let firstPart = "https://sandbox.cybergrants.com/pls/cybergrants-sb/upload.entry?x_gm_id=10762&x_ut=DONOR&x_custom_field_id=2848544&x_key="
-        let URLToUse = firstPart + requestID + "&x_parent_table_name=eg_request&x_proposal_type_id=" + testData.proposalType + "&x_section_id=1868070&x_internal_flag=N&x_style_id=&x_invitation_id=&x_language_code=en-US"
+        let URLToUse = firstPart + requestID + "&x_parent_table_name=eg_request&x_proposal_type_id=" + testData.ProposalType + "&x_section_id=1868070&x_internal_flag=N&x_style_id=&x_invitation_id=&x_language_code=en-US"
         await this.page.goto(URLToUse)
 
         // Create a page.
@@ -43,9 +43,12 @@ export class addFileUpload{
         //.formRowCG2848544.row  input[name="x_custom_field_value"]'
         //
         await this.page.setInputFiles('input[type="file"]#xfileupload.formFile',testData.BoardServiceDocument1);
+        await this.page.pause()
         await this.page.locator('[value="Upload File"]').click()
-
-        await this.page.locator('[value="Close Window"]').click();
+        await this.page.locator('[value="Close Window"]').click()
+        //return to previous page
+        await this.page.goto(startingPage)
+        await this.page.locator("Save and Proceed").click()
     };
     /*
     const [fileChooser] = await Promise.all([

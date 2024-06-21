@@ -1,8 +1,12 @@
 { 
-    "portlet1": {
-        "PortletTitle": "HowAmIDoing",
-        "Donated": "25 USD",
-        "HoursVolunteered": 0,
-        "HoursGoal": "0 %"
+    "Portlet1":{
+        "numPortlets": 1,
+        "PortletTitle": "How Am I Doing?",
+        "PortletHeadings": 99,
+        "TabType": 1033,
+        "PortletElements": 0,
+        "Donated": "$50.00",
+        "HoursVolunteered": "13",
+        "HoursGoal": "52%"
     }
 }

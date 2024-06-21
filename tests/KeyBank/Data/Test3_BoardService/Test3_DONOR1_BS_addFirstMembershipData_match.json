@@ -1,0 +1,11 @@
+{
+"organizationName": "RED CROSS ELEMENTARY PTO INC",
+"organizationButton": "Select RED CROSS ELEMENTARY PTO INC",
+"MatchGiftDate": "OneMonthPriorFromToday",
+"MatchGiftAmount": "25",
+"MatchAmountrequested": "25",
+"MatchGiftPaymentMethod": "cash",
+"MatchRecognitionName": "Erica",
+"MatchRecognitionEmail": "test@test.com",
+"MatchAcknowledge": "Y"
+}

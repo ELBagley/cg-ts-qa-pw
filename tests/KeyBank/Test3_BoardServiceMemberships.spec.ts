@@ -36,7 +36,7 @@ test.describe('Create initial data for new execution of tests',() => {
 
     //test ('Portlet defaults for Donor without a role', async ({page})=>) {}
 
-    test.skip ('Test DONOR1-BS-<ddmm> - Create First Board Membership', async ({page}) => {
+    test ('Test DONOR1-BS-<ddmm> - Create First Board Membership', async ({page}) => {
         const pm = new extPageManager(page)
         await pm.useBoardServicePage().navigateToBoardServicePage()
         // Repeat for each add a donation

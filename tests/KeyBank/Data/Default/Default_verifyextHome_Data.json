@@ -2,7 +2,7 @@
     "Portlet1":{
         "numPortlets": 1,
         "PortletTitle": "How Am I Doing?",
-        "PortletHeadings": "",
+        "PortletHeadings": 99,
         "TabType": 1033,
         "PortletElements": 0,
         "Donated": "$0.00",

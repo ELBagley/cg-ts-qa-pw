@@ -81,8 +81,8 @@ export class examinePortletHelper {
       }
 
       // 4012 is Dollars for Doers
-      //  this section hadles portlets that do not follwow the same format 
-      //      as standard portlets with headers and data tables
+      //  this section handles portlets that do not follow the same format 
+      //      as tabular portlets with headers and data
       //
       // 1033 is home page graphical portets
       //

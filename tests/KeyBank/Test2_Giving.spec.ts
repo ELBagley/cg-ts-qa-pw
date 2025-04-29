@@ -43,24 +43,24 @@ test.describe('Create initial data for new execution of tests',() => {
         await pm.useSubmissionSuccessfulPage().selectReturnToHome()
     })
 
-    test ('United Way Data Verification of Home page', async ({page})=>{
+    test ('Giving Data Verification of Home page', async ({page})=>{
         const pm = new extPageManager(page)
         await pm.useHomePage().examinePortletTab("How Am I Doing?",Test2_HomeData, HomeLocators)
     })
-    test ('United Way Data Verification of Giving page', async ({page})=>{
+    test ('Giving Data Verification of Giving page', async ({page})=>{
         const pm = new extPageManager(page)
         await pm.useGivingPage().examinePortletTab("Matching Gifts Balance",Test2_GivingData, GivingLocators)
         await pm.useGivingPage().examinePortletTab("Matching Gifts History",Test2_GivingData, GivingLocators)
         await pm.useGivingPage().examinePortletTab("Credit Card Transactions",Test2_GivingData, GivingLocators)
         await pm.useGivingPage().examinePortletTab("My Nominations",Test2_GivingData, GivingLocators)
     })
-    test ('United Way Data Verification of United Way Giving page', async ({page})=>{
+    test ('Giving Data Verification of United Way Giving page', async ({page})=>{
         const pm = new extPageManager(page)
         await pm.useUWGivingPage().examinePortletTab("United Way - Give Again",Test2_UWGivingData, UWGivingLocators)
         await pm.useUWGivingPage().examinePortletTab("United Way Credit Card Transactions",Test2_UWGivingData, UWGivingLocators)
         await pm.useUWGivingPage().examinePortletTab("Payroll Contributions",Test2_UWGivingData, UWGivingLocators)
     })
-    test ('United Way Data Verification of Board Service page', async ({page})=>{
+    test ('Giving Data Verification of Board Service page', async ({page})=>{
         const pm = new extPageManager(page)
         await pm.useBoardServicePage().examinePortletTab("Board Service Memberships",Test2_BoardServiceData, BoardServiceLocators)
         await pm.useBoardServicePage().examinePortletTab("Board Service Recorded Hours",Test2_BoardServiceData, BoardServiceLocators)
@@ -69,7 +69,7 @@ test.describe('Create initial data for new execution of tests',() => {
         await pm.useBoardServicePage().examinePortletTab("My Nominations",Test2_BoardServiceData, BoardServiceLocators)
         await pm.useBoardServicePage().examinePortletTab("Dollars For Doers",Test2_BoardServiceData, BoardServiceLocators)
     })
-        test ('United Way Data Verification of Manage Events page', async ({page})=>{
+        test ('Giving Data Verification of Manage Events page', async ({page})=>{
             const pm = new extPageManager(page)
         await pm.useManageEventsPage().examinePortletTab("Manage Open Events",Test2_ManageEventsData, ManageEventsLocators)
         await pm.useManageEventsPage().examinePortletTab("Manage Completed Events",Test2_ManageEventsData, ManageEventsLocators)

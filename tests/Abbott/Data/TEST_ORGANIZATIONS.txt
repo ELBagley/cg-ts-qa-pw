@@ -1,0 +1,17 @@
+organizations identified using SQL
+ORG1-US	Guide Dogs of America (1742050)
+ORG2-US	American National Red Cross (1845681)
+ORG3-US	Utah Youth Village (1739693)
+ORG4-US	Lawrence General Hospital (1739243)	
+ORG5-US	International Guiding Eyes Inc 
+ORG6-US	Albergue Olimpico (32205)
+
+ORG1-CA	Autism Dog Services Inc.(16138137)
+ORG2-CA	Heart and Stroke Foundation of Canada (9060653)
+	
+ORG1-GBP	Dogs for Disabled (17229889)
+ORG2-GBP	British Heart Foundation (4660770)
+
+ORG1-EUR	Association for the Conservation of Natural Ecosystems (CEN) (18497693)
+ORG2-EUR	SEO Birdlife (14120421)
+

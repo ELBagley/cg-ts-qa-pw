@@ -1,0 +1,39 @@
+{
+    "numPortlets": 5,
+    "PortletArray": ["Abbott Fund Match History","Abbott Fund Match Status","Payroll Giving","Credit Card Giving","My Charity Nominations"],
+    "Portlet1": {
+        "PortletTitle": "Abbott Fund Match History",
+        "PortletType": 1002,
+        "PortletElements": 4,
+        "PortletHeader": ["Organization Information", "Type", "Description", "Status"]
+    },
+    "Portlet2": {
+        "PortletTitle": "Abbott Fund Match Status",
+        "PortletType": 1002,
+        "PortletElements": 4,
+        "PortletHeader": ["Program Name", "Number of Transaction(s)", "Limit", "Total Match Amount", "My Charity Nominations"]
+    },
+    "Portlet3": {
+        "PortletTitle": "Payroll Giving",        
+        "PortletType": 1002,
+        "PortletElements": 5,
+        "PortletHeader": ["Action","Organization Information", "Type", "Description", "Status"]
+    },
+    "Portlet4": {
+        "PortletTitle": "Credit Card Giving",   
+        "PortletType": 1002,
+        "PortletElements": 4,
+        "PortletHeader": ["Organization Information", "Type", "Description", "Status"]
+    },
+    "Portlet5": {
+        "PortletTitle": "My Charity Nominations", 
+        "PortletType": 4014,
+        "PortletElements": 0,
+        "PortletHeader": [""]
+    },
+    "PayrollOneTime": "One-Time Payroll Deduction",
+    "Payrollrecurring": "Recurring Payroll Deduction",
+    "CreditCardOneTime": "Find Organizations|1",
+    "requestAMatch": "Find Organizations|2"
+}
+

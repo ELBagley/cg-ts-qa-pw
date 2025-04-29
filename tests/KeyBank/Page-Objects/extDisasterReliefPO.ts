@@ -9,6 +9,21 @@ export class extDisasterRelief extends examinePortletHelper{
     async navigateToDisasterRelief(){
         await this.page.goto("https://sandbox.cybergrants.com/pls/cybergrants-sb/eg_portal.home?x_gm_id=10762&x_page=disasterrelief")
     }
+    // If CURLANG is ENG then KeyBank_DR_ENG.json
+    // numOrganizations: 4,
+    // organizationNameArray: ["Project Hope", "Feeding America", "International Medical Corps", "Direct Relief"],
+    // 
+    // numOrganizationActions: 2,
+    // organizationActionArray: ["Donate Today", "Request a Match for a Previous Donation"],
+    // "Donate Today": "",
+    // "Request a Match for a Previous Donation": "",
+    //
+    // numSpecialButtons: 2,
+    // specialButtonArray: ["Donate with 1:1 Match", "Donate with 2:1 Match"],
+    // * INCASE OF L10N
+    // "Donate with 1:1 Match": "",
+    // "Donate with 2:1 Match: " "
+
     async selectDonateTodayOrganization(OrganizationName: string){
         // organization names are on the page's cards; credit card donation
         await this.page.getByText(OrganizationName).getByRole('link', { name: 'Donate Today' }).click();
